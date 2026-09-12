@@ -50,49 +50,97 @@ The platform combines rich multi-vendor retail operations (Customer, Seller, and
 
 ---
 
-## Quickstart Guide
+---
+
+## Install
 
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+ and npm
-- Docker and Docker Compose (optional for local standalone execution)
+- Docker and Docker Compose (optional for full containerized stack)
 
-### 1. Standalone Development Setup
-
+### Environment Configuration
+Copy `.env.example` to `.env` (note: `.env` is git-ignored for security):
 ```bash
-# Clone the repository
-git clone <repo-url>
-cd "AI E-Commerce"
+cp .env.example .env
+```
 
-# Backend setup
+### Dependency Installation
+
+#### Backend
+```bash
 cd backend
 python -m venv venv
 # Windows:
 .\venv\Scripts\activate
-# Linux/macOS:
+# Linux / macOS:
 source venv/bin/activate
 
 pip install -r requirements.txt
-python -m scripts.setup.init_db
-python -m scripts.seed.seed_all
-
-# Start backend server
-uvicorn app.main:app --reload --port 8000
 ```
 
+#### Frontend
 ```bash
-# Frontend setup (in a separate terminal)
 cd frontend
 npm install
-npm run dev
 ```
 
-The frontend will run at `http://localhost:5173` and the API documentation (Swagger UI) will be accessible at `http://localhost:8000/docs`.
+---
 
-### 2. Docker Compose Deployment
+## Build
 
+### Frontend Production Build
+```bash
+cd frontend
+npm run build
+```
+Compiles TypeScript with Vite into the production bundle under `frontend/dist/`.
+
+### Database Initialization & Seeding
+```bash
+python -m scripts.setup.init_db
+python -m scripts.seed.seed_all
+```
+
+---
+
+## Run
+
+### Development Mode
+
+#### 1. Start Backend API Server
+```bash
+cd backend
+uvicorn app.main:app --reload --port 8000
+```
+- API Base: `http://localhost:8000`
+- Interactive OpenAPI Swagger Docs: `http://localhost:8000/docs`
+- ReDoc Documentation: `http://localhost:8000/redoc`
+
+#### 2. Start Frontend Dev Server
+```bash
+cd frontend
+npm run dev
+```
+- Web Application UI: `http://localhost:5173`
+
+### Production / Docker Deployment
 ```bash
 docker-compose up --build
+```
+
+---
+
+## Tests & Coverage
+
+Run the automated test runner across core platform and AI engines:
+```bash
+pytest
+```
+
+Run test suite with code coverage analysis:
+```bash
+pytest --cov=backend/app --cov=ai tests/
 ```
 
 ---
@@ -100,18 +148,13 @@ docker-compose up --build
 ## Repository Structure
 
 ```
-├── frontend/             # React + TypeScript Vite frontend
-├── backend/              # FastAPI REST & WebSocket backend
-├── ai/                   # Machine learning pipelines & model registry
-├── database/             # Schemas, seeds, and migrations
+├── ai/                   # Machine learning pipelines, model registry & AI agents
+├── backend/              # FastAPI REST API, WebSocket routers, and domain services
+├── database/             # Relational schemas, seed matrices, and data fixtures
+├── docs/                 # Architectural and API documentation
+├── frontend/             # React + TypeScript Vite frontend application
 ├── infrastructure/       # Docker, Prometheus, Grafana configs
 ├── scripts/              # Audit, seed, and health verification scripts
-├── docs/                 # Architectural and API documentation
-└── tests/                # Automated test suites
+└── tests/                # Automated test suites & test runner configuration
 ```
 
----
-
-## License
-
-Academic / Portfolio Software Engineering Project.

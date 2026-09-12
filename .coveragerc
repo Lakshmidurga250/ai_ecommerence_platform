@@ -1,0 +1,14 @@
+[run]
+source = 
+    backend/app
+    ai
+omit =
+    */tests/*
+    */alembic/*
+    */node_modules/*
+    */__pycache__/*
+
+[report]
+show_missing = True
+precision = 2
+skip_covered = False
