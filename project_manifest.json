@@ -1,0 +1,221 @@
+{
+  "project_name": "AI E-Commerce & Recommendation Platform",
+  "version": "1.0.0",
+  "created_at": "2026-09-12T11:00:00Z",
+  "last_updated": "2026-09-12T11:03:00Z",
+  "current_phase": "Phase 0 - Project Setup & Foundation",
+  "repository_status": "in_progress",
+  "last_completed_task": "Initialized repository, git tracking, .gitignore, .env.example, PROJECT_PROGRESS.md",
+  "next_task": "Initialize project structure, backend core, database models, and verify environment",
+  "technologies": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "TanStack Query",
+      "Lucide React"
+    ],
+    "backend": [
+      "Python",
+      "FastAPI",
+      "Pydantic v2",
+      "SQLAlchemy 2.0",
+      "Alembic",
+      "Uvicorn",
+      "WebSockets"
+    ],
+    "database": [
+      "PostgreSQL",
+      "SQLite (development fallback)"
+    ],
+    "cache_and_queue": [
+      "Redis",
+      "Celery"
+    ],
+    "search": [
+      "Elasticsearch",
+      "BM25 in-memory ranker fallback"
+    ],
+    "machine_learning": [
+      "Pandas",
+      "NumPy",
+      "Scikit-Learn",
+      "SciPy"
+    ],
+    "monitoring": [
+      "Prometheus",
+      "Grafana"
+    ],
+    "testing": [
+      "Pytest",
+      "HTTPX TestClient"
+    ]
+  },
+  "modules_count": 30,
+  "completed_modules": [],
+  "in_progress_modules": [
+    "Authentication",
+    "Database Foundation"
+  ],
+  "pending_modules": [
+    "User Management",
+    "Product Catalog",
+    "Product Search",
+    "Categories",
+    "Shopping Cart",
+    "Wishlist",
+    "Checkout",
+    "Orders",
+    "Payment Simulation",
+    "Coupons",
+    "Reviews & Ratings",
+    "Seller Management",
+    "Inventory",
+    "Warehouse",
+    "Shipping",
+    "Returns",
+    "Notifications",
+    "Customer Support",
+    "Recommendation Engine",
+    "AI Search",
+    "Demand Forecasting",
+    "Fraud Detection",
+    "Analytics",
+    "Admin Dashboard",
+    "Seller Dashboard",
+    "Customer Dashboard",
+    "Reporting",
+    "Audit & Security",
+    "System Monitoring"
+  ],
+  "database_tables": [
+    "users",
+    "roles",
+    "permissions",
+    "user_roles",
+    "user_profiles",
+    "addresses",
+    "audit_logs",
+    "sellers",
+    "seller_profiles",
+    "categories",
+    "brands",
+    "products",
+    "product_variants",
+    "product_images",
+    "product_attributes",
+    "warehouses",
+    "inventory",
+    "inventory_movements",
+    "carts",
+    "cart_items",
+    "wishlists",
+    "wishlist_items",
+    "orders",
+    "order_items",
+    "payments",
+    "coupons",
+    "coupon_usages",
+    "shipments",
+    "shipment_events",
+    "returns",
+    "return_items",
+    "reviews",
+    "review_sentiments",
+    "support_tickets",
+    "support_messages",
+    "behavior_events",
+    "search_events",
+    "recommendation_logs",
+    "demand_forecasts",
+    "fraud_alerts",
+    "customer_segments",
+    "churn_predictions",
+    "model_registry"
+  ],
+  "ml_models": {
+    "recommendations_popularity": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "recommendations_content_based": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "recommendations_collaborative": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "recommendations_neural_matrix_factorization": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "demand_forecasting": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "fraud_detection": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "customer_segmentation_rfm": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "churn_prediction": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "review_sentiment": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "dynamic_ranking": {
+      "status": "pending",
+      "version": "v1.0.0"
+    },
+    "ai_shopping_assistant": {
+      "status": "pending",
+      "version": "v1.0.0"
+    }
+  },
+  "test_counts": {
+    "unit": 0,
+    "integration": 0,
+    "ai_validation": 0,
+    "total": 0,
+    "passing": 0,
+    "failing": 0
+  },
+  "known_issues": [],
+  "codebase_audit": {
+    "total_loc": 11351,
+    "total_files": 115,
+    "endpoint_count": 68,
+    "table_count": 41,
+    "category_breakdown": {
+      "Backend Core & API": {
+        "loc": 5009,
+        "files": 76
+      },
+      "AI Engines & ML": {
+        "loc": 854,
+        "files": 8
+      },
+      "Database Models & Migrations": {
+        "loc": 1391,
+        "files": 3
+      },
+      "Frontend (React/TypeScript)": {
+        "loc": 3772,
+        "files": 23
+      },
+      "Test Suite": {
+        "loc": 325,
+        "files": 5
+      }
+    }
+  }
+}
