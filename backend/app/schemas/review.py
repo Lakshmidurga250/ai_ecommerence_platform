@@ -4,7 +4,7 @@ Review, Rating, and Sentiment Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class ReviewCreate(BaseModel):
@@ -22,8 +22,7 @@ class ReviewSentimentRead(BaseModel):
     confidence_score: float
     extracted_aspects: Dict[str, Any] = {}
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ReviewRead(BaseModel):
@@ -39,8 +38,7 @@ class ReviewRead(BaseModel):
     sentiment: Optional[ReviewSentimentRead] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ReviewModerationUpdate(BaseModel):

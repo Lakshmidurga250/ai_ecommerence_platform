@@ -1,12 +1,12 @@
 # PROJECT PROGRESS: AI E-COMMERCE & RECOMMENDATION PLATFORM
 
 **Last Updated:** 2026-09-12  
-**Overall Status:** FULLY INTEGRATED, OPERATIONAL & AUDITED  
+**Overall Status:** FULLY EXPANDED, HARDENED, OPERATIONAL & AUDITED  
 **Git Branch:** main  
-**Test Suite Status:** 21 / 21 PASSING (100%)  
-**Codebase Size:** 11,351 Lines of Code across 115 files  
-**OpenAPI Endpoints:** 68 registered paths  
-**Database Tables:** 41 normalized relational tables  
+**Test Suite Status:** 45 / 45 PASSING (100%)  
+**Codebase Size:** 15,057 Lines of Code across 138 files  
+**OpenAPI Endpoints:** 85 registered paths  
+**Database Tables:** 49 normalized relational tables  
 
 ---
 
@@ -14,21 +14,19 @@
 
 | Phase | Description | Status | Progress |
 |-------|-------------|--------|----------|
-| **Phase 0** | Repository initialization, architecture, environment, docs | COMPLETED | 100% |
-| **Phase 1** | Database foundation, Authentication, User management, RBAC | COMPLETED | 100% |
-| **Phase 2** | Products, Categories, Sellers, Images, Search foundation | COMPLETED | 100% |
-| **Phase 3** | Cart, Wishlist, Checkout, Orders, Payment simulation | COMPLETED | 100% |
-| **Phase 4** | Inventory, Warehouse, Shipping, Returns, Notifications | COMPLETED | 100% |
-| **Phase 5** | Reviews, Sentiment analysis, Customer support | COMPLETED | 100% |
-| **Phase 6** | Multi-Tier recommendations (L1-L5), Behavior tracking, Analytics | COMPLETED | 100% |
-| **Phase 7** | Customer segmentation (K-Means), Demand forecasting (Random Forest), Churn prediction | COMPLETED | 100% |
-| **Phase 8** | Fraud/anomaly detection (Isolation Forest), Dynamic product ranking | COMPLETED | 100% |
-| **Phase 9** | Semantic search, Embeddings, AI shopping assistant | COMPLETED | 100% |
-| **Phase 10** | Latent Factor Matrix Factorization, Model registry | COMPLETED | 100% |
-| **Phase 11** | Admin dashboard, Seller dashboard, Customer dashboard | COMPLETED | 100% |
-| **Phase 12** | Monitoring, Prometheus metrics, Security hardening, Reporting | COMPLETED | 100% |
-| **Phase 13** | Docker, Docker Compose, CI/CD GitHub Actions | COMPLETED | 100% |
-| **Phase 14** | Full integration, Pytest suite, System health check & Audit | COMPLETED | 100% |
+| **Phase 0** | Baseline audit, architecture preservation, and deprecation analysis | COMPLETED | 100% |
+| **Phase 1** | Pydantic v2 migration (model_config = ConfigDict), security headers middleware | COMPLETED | 100% |
+| **Phase 2 & 3** | Catalog Expansion (Bundles, Q&A, Helpfulness Voting, Recently Viewed, Alerts, Ledger, Payouts) | COMPLETED | 100% |
+| **Phase 4** | Advanced Faceted Search with Typo Tolerance (Levenshtein) & Synonyms | COMPLETED | 100% |
+| **Phase 5 & 6** | PyTorch Neural Collaborative Filtering (GMF + MLP NeuMF) & Offline Benchmark Suite | COMPLETED | 100% |
+| **Phase 7 & 8** | Customer CLV & RFM Cohorts + Statistical Inventory Replenishment (Safety Stock, ROP, EOQ) | COMPLETED | 100% |
+| **Phase 9 & 10** | Layered Fraud Shield (Deterministic + Velocity + Isolation Forest anomaly scoring) | COMPLETED | 100% |
+| **Phase 11 & 12** | Multi-Vendor Marketplace Service, Seller Scorecards, Payout Settlements, Order Splitting | COMPLETED | 100% |
+| **Phase 13 & 14** | Context-Grounded AI Support Assistant & Chat Endpoint | COMPLETED | 100% |
+| **Phase 25** | Frontend Components (Bundles, Q&A, Review Voting, Recently Viewed, Comparison Modal, Customer Account) | COMPLETED | 100% |
+| **Phase 26 & 27** | Comprehensive Test Suite Expansion (45/45 passing tests across 7 test suites) | COMPLETED | 100% |
+| **Phase 31-37** | Codebase Audit, System Health Verification, Production Build, and Documentation | COMPLETED | 100% |
+
 
 ---
 
@@ -71,20 +69,32 @@
 
 ## 3. Engineering Details & Verification
 
-* **Database Schema:** 41 normalized relational tables migrated via Alembic baseline `2026_09_12_1109-dd56fe30381f`.
-* **Seed Dataset:** 14 verified users, 3 sellers, 6 categories, 8 brands, 11 rich catalog products with variants/images/inventory, 3 coupons, 4 reviews with sentiment scores, and 6 registered AI models.
-* **AI Model Pipeline:**
+* **Database Schema:** 49 normalized relational tables in `ecommerce.db` (expanded with `ProductBundle`, `ProductQuestion`, `ProductAnswer`, `ReviewHelpfulnessVote`, `UserRecentlyViewed`, `PriceAlert`, `InventoryLedger`, `SellerPayout`).
+* **API Surface:** 85 unique registered OpenAPI paths across 22 modular API routers.
+* **Codebase Audit:** 15,057 Lines of Code across 138 files:
+  - Backend Core & API: 6,543 LOC across 84 files
+  - AI Engines & ML: 1,572 LOC across 13 files
+  - Database Models & Migrations: 1,391 LOC across 3 files
+  - Frontend (React/TypeScript): 4,790 LOC across 29 files
+  - Test Suite: 761 LOC across 9 files
+* **AI Model & Intelligence Pipeline:**
   1. *L1 Popularity:* Bayesian-dampened popularity with recency decay.
   2. *L2 Content-Based:* TF-IDF Vectorizer with Cosine Similarity across specifications.
   3. *L3 Collaborative Filtering:* User-User interaction affinity matrix.
   4. *L4 Hybrid Ensemble:* Multi-armed scoring with explainability badges.
   5. *L5 Latent Factor Decomposition:* Low-rank SVD preference vector dot-product ranking.
-  6. *Sentiment Analyzer:* Lexicon aspect & polarity scoring (-1.0 to 1.0).
-  7. *Demand Forecaster:* Supervised lag feature engineering + Random Forest regressor with MAE & RMSE evaluation.
-  8. *Fraud Detector:* Unsupervised Isolation Forest anomaly detector with factor attribution.
-  9. *Customer Segmenter:* RFM normalization + K-Means clustering with Silhouette validation.
-  10. *Churn Predictor:* Calibrated logistic sigmoidal probability model with retention recommendations.
-  11. *NLP Query Intent Parser:* Conversational parameter extractor (Brand, Category, Color, Max Price, Rating).
-* **Automated Tests:** 21 / 21 Pytest cases passing (`backend/tests/test_auth.py`, `test_catalog.py`, `test_orders.py`, `test_ai_models.py`).
-* **Frontend Production Build:** Minified production bundle generated via Vite (`dist/index.html` 1.04 kB, `assets/index-DXrrUMes.css` 46.85 kB, `assets/index-DpCfBPS5.js` 302.78 kB).
+  6. *L6 Neural Collaborative Filtering:* PyTorch dual-branch NeuMF (Generalized Matrix Factorization + Multi-Layer Perceptron) with Adam optimizer and binary cross-entropy loss.
+  7. *Offline Recommendation Evaluator:* Mathematical benchmark suite calculating Precision@K, Recall@K, MAP@K, NDCG@K, and HitRate@K.
+  8. *3-Layer Fraud Defense Shield:* Deterministic rules + statistical velocity checks + Isolation Forest anomaly detection.
+  9. *Customer CLV & RFM Cohorts:* Historical margin and predictive forward-looking 12-month CLV with retail cohort segmentation (VIP Platinum, Loyal Gold, Growing Silver, Bronze Explorer).
+  10. *Statistical Inventory Replenishment:* Safety Stock ($Z \times \sigma \times \sqrt{L}$), Reorder Point (ROP), and Wilson Economic Order Quantity (EOQ).
+  11. *Sentiment Analyzer:* Lexicon aspect & polarity scoring (-1.0 to 1.0).
+  12. *Demand Forecaster:* Supervised lag feature engineering + Random Forest regressor with MAE & RMSE evaluation.
+  13. *Customer Segmenter:* RFM normalization + K-Means clustering with Silhouette validation.
+  14. *Churn Predictor:* Calibrated logistic sigmoidal probability model with retention recommendations.
+  15. *NLP Query Intent Parser:* Conversational parameter extractor (Brand, Category, Color, Max Price, Rating).
+  16. *Context-Grounded AI Support Assistant:* Intent classification and database context grounding for order tracking, 30-day return eligibility, and platform policies.
+* **Automated Tests:** 45 / 45 Pytest cases passing (100% pass rate across 7 test suites: `test_auth.py`, `test_catalog.py`, `test_orders.py`, `test_ai_models.py`, `test_advanced_features.py`, `test_ncf_and_metrics.py`, `test_marketplace_and_orders.py`, `test_data_quality_and_fraud.py`).
+* **Frontend Production Build:** Minified production bundle generated via Vite (`dist/index.html` 1.04 kB, `assets/index-DOV-KWtX.css` 51.75 kB, `assets/index-zh3qQ9Hy.js` 332.73 kB) with TypeScript 0 error compilation.
 * **Infrastructure:** Multi-stage `Dockerfile.backend`, `Dockerfile.frontend`, `nginx.conf`, root `docker-compose.yml`, and `.github/workflows/ci.yml`.
+

@@ -4,7 +4,7 @@ Warehouse, Inventory, and Stock Movement Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class WarehouseBase(BaseModel):
@@ -27,8 +27,7 @@ class WarehouseRead(WarehouseBase):
     id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class StockAdjustment(BaseModel):
@@ -48,8 +47,7 @@ class InventoryMovementRead(BaseModel):
     notes: Optional[str] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class InventoryRead(BaseModel):
@@ -63,8 +61,7 @@ class InventoryRead(BaseModel):
     warehouse: Optional[WarehouseRead] = None
     movements: List[InventoryMovementRead] = []
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class LowStockAlert(BaseModel):

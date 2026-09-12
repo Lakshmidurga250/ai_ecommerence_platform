@@ -207,5 +207,105 @@ export const api = {
       headers: getHeaders(),
       body: JSON.stringify({ event_type: eventType, product_id: productId, metadata: metadata || {} }),
     }).catch(() => {});
+  },
+
+  // Catalog Expansion: Bundles, Q&A, Reviews, Alerts
+  async getProductBundles(productId: number) {
+    const res = await fetch(`${API_BASE}/catalog/products/${productId}/bundles`, { headers: getHeaders() });
+    return handleResponse<any[]>(res);
+  },
+
+  async getProductQnA(productId: number) {
+    const res = await fetch(`${API_BASE}/catalog/products/${productId}/questions`, { headers: getHeaders() });
+    return handleResponse<any[]>(res);
+  },
+
+  async askProductQuestion(productId: number, questionText: string) {
+    const res = await fetch(`${API_BASE}/catalog/products/${productId}/questions`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ question_text: questionText })
+    });
+    return handleResponse<any>(res);
+  },
+
+  async voteReviewHelpfulness(reviewId: number, isHelpful: boolean) {
+    const res = await fetch(`${API_BASE}/catalog/reviews/${reviewId}/vote`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ is_helpful: isHelpful })
+    });
+    return handleResponse<any>(res);
+  },
+
+  async recordRecentlyViewed(productId: number) {
+    fetch(`${API_BASE}/catalog/recently-viewed/${productId}`, {
+      method: 'POST',
+      headers: getHeaders()
+    }).catch(() => {});
+  },
+
+  async getRecentlyViewed(limit: number = 10) {
+    const res = await fetch(`${API_BASE}/catalog/recently-viewed?limit=${limit}`, { headers: getHeaders() });
+    return handleResponse<any[]>(res);
+  },
+
+  async createPriceAlert(productId: number, targetPrice: number, alertType: string = 'PRICE_DROP') {
+    const res = await fetch(`${API_BASE}/catalog/price-alerts`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ product_id: productId, target_price: targetPrice, alert_type: alertType })
+    });
+    return handleResponse<any>(res);
+  },
+
+  async getUserPriceAlerts() {
+    const res = await fetch(`${API_BASE}/catalog/price-alerts`, { headers: getHeaders() });
+    return handleResponse<any[]>(res);
+  },
+
+  // Multi-Vendor Marketplace & Orchestration
+  async getSellerScorecard() {
+    const res = await fetch(`${API_BASE}/marketplace/scorecard`, { headers: getHeaders() });
+    return handleResponse<any>(res);
+  },
+
+  async requestSellerPayout(amount: number, notes?: string) {
+    const res = await fetch(`${API_BASE}/marketplace/payouts/request`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ amount, notes })
+    });
+    return handleResponse<any>(res);
+  },
+
+  async getSellerPayouts() {
+    const res = await fetch(`${API_BASE}/marketplace/payouts`, { headers: getHeaders() });
+    return handleResponse<any[]>(res);
+  },
+
+  async checkReturnEligibility(orderId: number, orderItemId: number) {
+    const res = await fetch(`${API_BASE}/marketplace/orders/${orderId}/items/${orderItemId}/return-eligibility`, {
+      headers: getHeaders()
+    });
+    return handleResponse<any>(res);
+  },
+
+  async aiSupportChat(message: string, context?: any) {
+    const res = await fetch(`${API_BASE}/marketplace/ai-support/chat`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ message, context: context || {} })
+    });
+    return handleResponse<any>(res);
+  },
+
+  async getFacetedSearch(query: string, categoryId?: number, brandId?: number) {
+    let url = `${API_BASE}/search/faceted?query=${encodeURIComponent(query)}`;
+    if (categoryId) url += `&category_id=${categoryId}`;
+    if (brandId) url += `&brand_id=${brandId}`;
+    const res = await fetch(url, { headers: getHeaders() });
+    return handleResponse<any>(res);
   }
 };
+

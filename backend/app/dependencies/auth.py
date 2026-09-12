@@ -70,3 +70,10 @@ class RoleChecker:
                 f"Action requires one of the following roles: {', '.join(sorted(self.allowed_roles))}"
             )
         return current_user
+
+
+# Convenience aliases
+get_current_active_user = get_current_user
+get_current_admin_user = RoleChecker(["ADMIN"])
+get_current_seller_user = RoleChecker(["SELLER"])
+

@@ -4,7 +4,7 @@ Product, Category, Brand, and Variant Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class CategoryBase(BaseModel):
@@ -23,8 +23,7 @@ class CategoryRead(CategoryBase):
     id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class BrandBase(BaseModel):
@@ -42,8 +41,7 @@ class BrandRead(BrandBase):
     id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ProductImageRead(BaseModel):
@@ -53,8 +51,7 @@ class ProductImageRead(BaseModel):
     sort_order: int = 0
     is_primary: bool = False
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ProductVariantRead(BaseModel):
@@ -65,8 +62,7 @@ class ProductVariantRead(BaseModel):
     stock: int
     attributes: Dict[str, Any] = {}
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ProductCreate(BaseModel):
@@ -131,5 +127,4 @@ class ProductRead(BaseModel):
     variants: List[ProductVariantRead] = []
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

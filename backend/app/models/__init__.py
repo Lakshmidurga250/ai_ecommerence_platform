@@ -17,6 +17,11 @@ from app.models.analytics import (
     BehaviorEvent, SearchEvent, RecommendationLog, DemandForecast,
     FraudAlert, CustomerSegment, ChurnPrediction, ModelRegistryEntry
 )
+from app.models.catalog_expansion import (
+    ProductBundle, ProductQuestion, ProductAnswer,
+    ReviewHelpfulnessVote, UserRecentlyViewed, PriceAlert,
+    InventoryLedger, SellerPayout
+)
 from app.models.audit import AuditLog
 
 __all__ = [
@@ -65,5 +70,13 @@ __all__ = [
     "CustomerSegment",
     "ChurnPrediction",
     "ModelRegistryEntry",
-    "AuditLog"
+    "AuditLog",
+    "ProductBundle",
+    "ProductQuestion",
+    "ProductAnswer",
+    "ReviewHelpfulnessVote",
+    "UserRecentlyViewed",
+    "PriceAlert",
+    "InventoryLedger",
+    "SellerPayout"
 ]

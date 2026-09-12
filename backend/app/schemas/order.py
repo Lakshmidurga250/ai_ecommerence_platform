@@ -4,7 +4,7 @@ Order, Payment, Shipping, and Return Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from app.schemas.user import AddressRead
 
 
@@ -29,8 +29,7 @@ class OrderItemRead(BaseModel):
     total: float
     status: str
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ShipmentEventRead(BaseModel):
@@ -40,8 +39,7 @@ class ShipmentEventRead(BaseModel):
     description: Optional[str] = None
     event_time: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ShipmentRead(BaseModel):
@@ -54,8 +52,7 @@ class ShipmentRead(BaseModel):
     delivered_at: Optional[datetime] = None
     events: List[ShipmentEventRead] = []
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class PaymentRead(BaseModel):
@@ -68,8 +65,7 @@ class PaymentRead(BaseModel):
     simulation_metadata: Dict[str, Any] = {}
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class OrderRead(BaseModel):
@@ -91,8 +87,7 @@ class OrderRead(BaseModel):
     shipment: Optional[ShipmentRead] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class OrderStatusUpdate(BaseModel):
@@ -131,5 +126,4 @@ class ReturnRead(BaseModel):
     refund_amount: float
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

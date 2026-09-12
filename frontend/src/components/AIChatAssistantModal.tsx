@@ -8,6 +8,7 @@ interface Message {
   sender: 'user' | 'assistant';
   text: string;
   response?: ShoppingAssistantResponse;
+  suggestedActions?: Array<{ label: string; action: string; payload?: any }>;
 }
 
 interface AIChatAssistantModalProps {
@@ -20,7 +21,7 @@ export const AIChatAssistantModal: React.FC<AIChatAssistantModalProps> = ({ isOp
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: 'assistant',
-      text: 'Hello! I am your AI Shopping Assistant. Ask me anything like "Find noise-cancelling headphones under $400" or "Show me smart running fitness trackers".',
+      text: 'Hello! I am your AI Shopping & Support Concierge. Ask me about your orders, returns, platform shipping, or product recommendations like "Find headphones under $400".',
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -46,13 +47,31 @@ export const AIChatAssistantModal: React.FC<AIChatAssistantModalProps> = ({ isOp
     setLoading(true);
 
     try {
-      const response = await api.chatAssistant(textToSend);
+      let replyText = '';
+      let suggestedActions: any[] = [];
+      let shoppingResponse: any = null;
+
+      try {
+        const supportRes = await api.aiSupportChat(textToSend);
+        if (supportRes && supportRes.intent !== 'GENERAL' && supportRes.reply) {
+          replyText = supportRes.reply;
+          suggestedActions = supportRes.suggested_actions || [];
+        }
+      } catch (e) {}
+
+      if (!replyText) {
+        const response = await api.chatAssistant(textToSend);
+        replyText = response.assistant_reply;
+        shoppingResponse = response;
+      }
+
       setMessages((prev) => [
         ...prev,
         {
           sender: 'assistant',
-          text: response.assistant_reply,
-          response: response,
+          text: replyText,
+          response: shoppingResponse,
+          suggestedActions: suggestedActions
         },
       ]);
     } catch (err: any) {
@@ -69,10 +88,12 @@ export const AIChatAssistantModal: React.FC<AIChatAssistantModalProps> = ({ isOp
   };
 
   const samplePrompts = [
+    'Where is my order?',
+    'What is your return policy?',
     'Noise-cancelling headphones under $400',
-    'Running shoes with great cushion',
-    'OLED smartwatch for workouts',
+    'How long does standard delivery take?',
   ];
+
 
   if (!isOpen) return null;
 
@@ -117,12 +138,35 @@ export const AIChatAssistantModal: React.FC<AIChatAssistantModalProps> = ({ isOp
               >
                 <p className="whitespace-pre-wrap leading-relaxed">{msg.text}</p>
 
+                {/* Grounded Suggested Actions */}
+                {msg.suggestedActions && msg.suggestedActions.length > 0 && (
+                  <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/60 flex flex-wrap gap-1.5">
+                    {msg.suggestedActions.map((act, i) => (
+                      <button
+                        key={i}
+                        onClick={() => {
+                          if (act.action === 'SEND_MESSAGE') {
+                            handleSend(act.payload?.text || act.label);
+                          } else if (act.action === 'NAVIGATE' && act.payload?.path) {
+                            onClose();
+                            window.location.href = act.payload.path;
+                          }
+                        }}
+                        className="text-xs bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-semibold px-2.5 py-1 rounded-lg border border-indigo-200/60 hover:bg-indigo-100 transition-colors"
+                      >
+                        {act.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
                 {/* Intent Extraction Metadata */}
                 {msg.response?.parsed_intent && (
                   <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-700/60 text-[11px] space-y-1">
                     <div className="font-semibold text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
                       <Sparkles className="w-3 h-3" /> Extracted Parameters:
                     </div>
+
                     <div className="flex flex-wrap gap-1 mt-1">
                       {msg.response.parsed_intent.extracted_brand && (
                         <span className="bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-700 dark:text-slate-300">

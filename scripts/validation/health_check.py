@@ -80,12 +80,47 @@ def check_system_health():
     intent = QueryIntentParser.parse_query("Sony wireless headphones under 350")
     print(f"  [OK] Search Intent Parser (NLP): Extracted Brand = '{intent['extracted_brand']}', Max Price = ${intent['max_price']}")
 
+    # Neural Collaborative Filtering (PyTorch NeuMF)
+    from ai.recommendations.neural_cf import NeuralCFEngine, HAS_TORCH
+    ncf = NeuralCFEngine()
+    toy_data = [(1, 101, 1.0), (1, 102, 1.0), (2, 101, 1.0), (2, 103, 1.0)]
+    ncf_res = ncf.fit(toy_data, epochs=1)
+    print(f"  [OK] Neural CF Deep Learning (NeuMF): PyTorch backend = {HAS_TORCH}, loss = {ncf_res['final_loss']}")
+
+    # Recommendation Evaluator
+    from ai.recommendations.evaluator import RecommendationEvaluator
+    eval_p = RecommendationEvaluator.precision_at_k([10, 20, 30], {10, 30, 40}, k=3)
+    eval_ndcg = RecommendationEvaluator.ndcg_at_k([10, 20, 30], {10, 30, 40}, k=3)
+    print(f"  [OK] Offline Recommendation Evaluator: Precision@3 = {eval_p}, NDCG@3 = {eval_ndcg}")
+
+    # Layered Fraud Defense Shield
+    from ai.fraud.layered_shield import LayeredFraudShield
+    shield = LayeredFraudShield()
+    shield_eval = shield.evaluate_order(order_amount=120.0, items_count=2, user_account_age_days=60, past_successful_orders=4)
+    print(f"  [OK] Layered Fraud Shield (3-Tier): Risk = {shield_eval['risk_score']}/100 ({shield_eval['decision']})")
+
+    # Customer Lifetime Value & Cohort Segmentation
+    from ai.customer_intelligence.clv_cohorts import CustomerIntelligenceEngine
+    clv_eval = CustomerIntelligenceEngine.calculate_clv(historical_spend=1500.0, order_count=6, days_active=120)
+    print(f"  [OK] Customer CLV & Cohort Engine: Tier = {clv_eval['customer_tier']}, 1-Yr CLV = ${clv_eval['predictive_clv_1yr']:.2f}")
+
+    # Inventory Replenishment & Stock Optimization
+    from ai.inventory_intelligence.replenishment import InventoryIntelligenceEngine
+    inv_eval = InventoryIntelligenceEngine.calculate_reorder_parameters([10, 12, 11, 14, 13], lead_time_days=7)
+    print(f"  [OK] Inventory Replenishment Engine: Safety Stock = {inv_eval['safety_stock_units']} units, ROP = {inv_eval['reorder_point_units']} units")
+
+    # Context-Grounded AI Support Assistant
+    from app.services.ai_support_service import AISupportService
+    support_reply = AISupportService.process_customer_query(db=SessionLocal(), message="How long does standard delivery take?")
+    print(f"  [OK] Grounded AI Support Assistant: Intent = {support_reply['intent']}, Sentiment = {support_reply['sentiment']}")
+
     # 3. Check FastAPI App & OpenAPI routes
     print("\n[3/4] Checking FastAPI App & Route Registry...")
     from app.main import app
     route_count = len(app.openapi()["paths"])
     print(f"  [OK] FastAPI Application Loaded: {route_count} functional HTTP/WebSocket endpoints registered in OpenAPI")
     assert route_count >= 50, f"Expected at least 50 endpoints, found {route_count}"
+
 
     # 4. Check Frontend Production Bundle
     print("\n[4/4] Verifying Frontend Production Artifacts...")

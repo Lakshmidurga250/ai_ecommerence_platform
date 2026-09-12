@@ -24,6 +24,8 @@ from app.api.v1.ai import router as ai_router
 from app.api.v1.analytics import router as analytics_router
 from app.api.v1.admin import router as admin_router
 from app.api.v1.reports import router as reports_router
+from app.api.v1.customer_expansion import router as customer_expansion_router
+from app.api.v1.marketplace import router as marketplace_router
 
 api_v1_router = APIRouter(prefix="/api/v1")
 
@@ -47,3 +49,5 @@ api_v1_router.include_router(ai_router)
 api_v1_router.include_router(analytics_router)
 api_v1_router.include_router(admin_router)
 api_v1_router.include_router(reports_router)
+api_v1_router.include_router(customer_expansion_router)
+api_v1_router.include_router(marketplace_router)

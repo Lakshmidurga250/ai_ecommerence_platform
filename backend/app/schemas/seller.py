@@ -4,7 +4,7 @@ Seller & Seller Profile Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 
 
 class SellerRegister(BaseModel):
@@ -39,8 +39,7 @@ class SellerProfileRead(BaseModel):
     return_policy: Optional[str] = None
     shipping_policy: Optional[str] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class SellerRead(BaseModel):
@@ -58,8 +57,7 @@ class SellerRead(BaseModel):
     profile: Optional[SellerProfileRead] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class SellerStatusUpdate(BaseModel):

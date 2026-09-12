@@ -4,7 +4,7 @@ Business Analytics, Dashboard Metrics, and Audit Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class BusinessOverviewMetrics(BaseModel):
@@ -45,8 +45,7 @@ class AuditLogRead(BaseModel):
     details: Dict[str, Any] = {}
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class BehaviorEventCreate(BaseModel):

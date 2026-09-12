@@ -59,3 +59,14 @@ def admin_token(client):
         "password": "Admin@123456"
     })
     return res.json()["access_token"]
+
+
+@pytest.fixture
+def db_session():
+    """Direct database session fixture for services testing."""
+    session = SessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()
+

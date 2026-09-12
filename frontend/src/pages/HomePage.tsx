@@ -6,6 +6,8 @@ import { api } from '../services/api';
 import { ProductCard } from '../components/ProductCard';
 import { RecommendationSection } from '../components/RecommendationSection';
 import { AIChatAssistantModal } from '../components/AIChatAssistantModal';
+import { RecentlyViewedBar } from '../components/RecentlyViewedBar';
+
 
 export const HomePage: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -197,7 +199,13 @@ export const HomePage: React.FC = () => {
       {/* 5-Tier Recommendation Section */}
       <RecommendationSection defaultStrategy="HYBRID" />
 
+      {/* Recently Viewed History */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <RecentlyViewedBar />
+      </div>
+
       {/* Platform Features / Guarantees */}
+
       <section className="py-16 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

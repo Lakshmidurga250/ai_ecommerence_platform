@@ -189,9 +189,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAssistant, onOpenAIChat })
                   <p className="text-xs font-bold text-slate-800">{user.username}</p>
                   <p className="text-[11px] text-slate-500 truncate">{user.email}</p>
                 </div>
+                <Link to="/account" className="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 font-medium">
+                  My Profile & Alerts
+                </Link>
                 <Link to="/orders" className="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50">
                   My Orders
                 </Link>
+
                 {isSeller && (
                   <Link to="/seller/dashboard" className="block px-4 py-2 text-xs text-blue-600 font-medium hover:bg-blue-50">
                     Seller Dashboard

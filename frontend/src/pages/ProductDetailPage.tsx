@@ -5,6 +5,10 @@ import { Product } from '../types';
 import { api } from '../services/api';
 import { useCart } from '../context/CartContext';
 import { RecommendationSection } from '../components/RecommendationSection';
+import { ProductBundleCard } from '../components/ProductBundleCard';
+import { ProductQnASection } from '../components/ProductQnASection';
+import { RecentlyViewedBar } from '../components/RecentlyViewedBar';
+import { Bell } from 'lucide-react';
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +17,10 @@ export const ProductDetailPage: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
   const [addedSuccess, setAddedSuccess] = useState<boolean>(false);
+  const [bundles, setBundles] = useState<any[]>([]);
+  const [alertTargetPrice, setAlertTargetPrice] = useState<string>('');
+  const [showAlertModal, setShowAlertModal] = useState<boolean>(false);
+  const [alertSuccess, setAlertSuccess] = useState<string | null>(null);
   const { addItem, loading: cartLoading } = useCart();
 
   useEffect(() => {
@@ -27,6 +35,8 @@ export const ProductDetailPage: React.FC = () => {
           setSelectedImage(primary.image_url);
         }
         api.recordBehaviorEvent('PRODUCT_VIEW', data.id);
+        api.recordRecentlyViewed(data.id);
+        api.getProductBundles(data.id).then(setBundles).catch(() => setBundles([]));
       } catch (err) {
         console.error('Failed to load product detail:', err);
       } finally {
@@ -36,6 +46,22 @@ export const ProductDetailPage: React.FC = () => {
 
     fetchProduct();
   }, [slug]);
+
+  const handleCreatePriceAlert = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!product || !alertTargetPrice) return;
+    try {
+      await api.createPriceAlert(product.id, parseFloat(alertTargetPrice));
+      setAlertSuccess(`Subscribed! We will alert you when price drops to $${parseFloat(alertTargetPrice).toFixed(2)}`);
+      setTimeout(() => {
+        setAlertSuccess(null);
+        setShowAlertModal(false);
+      }, 3000);
+    } catch (e: any) {
+      setAlertSuccess(e.message || "Please sign in to set price alerts.");
+    }
+  };
+
 
   const handleAddToCart = async () => {
     if (!product) return;
@@ -229,6 +255,15 @@ export const ProductDetailPage: React.FC = () => {
                 </>
               )}
             </button>
+
+            <button
+              onClick={() => setShowAlertModal(true)}
+              className="py-3.5 px-4 rounded-2xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+              title="Get notified if price drops"
+            >
+              <Bell className="w-4 h-4 text-amber-500" />
+              <span className="hidden sm:inline">Price Alert</span>
+            </button>
           </div>
 
           {/* Value Props */}
@@ -248,6 +283,15 @@ export const ProductDetailPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Product Bundles (Frequently Bought Together) */}
+      {bundles && bundles.length > 0 && (
+        <div className="mb-12">
+          {bundles.map((bundle) => (
+            <ProductBundleCard key={bundle.bundle_id} bundle={bundle} />
+          ))}
+        </div>
+      )}
 
       {/* Specifications / Attributes Table */}
       {product.attributes && Object.keys(product.attributes).length > 0 && (
@@ -269,9 +313,63 @@ export const ProductDetailPage: React.FC = () => {
       {/* Grounded Recommendations for this Product */}
       <RecommendationSection
         productId={product.id}
-        title="Frequently Purchased Together &amp; Similar Products"
+        title="Frequently Purchased Together & Similar Products"
         defaultStrategy="CONTENT_BASED"
       />
+
+      {/* Customer Community Q&A */}
+      <div className="my-12">
+        <ProductQnASection productId={product.id} />
+      </div>
+
+      {/* Browsing History Carousel */}
+      <RecentlyViewedBar />
+
+      {/* Price Alert Modal */}
+      {showAlertModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in">
+          <div className="bg-white dark:bg-slate-900 w-full max-w-md rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-slate-800">
+            <h3 className="font-bold text-lg text-slate-900 dark:text-white">Track Price Drops</h3>
+            <p className="text-xs text-slate-500 mt-1">Current Price: ${product.price.toFixed(2)}. We will notify you when price drops below your target.</p>
+            {alertSuccess && (
+              <div className="my-3 p-3 bg-emerald-50 text-emerald-700 text-xs rounded-xl font-medium">
+                {alertSuccess}
+              </div>
+            )}
+            <form onSubmit={handleCreatePriceAlert} className="mt-4 space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Target Price ($ USD)</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  max={product.price - 0.01}
+                  placeholder={`e.g. ${(product.price * 0.9).toFixed(2)}`}
+                  value={alertTargetPrice}
+                  onChange={(e) => setAlertTargetPrice(e.target.value)}
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold"
+                  required
+                />
+              </div>
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowAlertModal(false)}
+                  className="px-4 py-2 text-xs font-semibold text-slate-500 hover:text-slate-700"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl"
+                >
+                  Subscribe Alert
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+

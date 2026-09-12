@@ -48,3 +48,25 @@ def get_search_suggestions(
 ):
     """Get fast auto-complete suggestions based on catalog inventory."""
     return SearchService.get_suggestions(db, prefix=prefix)
+
+
+@router.get("/faceted")
+def search_products_faceted(
+    q: str = Query("", description="Keywords or search query"),
+    category_id: Optional[int] = Query(None),
+    brand_id: Optional[int] = Query(None),
+    min_price: Optional[float] = Query(None, ge=0),
+    max_price: Optional[float] = Query(None, ge=0),
+    limit: int = Query(50, ge=1, le=100),
+    db: Session = Depends(get_db)
+):
+    """Search products and return facet distribution counts for categories and brands."""
+    return SearchService.search_faceted(
+        db=db,
+        query_text=q,
+        category_id=category_id,
+        brand_id=brand_id,
+        min_price=min_price,
+        max_price=max_price,
+        limit=limit
+    )

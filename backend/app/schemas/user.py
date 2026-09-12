@@ -4,7 +4,7 @@ User, Profile, and Address Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, EmailStr, field_validator
+from pydantic import BaseModel, EmailStr, field_validator, ConfigDict
 
 
 class AddressBase(BaseModel):
@@ -40,8 +40,7 @@ class AddressRead(AddressBase):
     user_id: int
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UserProfileUpdate(BaseModel):
@@ -59,8 +58,7 @@ class UserProfileRead(BaseModel):
     avatar_url: Optional[str] = None
     preferences: Dict[str, Any] = {}
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UserRead(BaseModel):
@@ -81,5 +79,4 @@ class UserRead(BaseModel):
             return [ur.role.name for ur in v if hasattr(ur, "role") and ur.role]
         return [str(item) for item in v]
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

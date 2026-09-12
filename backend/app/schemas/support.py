@@ -4,7 +4,7 @@ Support Ticket and Support Message Pydantic Schemas.
 
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class SupportMessageCreate(BaseModel):
@@ -19,8 +19,7 @@ class SupportMessageRead(BaseModel):
     is_staff_reply: bool
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class SupportTicketCreate(BaseModel):
@@ -47,5 +46,4 @@ class SupportTicketRead(BaseModel):
     messages: List[SupportMessageRead] = []
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

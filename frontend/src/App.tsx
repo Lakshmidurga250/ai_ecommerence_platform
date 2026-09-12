@@ -19,6 +19,7 @@ import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { SellerDashboardPage } from './pages/SellerDashboardPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
+import { CustomerAccountPage } from './pages/CustomerAccountPage';
 
 export const App: React.FC = () => {
   const [isAIChatOpen, setIsAIChatOpen] = useState<boolean>(false);
@@ -39,6 +40,7 @@ export const App: React.FC = () => {
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/orders" element={<OrdersPage />} />
                 <Route path="/wishlist" element={<WishlistPage />} />
+                <Route path="/account" element={<CustomerAccountPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/seller/dashboard" element={<SellerDashboardPage />} />
@@ -47,6 +49,7 @@ export const App: React.FC = () => {
                 <Route path="*" element={<HomePage />} />
               </Routes>
             </main>
+
 
             {/* Global Floating AI Shopping Concierge Trigger Button */}
             <div className="fixed bottom-6 right-6 z-40">

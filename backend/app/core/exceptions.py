@@ -18,6 +18,11 @@ class AppException(Exception):
         self.details = details or {}
 
 
+class BadRequestException(AppException):
+    def __init__(self, message: str = "Bad request", details=None):
+        super().__init__(message, status_code=status.HTTP_400_BAD_REQUEST, error_code="BAD_REQUEST", details=details)
+
+
 class AuthenticationException(AppException):
     def __init__(self, message: str = "Invalid credentials or token expired", details=None):
         super().__init__(message, status_code=status.HTTP_401_UNAUTHORIZED, error_code="AUTHENTICATION_FAILED", details=details)
