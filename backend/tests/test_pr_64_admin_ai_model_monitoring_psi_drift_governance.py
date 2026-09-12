@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-ai-model-monitoring-psi-drift-governance import AdminMlGovernanceService, get_admin_ml_governance_service, AdminMlGovernanceServiceRequest
-from ai.admin.admin-ai-model-monitoring-psi-drift-governance_ai_model import AdminMlGovernanceAIModel, get_admin_ml_governance_ai_model
-from database.seeds.admin-ai-model-monitoring-psi-drift-governance_seed import get_seed_data_pr_64, seed_pr_64_to_database
+from backend.app.domain.admin_ai_model_monitoring_psi_drift_governance import AdminMlGovernanceService, get_admin_ml_governance_service, AdminMlGovernanceServiceRequest
+from ai.admin.admin_ai_model_monitoring_psi_drift_governance_ai_model import AdminMlGovernanceAIModel, get_admin_ml_governance_ai_model
+from database.seeds.admin_ai_model_monitoring_psi_drift_governance_seed import get_seed_data_pr_64, seed_pr_64_to_database
 
 def test_admin_ml_governance_service_initialization():
     """Verify AdminMlGovernanceService singleton instantiation and default attributes."""

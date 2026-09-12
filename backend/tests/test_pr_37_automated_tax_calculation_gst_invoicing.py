@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.automated-tax-calculation-gst-invoicing import TaxInvoiceEngineService, get_tax_invoice_engine_service, TaxInvoiceEngineServiceRequest
-from ai.automated.automated-tax-calculation-gst-invoicing_ai_model import TaxInvoiceEngineAIModel, get_tax_invoice_engine_ai_model
-from database.seeds.automated-tax-calculation-gst-invoicing_seed import get_seed_data_pr_37, seed_pr_37_to_database
+from backend.app.domain.automated_tax_calculation_gst_invoicing import TaxInvoiceEngineService, get_tax_invoice_engine_service, TaxInvoiceEngineServiceRequest
+from ai.automated.automated_tax_calculation_gst_invoicing_ai_model import TaxInvoiceEngineAIModel, get_tax_invoice_engine_ai_model
+from database.seeds.automated_tax_calculation_gst_invoicing_seed import get_seed_data_pr_37, seed_pr_37_to_database
 
 def test_tax_invoice_engine_service_initialization():
     """Verify TaxInvoiceEngineService singleton instantiation and default attributes."""

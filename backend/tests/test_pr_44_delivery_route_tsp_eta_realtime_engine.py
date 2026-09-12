@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.delivery-route-tsp-eta-realtime-engine import RouteTspSolverService, get_route_tsp_solver_service, RouteTspSolverServiceRequest
-from ai.delivery.delivery-route-tsp-eta-realtime-engine_ai_model import RouteTspSolverAIModel, get_route_tsp_solver_ai_model
-from database.seeds.delivery-route-tsp-eta-realtime-engine_seed import get_seed_data_pr_44, seed_pr_44_to_database
+from backend.app.domain.delivery_route_tsp_eta_realtime_engine import RouteTspSolverService, get_route_tsp_solver_service, RouteTspSolverServiceRequest
+from ai.delivery.delivery_route_tsp_eta_realtime_engine_ai_model import RouteTspSolverAIModel, get_route_tsp_solver_ai_model
+from database.seeds.delivery_route_tsp_eta_realtime_engine_seed import get_seed_data_pr_44, seed_pr_44_to_database
 
 def test_route_tsp_solver_service_initialization():
     """Verify RouteTspSolverService singleton instantiation and default attributes."""

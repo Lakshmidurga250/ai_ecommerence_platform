@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-command-center-realtime-monitoring import AdminCommandCenterService, get_admin_command_center_service, AdminCommandCenterServiceRequest
-from ai.admin.admin-command-center-realtime-monitoring_ai_model import AdminCommandCenterAIModel, get_admin_command_center_ai_model
-from database.seeds.admin-command-center-realtime-monitoring_seed import get_seed_data_pr_62, seed_pr_62_to_database
+from backend.app.domain.admin_command_center_realtime_monitoring import AdminCommandCenterService, get_admin_command_center_service, AdminCommandCenterServiceRequest
+from ai.admin.admin_command_center_realtime_monitoring_ai_model import AdminCommandCenterAIModel, get_admin_command_center_ai_model
+from database.seeds.admin_command_center_realtime_monitoring_seed import get_seed_data_pr_62, seed_pr_62_to_database
 
 def test_admin_command_center_service_initialization():
     """Verify AdminCommandCenterService singleton instantiation and default attributes."""

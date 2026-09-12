@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.login-attempt-monitoring-account-takeover-defense import AtoDefenseServiceService, get_ato_defense_service_service, AtoDefenseServiceServiceRequest
-from ai.login.login-attempt-monitoring-account-takeover-defense_ai_model import AtoDefenseServiceAIModel, get_ato_defense_service_ai_model
-from database.seeds.login-attempt-monitoring-account-takeover-defense_seed import get_seed_data_pr_82, seed_pr_82_to_database
+from backend.app.domain.login_attempt_monitoring_account_takeover_defense import AtoDefenseServiceService, get_ato_defense_service_service, AtoDefenseServiceServiceRequest
+from ai.login.login_attempt_monitoring_account_takeover_defense_ai_model import AtoDefenseServiceAIModel, get_ato_defense_service_ai_model
+from database.seeds.login_attempt_monitoring_account_takeover_defense_seed import get_seed_data_pr_82, seed_pr_82_to_database
 
 def test_ato_defense_service_service_initialization():
     """Verify AtoDefenseServiceService singleton instantiation and default attributes."""

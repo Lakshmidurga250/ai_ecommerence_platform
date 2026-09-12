@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.product-subscriptions-auto-replenishment import SubscriptionEngineService, get_subscription_engine_service, SubscriptionEngineServiceRequest
-from ai.product.product-subscriptions-auto-replenishment_ai_model import SubscriptionEngineAIModel, get_subscription_engine_ai_model
-from database.seeds.product-subscriptions-auto-replenishment_seed import get_seed_data_pr_26, seed_pr_26_to_database
+from backend.app.domain.product_subscriptions_auto_replenishment import SubscriptionEngineService, get_subscription_engine_service, SubscriptionEngineServiceRequest
+from ai.product.product_subscriptions_auto_replenishment_ai_model import SubscriptionEngineAIModel, get_subscription_engine_ai_model
+from database.seeds.product_subscriptions_auto_replenishment_seed import get_seed_data_pr_26, seed_pr_26_to_database
 
 def test_subscription_engine_service_initialization():
     """Verify SubscriptionEngineService singleton instantiation and default attributes."""

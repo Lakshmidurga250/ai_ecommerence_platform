@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-revenue-category-geographic-analytics import AdminAnalyticsHubService, get_admin_analytics_hub_service, AdminAnalyticsHubServiceRequest
-from ai.admin.admin-revenue-category-geographic-analytics_ai_model import AdminAnalyticsHubAIModel, get_admin_analytics_hub_ai_model
-from database.seeds.admin-revenue-category-geographic-analytics_seed import get_seed_data_pr_65, seed_pr_65_to_database
+from backend.app.domain.admin_revenue_category_geographic_analytics import AdminAnalyticsHubService, get_admin_analytics_hub_service, AdminAnalyticsHubServiceRequest
+from ai.admin.admin_revenue_category_geographic_analytics_ai_model import AdminAnalyticsHubAIModel, get_admin_analytics_hub_ai_model
+from database.seeds.admin_revenue_category_geographic_analytics_seed import get_seed_data_pr_65, seed_pr_65_to_database
 
 def test_admin_analytics_hub_service_initialization():
     """Verify AdminAnalyticsHubService singleton instantiation and default attributes."""

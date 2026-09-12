@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.payment-gateway-simulation-upi-card import PaymentGatewayService, get_payment_gateway_service, PaymentGatewayServiceRequest
-from ai.payment.payment-gateway-simulation-upi-card_ai_model import PaymentGatewayAIModel, get_payment_gateway_ai_model
-from database.seeds.payment-gateway-simulation-upi-card_seed import get_seed_data_pr_32, seed_pr_32_to_database
+from backend.app.domain.payment_gateway_simulation_upi_card import PaymentGatewayService, get_payment_gateway_service, PaymentGatewayServiceRequest
+from ai.payment.payment_gateway_simulation_upi_card_ai_model import PaymentGatewayAIModel, get_payment_gateway_ai_model
+from database.seeds.payment_gateway_simulation_upi_card_seed import get_seed_data_pr_32, seed_pr_32_to_database
 
 def test_payment_gateway_service_initialization():
     """Verify PaymentGatewayService singleton instantiation and default attributes."""

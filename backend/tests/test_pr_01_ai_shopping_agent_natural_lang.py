@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-shopping-agent-natural-lang import ShoppingAgentService, get_shopping_agent_service, ShoppingAgentServiceRequest
-from ai.ai.ai-shopping-agent-natural-lang_ai_model import ShoppingAgentAIModel, get_shopping_agent_ai_model
-from database.seeds.ai-shopping-agent-natural-lang_seed import get_seed_data_pr_1, seed_pr_1_to_database
+from backend.app.domain.ai_shopping_agent_natural_lang import ShoppingAgentService, get_shopping_agent_service, ShoppingAgentServiceRequest
+from ai.ai.ai_shopping_agent_natural_lang_ai_model import ShoppingAgentAIModel, get_shopping_agent_ai_model
+from database.seeds.ai_shopping_agent_natural_lang_seed import get_seed_data_pr_1, seed_pr_1_to_database
 
 def test_shopping_agent_service_initialization():
     """Verify ShoppingAgentService singleton instantiation and default attributes."""

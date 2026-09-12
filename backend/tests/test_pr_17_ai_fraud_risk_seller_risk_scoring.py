@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-fraud-risk-seller-risk-scoring import FraudSellerRiskService, get_fraud_seller_risk_service, FraudSellerRiskServiceRequest
-from ai.ai.ai-fraud-risk-seller-risk-scoring_ai_model import FraudSellerRiskAIModel, get_fraud_seller_risk_ai_model
-from database.seeds.ai-fraud-risk-seller-risk-scoring_seed import get_seed_data_pr_17, seed_pr_17_to_database
+from backend.app.domain.ai_fraud_risk_seller_risk_scoring import FraudSellerRiskService, get_fraud_seller_risk_service, FraudSellerRiskServiceRequest
+from ai.ai.ai_fraud_risk_seller_risk_scoring_ai_model import FraudSellerRiskAIModel, get_fraud_seller_risk_ai_model
+from database.seeds.ai_fraud_risk_seller_risk_scoring_seed import get_seed_data_pr_17, seed_pr_17_to_database
 
 def test_fraud_seller_risk_service_initialization():
     """Verify FraudSellerRiskService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.buy-again-one-click-reorder-engine import ReorderEngineService, get_reorder_engine_service, ReorderEngineServiceRequest
-from ai.buy.buy-again-one-click-reorder-engine_ai_model import ReorderEngineAIModel, get_reorder_engine_ai_model
-from database.seeds.buy-again-one-click-reorder-engine_seed import get_seed_data_pr_24, seed_pr_24_to_database
+from backend.app.domain.buy_again_one_click_reorder_engine import ReorderEngineService, get_reorder_engine_service, ReorderEngineServiceRequest
+from ai.buy.buy_again_one_click_reorder_engine_ai_model import ReorderEngineAIModel, get_reorder_engine_ai_model
+from database.seeds.buy_again_one_click_reorder_engine_seed import get_seed_data_pr_24, seed_pr_24_to_database
 
 def test_reorder_engine_service_initialization():
     """Verify ReorderEngineService singleton instantiation and default attributes."""

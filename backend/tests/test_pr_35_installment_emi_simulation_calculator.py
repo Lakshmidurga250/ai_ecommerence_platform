@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.installment-emi-simulation-calculator import EmiCalculatorService, get_emi_calculator_service, EmiCalculatorServiceRequest
-from ai.installment.installment-emi-simulation-calculator_ai_model import EmiCalculatorAIModel, get_emi_calculator_ai_model
-from database.seeds.installment-emi-simulation-calculator_seed import get_seed_data_pr_35, seed_pr_35_to_database
+from backend.app.domain.installment_emi_simulation_calculator import EmiCalculatorService, get_emi_calculator_service, EmiCalculatorServiceRequest
+from ai.installment.installment_emi_simulation_calculator_ai_model import EmiCalculatorAIModel, get_emi_calculator_ai_model
+from database.seeds.installment_emi_simulation_calculator_seed import get_seed_data_pr_35, seed_pr_35_to_database
 
 def test_emi_calculator_service_initialization():
     """Verify EmiCalculatorService singleton instantiation and default attributes."""

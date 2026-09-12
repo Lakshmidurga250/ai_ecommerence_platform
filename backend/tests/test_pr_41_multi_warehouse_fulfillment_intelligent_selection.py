@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.multi-warehouse-fulfillment-intelligent-selection import WarehouseAllocatorService, get_warehouse_allocator_service, WarehouseAllocatorServiceRequest
-from ai.multi.multi-warehouse-fulfillment-intelligent-selection_ai_model import WarehouseAllocatorAIModel, get_warehouse_allocator_ai_model
-from database.seeds.multi-warehouse-fulfillment-intelligent-selection_seed import get_seed_data_pr_41, seed_pr_41_to_database
+from backend.app.domain.multi_warehouse_fulfillment_intelligent_selection import WarehouseAllocatorService, get_warehouse_allocator_service, WarehouseAllocatorServiceRequest
+from ai.multi.multi_warehouse_fulfillment_intelligent_selection_ai_model import WarehouseAllocatorAIModel, get_warehouse_allocator_ai_model
+from database.seeds.multi_warehouse_fulfillment_intelligent_selection_seed import get_seed_data_pr_41, seed_pr_41_to_database
 
 def test_warehouse_allocator_service_initialization():
     """Verify WarehouseAllocatorService singleton instantiation and default attributes."""

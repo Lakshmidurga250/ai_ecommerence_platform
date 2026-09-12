@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.smart-product-side-by-side-comparison import ProductComparisonService, get_product_comparison_service, ProductComparisonServiceRequest
-from ai.smart.smart-product-side-by-side-comparison_ai_model import ProductComparisonAIModel, get_product_comparison_ai_model
-from database.seeds.smart-product-side-by-side-comparison_seed import get_seed_data_pr_19, seed_pr_19_to_database
+from backend.app.domain.smart_product_side_by_side_comparison import ProductComparisonService, get_product_comparison_service, ProductComparisonServiceRequest
+from ai.smart.smart_product_side_by_side_comparison_ai_model import ProductComparisonAIModel, get_product_comparison_ai_model
+from database.seeds.smart_product_side_by_side_comparison_seed import get_seed_data_pr_19, seed_pr_19_to_database
 
 def test_product_comparison_service_initialization():
     """Verify ProductComparisonService singleton instantiation and default attributes."""

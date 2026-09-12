@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.digital-gift-cards-store-credit-system import GiftCardServiceService, get_gift_card_service_service, GiftCardServiceServiceRequest
-from ai.digital.digital-gift-cards-store-credit-system_ai_model import GiftCardServiceAIModel, get_gift_card_service_ai_model
-from database.seeds.digital-gift-cards-store-credit-system_seed import get_seed_data_pr_23, seed_pr_23_to_database
+from backend.app.domain.digital_gift_cards_store_credit_system import GiftCardServiceService, get_gift_card_service_service, GiftCardServiceServiceRequest
+from ai.digital.digital_gift_cards_store_credit_system_ai_model import GiftCardServiceAIModel, get_gift_card_service_ai_model
+from database.seeds.digital_gift_cards_store_credit_system_seed import get_seed_data_pr_23, seed_pr_23_to_database
 
 def test_gift_card_service_service_initialization():
     """Verify GiftCardServiceService singleton instantiation and default attributes."""

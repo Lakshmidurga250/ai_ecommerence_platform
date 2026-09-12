@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-competitor-analysis-market-gap-finder import CompetitorAnalysisService, get_competitor_analysis_service, CompetitorAnalysisServiceRequest
-from ai.seller.seller-competitor-analysis-market-gap-finder_ai_model import CompetitorAnalysisAIModel, get_competitor_analysis_ai_model
-from database.seeds.seller-competitor-analysis-market-gap-finder_seed import get_seed_data_pr_58, seed_pr_58_to_database
+from backend.app.domain.seller_competitor_analysis_market_gap_finder import CompetitorAnalysisService, get_competitor_analysis_service, CompetitorAnalysisServiceRequest
+from ai.seller.seller_competitor_analysis_market_gap_finder_ai_model import CompetitorAnalysisAIModel, get_competitor_analysis_ai_model
+from database.seeds.seller_competitor_analysis_market_gap_finder_seed import get_seed_data_pr_58, seed_pr_58_to_database
 
 def test_competitor_analysis_service_initialization():
     """Verify CompetitorAnalysisService singleton instantiation and default attributes."""

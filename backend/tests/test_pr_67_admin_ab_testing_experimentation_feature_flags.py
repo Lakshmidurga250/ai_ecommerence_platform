@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-ab-testing-experimentation-feature-flags import AdminExperimentsService, get_admin_experiments_service, AdminExperimentsServiceRequest
-from ai.admin.admin-ab-testing-experimentation-feature-flags_ai_model import AdminExperimentsAIModel, get_admin_experiments_ai_model
-from database.seeds.admin-ab-testing-experimentation-feature-flags_seed import get_seed_data_pr_67, seed_pr_67_to_database
+from backend.app.domain.admin_ab_testing_experimentation_feature_flags import AdminExperimentsService, get_admin_experiments_service, AdminExperimentsServiceRequest
+from ai.admin.admin_ab_testing_experimentation_feature_flags_ai_model import AdminExperimentsAIModel, get_admin_experiments_ai_model
+from database.seeds.admin_ab_testing_experimentation_feature_flags_seed import get_seed_data_pr_67, seed_pr_67_to_database
 
 def test_admin_experiments_service_initialization():
     """Verify AdminExperimentsService singleton instantiation and default attributes."""

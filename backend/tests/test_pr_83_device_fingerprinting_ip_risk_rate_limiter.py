@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.device-fingerprinting-ip-risk-rate-limiter import DeviceIpSecurityService, get_device_ip_security_service, DeviceIpSecurityServiceRequest
-from ai.device.device-fingerprinting-ip-risk-rate-limiter_ai_model import DeviceIpSecurityAIModel, get_device_ip_security_ai_model
-from database.seeds.device-fingerprinting-ip-risk-rate-limiter_seed import get_seed_data_pr_83, seed_pr_83_to_database
+from backend.app.domain.device_fingerprinting_ip_risk_rate_limiter import DeviceIpSecurityService, get_device_ip_security_service, DeviceIpSecurityServiceRequest
+from ai.device.device_fingerprinting_ip_risk_rate_limiter_ai_model import DeviceIpSecurityAIModel, get_device_ip_security_ai_model
+from database.seeds.device_fingerprinting_ip_risk_rate_limiter_seed import get_seed_data_pr_83, seed_pr_83_to_database
 
 def test_device_ip_security_service_initialization():
     """Verify DeviceIpSecurityService singleton instantiation and default attributes."""

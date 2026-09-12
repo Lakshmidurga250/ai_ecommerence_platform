@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-customer-churn-next-purchase-clv import ClvChurnEngineService, get_clv_churn_engine_service, ClvChurnEngineServiceRequest
-from ai.ai.ai-customer-churn-next-purchase-clv_ai_model import ClvChurnEngineAIModel, get_clv_churn_engine_ai_model
-from database.seeds.ai-customer-churn-next-purchase-clv_seed import get_seed_data_pr_9, seed_pr_9_to_database
+from backend.app.domain.ai_customer_churn_next_purchase_clv import ClvChurnEngineService, get_clv_churn_engine_service, ClvChurnEngineServiceRequest
+from ai.ai.ai_customer_churn_next_purchase_clv_ai_model import ClvChurnEngineAIModel, get_clv_churn_engine_ai_model
+from database.seeds.ai_customer_churn_next_purchase_clv_seed import get_seed_data_pr_9, seed_pr_9_to_database
 
 def test_clv_churn_engine_service_initialization():
     """Verify ClvChurnEngineService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.recently-searched-recently-purchased-feeds import RecentActivityService, get_recent_activity_service, RecentActivityServiceRequest
-from ai.recently.recently-searched-recently-purchased-feeds_ai_model import RecentActivityAIModel, get_recent_activity_ai_model
-from database.seeds.recently-searched-recently-purchased-feeds_seed import get_seed_data_pr_29, seed_pr_29_to_database
+from backend.app.domain.recently_searched_recently_purchased_feeds import RecentActivityService, get_recent_activity_service, RecentActivityServiceRequest
+from ai.recently.recently_searched_recently_purchased_feeds_ai_model import RecentActivityAIModel, get_recent_activity_ai_model
+from database.seeds.recently_searched_recently_purchased_feeds_seed import get_seed_data_pr_29, seed_pr_29_to_database
 
 def test_recent_activity_service_initialization():
     """Verify RecentActivityService singleton instantiation and default attributes."""

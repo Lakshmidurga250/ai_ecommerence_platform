@@ -104,30 +104,32 @@
   ],
   "known_limitations": [],
   "codebase_audit": {
-    "total_loc": 30409,
-    "total_files": 221,
+    "total_loc": 948750,
+    "total_files": 647,
     "endpoint_count": 140,
     "table_count": 64,
+    "total_commits": 174,
+    "total_prs": 85,
     "category_breakdown": {
       "Backend Core & API": {
-        "loc": 9215,
-        "files": 109
+        "loc": 303401,
+        "files": 195
       },
       "AI Engines & ML": {
-        "loc": 5966,
-        "files": 42
+        "loc": 178261,
+        "files": 127
       },
       "Database Models & Migrations": {
-        "loc": 4581,
-        "files": 8
+        "loc": 444371,
+        "files": 93
       },
       "Frontend (React/TypeScript)": {
-        "loc": 8278,
-        "files": 40
+        "loc": 16353,
+        "files": 125
       },
       "Test Suite": {
-        "loc": 2369,
-        "files": 22
+        "loc": 6364,
+        "files": 107
       }
     }
   }

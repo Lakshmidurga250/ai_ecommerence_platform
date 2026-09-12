@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-campaign-promotions-payout-reports import SellerCampaignsService, get_seller_campaigns_service, SellerCampaignsServiceRequest
-from ai.seller.seller-campaign-promotions-payout-reports_ai_model import SellerCampaignsAIModel, get_seller_campaigns_ai_model
-from database.seeds.seller-campaign-promotions-payout-reports_seed import get_seed_data_pr_61, seed_pr_61_to_database
+from backend.app.domain.seller_campaign_promotions_payout_reports import SellerCampaignsService, get_seller_campaigns_service, SellerCampaignsServiceRequest
+from ai.seller.seller_campaign_promotions_payout_reports_ai_model import SellerCampaignsAIModel, get_seller_campaigns_ai_model
+from database.seeds.seller_campaign_promotions_payout_reports_seed import get_seed_data_pr_61, seed_pr_61_to_database
 
 def test_seller_campaigns_service_initialization():
     """Verify SellerCampaignsService singleton instantiation and default attributes."""

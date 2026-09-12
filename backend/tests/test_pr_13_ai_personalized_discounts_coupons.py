@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-personalized-discounts-coupons import PersonalizedCouponsService, get_personalized_coupons_service, PersonalizedCouponsServiceRequest
-from ai.ai.ai-personalized-discounts-coupons_ai_model import PersonalizedCouponsAIModel, get_personalized_coupons_ai_model
-from database.seeds.ai-personalized-discounts-coupons_seed import get_seed_data_pr_13, seed_pr_13_to_database
+from backend.app.domain.ai_personalized_discounts_coupons import PersonalizedCouponsService, get_personalized_coupons_service, PersonalizedCouponsServiceRequest
+from ai.ai.ai_personalized_discounts_coupons_ai_model import PersonalizedCouponsAIModel, get_personalized_coupons_ai_model
+from database.seeds.ai_personalized_discounts_coupons_seed import get_seed_data_pr_13, seed_pr_13_to_database
 
 def test_personalized_coupons_service_initialization():
     """Verify PersonalizedCouponsService singleton instantiation and default attributes."""

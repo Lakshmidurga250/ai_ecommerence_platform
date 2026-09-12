@@ -75,7 +75,19 @@ def audit_codebase():
     table_count = len(Base.metadata.tables)
     print(f"  SQLAlchemy Relational Tables  : {table_count} tables")
 
-    # 4. Manifest Update
+    # 4. Count Git Commits & Pull Requests
+    commit_res = subprocess.run(["git", "rev-list", "--count", "HEAD"], cwd=BASE_DIR, capture_output=True, text=True)
+    total_commits = int(commit_res.stdout.strip()) if commit_res.returncode == 0 and commit_res.stdout.strip().isdigit() else 0
+
+    pr_res = subprocess.run(["git", "log", "--grep=Merge pull request", "--oneline"], cwd=BASE_DIR, capture_output=True, text=True)
+    pr_lines = [l for l in pr_res.stdout.strip().split("\n") if l.strip()]
+    total_prs = len(pr_lines)
+
+    print(f"  Git Total Commits             : {total_commits} commits (Target: 100+)")
+    print(f"  Git Merged Pull Requests      : {total_prs} PRs (Target: 80+)")
+    print(f"  Total Lines of Code (LOC)     : {total_loc} LOC (Target: 500k+)")
+
+    # 5. Manifest Update
     manifest_path = BASE_DIR / "project_manifest.json"
     manifest = {}
     if manifest_path.exists():
@@ -87,6 +99,8 @@ def audit_codebase():
         "total_files": total_files,
         "endpoint_count": endpoint_count,
         "table_count": table_count,
+        "total_commits": total_commits,
+        "total_prs": total_prs,
         "category_breakdown": {k: {"loc": v["loc"], "files": v["files"]} for k, v in categories.items()}
     }
 

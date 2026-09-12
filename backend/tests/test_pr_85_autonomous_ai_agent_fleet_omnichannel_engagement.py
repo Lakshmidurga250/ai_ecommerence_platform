@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.autonomous-ai-agent-fleet-omnichannel-engagement import AutonomousAgentFleetService, get_autonomous_agent_fleet_service, AutonomousAgentFleetServiceRequest
-from ai.autonomous.autonomous-ai-agent-fleet-omnichannel-engagement_ai_model import AutonomousAgentFleetAIModel, get_autonomous_agent_fleet_ai_model
-from database.seeds.autonomous-ai-agent-fleet-omnichannel-engagement_seed import get_seed_data_pr_85, seed_pr_85_to_database
+from backend.app.domain.autonomous_ai_agent_fleet_omnichannel_engagement import AutonomousAgentFleetService, get_autonomous_agent_fleet_service, AutonomousAgentFleetServiceRequest
+from ai.autonomous.autonomous_ai_agent_fleet_omnichannel_engagement_ai_model import AutonomousAgentFleetAIModel, get_autonomous_agent_fleet_ai_model
+from database.seeds.autonomous_ai_agent_fleet_omnichannel_engagement_seed import get_seed_data_pr_85, seed_pr_85_to_database
 
 def test_autonomous_agent_fleet_service_initialization():
     """Verify AutonomousAgentFleetService singleton instantiation and default attributes."""

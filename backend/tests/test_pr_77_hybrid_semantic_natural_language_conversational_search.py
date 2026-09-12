@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.hybrid-semantic-natural-language-conversational-search import HybridSearchService, get_hybrid_search_service, HybridSearchServiceRequest
-from ai.hybrid.hybrid-semantic-natural-language-conversational-search_ai_model import HybridSearchAIModel, get_hybrid_search_ai_model
-from database.seeds.hybrid-semantic-natural-language-conversational-search_seed import get_seed_data_pr_77, seed_pr_77_to_database
+from backend.app.domain.hybrid_semantic_natural_language_conversational_search import HybridSearchService, get_hybrid_search_service, HybridSearchServiceRequest
+from ai.hybrid.hybrid_semantic_natural_language_conversational_search_ai_model import HybridSearchAIModel, get_hybrid_search_ai_model
+from database.seeds.hybrid_semantic_natural_language_conversational_search_seed import get_seed_data_pr_77, seed_pr_77_to_database
 
 def test_hybrid_search_service_initialization():
     """Verify HybridSearchService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.flash-sale-deal-countdown-timers import FlashSaleEngineService, get_flash_sale_engine_service, FlashSaleEngineServiceRequest
-from ai.flash.flash-sale-deal-countdown-timers_ai_model import FlashSaleEngineAIModel, get_flash_sale_engine_ai_model
-from database.seeds.flash-sale-deal-countdown-timers_seed import get_seed_data_pr_31, seed_pr_31_to_database
+from backend.app.domain.flash_sale_deal_countdown_timers import FlashSaleEngineService, get_flash_sale_engine_service, FlashSaleEngineServiceRequest
+from ai.flash.flash_sale_deal_countdown_timers_ai_model import FlashSaleEngineAIModel, get_flash_sale_engine_ai_model
+from database.seeds.flash_sale_deal_countdown_timers_seed import get_seed_data_pr_31, seed_pr_31_to_database
 
 def test_flash_sale_engine_service_initialization():
     """Verify FlashSaleEngineService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.payment-retry-failed-payment-recovery import PaymentRecoveryService, get_payment_recovery_service, PaymentRecoveryServiceRequest
-from ai.payment.payment-retry-failed-payment-recovery_ai_model import PaymentRecoveryAIModel, get_payment_recovery_ai_model
-from database.seeds.payment-retry-failed-payment-recovery_seed import get_seed_data_pr_36, seed_pr_36_to_database
+from backend.app.domain.payment_retry_failed_payment_recovery import PaymentRecoveryService, get_payment_recovery_service, PaymentRecoveryServiceRequest
+from ai.payment.payment_retry_failed_payment_recovery_ai_model import PaymentRecoveryAIModel, get_payment_recovery_ai_model
+from database.seeds.payment_retry_failed_payment_recovery_seed import get_seed_data_pr_36, seed_pr_36_to_database
 
 def test_payment_recovery_service_initialization():
     """Verify PaymentRecoveryService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.best-product-for-me-decision-wizard import ShoppingWizardService, get_shopping_wizard_service, ShoppingWizardServiceRequest
-from ai.best.best-product-for-me-decision-wizard_ai_model import ShoppingWizardAIModel, get_shopping_wizard_ai_model
-from database.seeds.best-product-for-me-decision-wizard_seed import get_seed_data_pr_20, seed_pr_20_to_database
+from backend.app.domain.best_product_for_me_decision_wizard import ShoppingWizardService, get_shopping_wizard_service, ShoppingWizardServiceRequest
+from ai.best.best_product_for_me_decision_wizard_ai_model import ShoppingWizardAIModel, get_shopping_wizard_ai_model
+from database.seeds.best_product_for_me_decision_wizard_seed import get_seed_data_pr_20, seed_pr_20_to_database
 
 def test_shopping_wizard_service_initialization():
     """Verify ShoppingWizardService singleton instantiation and default attributes."""

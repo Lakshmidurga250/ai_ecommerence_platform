@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-performance-scorecard-health-matrix import SellerHealthService, get_seller_health_service, SellerHealthServiceRequest
-from ai.seller.seller-performance-scorecard-health-matrix_ai_model import SellerHealthAIModel, get_seller_health_ai_model
-from database.seeds.seller-performance-scorecard-health-matrix_seed import get_seed_data_pr_54, seed_pr_54_to_database
+from backend.app.domain.seller_performance_scorecard_health_matrix import SellerHealthService, get_seller_health_service, SellerHealthServiceRequest
+from ai.seller.seller_performance_scorecard_health_matrix_ai_model import SellerHealthAIModel, get_seller_health_ai_model
+from database.seeds.seller_performance_scorecard_health_matrix_seed import get_seed_data_pr_54, seed_pr_54_to_database
 
 def test_seller_health_service_initialization():
     """Verify SellerHealthService singleton instantiation and default attributes."""

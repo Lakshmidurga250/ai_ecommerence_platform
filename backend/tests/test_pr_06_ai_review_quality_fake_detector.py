@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-review-quality-fake-detector import FakeReviewShieldService, get_fake_review_shield_service, FakeReviewShieldServiceRequest
-from ai.ai.ai-review-quality-fake-detector_ai_model import FakeReviewShieldAIModel, get_fake_review_shield_ai_model
-from database.seeds.ai-review-quality-fake-detector_seed import get_seed_data_pr_6, seed_pr_6_to_database
+from backend.app.domain.ai_review_quality_fake_detector import FakeReviewShieldService, get_fake_review_shield_service, FakeReviewShieldServiceRequest
+from ai.ai.ai_review_quality_fake_detector_ai_model import FakeReviewShieldAIModel, get_fake_review_shield_ai_model
+from database.seeds.ai_review_quality_fake_detector_seed import get_seed_data_pr_6, seed_pr_6_to_database
 
 def test_fake_review_shield_service_initialization():
     """Verify FakeReviewShieldService singleton instantiation and default attributes."""

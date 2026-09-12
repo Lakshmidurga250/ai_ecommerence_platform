@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-content-generation-suite-seo import ContentGeneratorService, get_content_generator_service, ContentGeneratorServiceRequest
-from ai.ai.ai-content-generation-suite-seo_ai_model import ContentGeneratorAIModel, get_content_generator_ai_model
-from database.seeds.ai-content-generation-suite-seo_seed import get_seed_data_pr_4, seed_pr_4_to_database
+from backend.app.domain.ai_content_generation_suite_seo import ContentGeneratorService, get_content_generator_service, ContentGeneratorServiceRequest
+from ai.ai.ai_content_generation_suite_seo_ai_model import ContentGeneratorAIModel, get_content_generator_ai_model
+from database.seeds.ai_content_generation_suite_seo_seed import get_seed_data_pr_4, seed_pr_4_to_database
 
 def test_content_generator_service_initialization():
     """Verify ContentGeneratorService singleton instantiation and default attributes."""

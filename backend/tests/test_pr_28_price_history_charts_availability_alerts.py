@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.price-history-charts-availability-alerts import PriceHistoryService, get_price_history_service, PriceHistoryServiceRequest
-from ai.price.price-history-charts-availability-alerts_ai_model import PriceHistoryAIModel, get_price_history_ai_model
-from database.seeds.price-history-charts-availability-alerts_seed import get_seed_data_pr_28, seed_pr_28_to_database
+from backend.app.domain.price_history_charts_availability_alerts import PriceHistoryService, get_price_history_service, PriceHistoryServiceRequest
+from ai.price.price_history_charts_availability_alerts_ai_model import PriceHistoryAIModel, get_price_history_ai_model
+from database.seeds.price_history_charts_availability_alerts_seed import get_seed_data_pr_28, seed_pr_28_to_database
 
 def test_price_history_service_initialization():
     """Verify PriceHistoryService singleton instantiation and default attributes."""

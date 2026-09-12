@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-basket-size-prediction-matrix import BasketSizePredictorService, get_basket_size_predictor_service, BasketSizePredictorServiceRequest
-from ai.ai.ai-basket-size-prediction-matrix_ai_model import BasketSizePredictorAIModel, get_basket_size_predictor_ai_model
-from database.seeds.ai-basket-size-prediction-matrix_seed import get_seed_data_pr_10, seed_pr_10_to_database
+from backend.app.domain.ai_basket_size_prediction_matrix import BasketSizePredictorService, get_basket_size_predictor_service, BasketSizePredictorServiceRequest
+from ai.ai.ai_basket_size_prediction_matrix_ai_model import BasketSizePredictorAIModel, get_basket_size_predictor_ai_model
+from database.seeds.ai_basket_size_prediction_matrix_seed import get_seed_data_pr_10, seed_pr_10_to_database
 
 def test_basket_size_predictor_service_initialization():
     """Verify BasketSizePredictorService singleton instantiation and default attributes."""

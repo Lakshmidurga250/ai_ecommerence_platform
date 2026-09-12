@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-commission-payout-scheduling import SellerPayoutsService, get_seller_payouts_service, SellerPayoutsServiceRequest
-from ai.seller.seller-commission-payout-scheduling_ai_model import SellerPayoutsAIModel, get_seller_payouts_ai_model
-from database.seeds.seller-commission-payout-scheduling_seed import get_seed_data_pr_38, seed_pr_38_to_database
+from backend.app.domain.seller_commission_payout_scheduling import SellerPayoutsService, get_seller_payouts_service, SellerPayoutsServiceRequest
+from ai.seller.seller_commission_payout_scheduling_ai_model import SellerPayoutsAIModel, get_seller_payouts_ai_model
+from database.seeds.seller_commission_payout_scheduling_seed import get_seed_data_pr_38, seed_pr_38_to_database
 
 def test_seller_payouts_service_initialization():
     """Verify SellerPayoutsService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.cart-abandonment-funnel-dropoff-diagnostics import AbandonmentDiagnosticsService, get_abandonment_diagnostics_service, AbandonmentDiagnosticsServiceRequest
-from ai.cart.cart-abandonment-funnel-dropoff-diagnostics_ai_model import AbandonmentDiagnosticsAIModel, get_abandonment_diagnostics_ai_model
-from database.seeds.cart-abandonment-funnel-dropoff-diagnostics_seed import get_seed_data_pr_71, seed_pr_71_to_database
+from backend.app.domain.cart_abandonment_funnel_dropoff_diagnostics import AbandonmentDiagnosticsService, get_abandonment_diagnostics_service, AbandonmentDiagnosticsServiceRequest
+from ai.cart.cart_abandonment_funnel_dropoff_diagnostics_ai_model import AbandonmentDiagnosticsAIModel, get_abandonment_diagnostics_ai_model
+from database.seeds.cart_abandonment_funnel_dropoff_diagnostics_seed import get_seed_data_pr_71, seed_pr_71_to_database
 
 def test_abandonment_diagnostics_service_initialization():
     """Verify AbandonmentDiagnosticsService singleton instantiation and default attributes."""

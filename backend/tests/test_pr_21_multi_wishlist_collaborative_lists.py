@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.multi-wishlist-collaborative-lists import WishlistAdvancedService, get_wishlist_advanced_service, WishlistAdvancedServiceRequest
-from ai.multi.multi-wishlist-collaborative-lists_ai_model import WishlistAdvancedAIModel, get_wishlist_advanced_ai_model
-from database.seeds.multi-wishlist-collaborative-lists_seed import get_seed_data_pr_21, seed_pr_21_to_database
+from backend.app.domain.multi_wishlist_collaborative_lists import WishlistAdvancedService, get_wishlist_advanced_service, WishlistAdvancedServiceRequest
+from ai.multi.multi_wishlist_collaborative_lists_ai_model import WishlistAdvancedAIModel, get_wishlist_advanced_ai_model
+from database.seeds.multi_wishlist_collaborative_lists_seed import get_seed_data_pr_21, seed_pr_21_to_database
 
 def test_wishlist_advanced_service_initialization():
     """Verify WishlistAdvancedService singleton instantiation and default attributes."""

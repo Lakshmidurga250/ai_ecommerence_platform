@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-outfit-product-matching-graph import OutfitMatcherService, get_outfit_matcher_service, OutfitMatcherServiceRequest
-from ai.ai.ai-outfit-product-matching-graph_ai_model import OutfitMatcherAIModel, get_outfit_matcher_ai_model
-from database.seeds.ai-outfit-product-matching-graph_seed import get_seed_data_pr_3, seed_pr_3_to_database
+from backend.app.domain.ai_outfit_product_matching_graph import OutfitMatcherService, get_outfit_matcher_service, OutfitMatcherServiceRequest
+from ai.ai.ai_outfit_product_matching_graph_ai_model import OutfitMatcherAIModel, get_outfit_matcher_ai_model
+from database.seeds.ai_outfit_product_matching_graph_seed import get_seed_data_pr_3, seed_pr_3_to_database
 
 def test_outfit_matcher_service_initialization():
     """Verify OutfitMatcherService singleton instantiation and default attributes."""

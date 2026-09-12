@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.proof-of-delivery-digital-signature-pod import PodSimulationService, get_pod_simulation_service, PodSimulationServiceRequest
-from ai.proof.proof-of-delivery-digital-signature-pod_ai_model import PodSimulationAIModel, get_pod_simulation_ai_model
-from database.seeds.proof-of-delivery-digital-signature-pod_seed import get_seed_data_pr_46, seed_pr_46_to_database
+from backend.app.domain.proof_of_delivery_digital_signature_pod import PodSimulationService, get_pod_simulation_service, PodSimulationServiceRequest
+from ai.proof.proof_of_delivery_digital_signature_pod_ai_model import PodSimulationAIModel, get_pod_simulation_ai_model
+from database.seeds.proof_of_delivery_digital_signature_pod_seed import get_seed_data_pr_46, seed_pr_46_to_database
 
 def test_pod_simulation_service_initialization():
     """Verify PodSimulationService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-purchase-intent-prediction-engine import PurchaseIntentService, get_purchase_intent_service, PurchaseIntentServiceRequest
-from ai.ai.ai-purchase-intent-prediction-engine_ai_model import PurchaseIntentAIModel, get_purchase_intent_ai_model
-from database.seeds.ai-purchase-intent-prediction-engine_seed import get_seed_data_pr_8, seed_pr_8_to_database
+from backend.app.domain.ai_purchase_intent_prediction_engine import PurchaseIntentService, get_purchase_intent_service, PurchaseIntentServiceRequest
+from ai.ai.ai_purchase_intent_prediction_engine_ai_model import PurchaseIntentAIModel, get_purchase_intent_ai_model
+from database.seeds.ai_purchase_intent_prediction_engine_seed import get_seed_data_pr_8, seed_pr_8_to_database
 
 def test_purchase_intent_service_initialization():
     """Verify PurchaseIntentService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.saved-carts-abandoned-cart-recovery import CartRecoveryService, get_cart_recovery_service, CartRecoveryServiceRequest
-from ai.saved.saved-carts-abandoned-cart-recovery_ai_model import CartRecoveryAIModel, get_cart_recovery_ai_model
-from database.seeds.saved-carts-abandoned-cart-recovery_seed import get_seed_data_pr_25, seed_pr_25_to_database
+from backend.app.domain.saved_carts_abandoned_cart_recovery import CartRecoveryService, get_cart_recovery_service, CartRecoveryServiceRequest
+from ai.saved.saved_carts_abandoned_cart_recovery_ai_model import CartRecoveryAIModel, get_cart_recovery_ai_model
+from database.seeds.saved_carts_abandoned_cart_recovery_seed import get_seed_data_pr_25, seed_pr_25_to_database
 
 def test_cart_recovery_service_initialization():
     """Verify CartRecoveryService singleton instantiation and default attributes."""

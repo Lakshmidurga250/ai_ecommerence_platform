@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-bayesian-product-quality-scoring import BayesianQualityService, get_bayesian_quality_service, BayesianQualityServiceRequest
-from ai.ai.ai-bayesian-product-quality-scoring_ai_model import BayesianQualityAIModel, get_bayesian_quality_ai_model
-from database.seeds.ai-bayesian-product-quality-scoring_seed import get_seed_data_pr_7, seed_pr_7_to_database
+from backend.app.domain.ai_bayesian_product_quality_scoring import BayesianQualityService, get_bayesian_quality_service, BayesianQualityServiceRequest
+from ai.ai.ai_bayesian_product_quality_scoring_ai_model import BayesianQualityAIModel, get_bayesian_quality_ai_model
+from database.seeds.ai_bayesian_product_quality_scoring_seed import get_seed_data_pr_7, seed_pr_7_to_database
 
 def test_bayesian_quality_service_initialization():
     """Verify BayesianQualityService singleton instantiation and default attributes."""

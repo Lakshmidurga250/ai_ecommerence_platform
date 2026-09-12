@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-cross-selling-upselling-corridor import CrossUpsellEngineService, get_cross_upsell_engine_service, CrossUpsellEngineServiceRequest
-from ai.ai.ai-cross-selling-upselling-corridor_ai_model import CrossUpsellEngineAIModel, get_cross_upsell_engine_ai_model
-from database.seeds.ai-cross-selling-upselling-corridor_seed import get_seed_data_pr_11, seed_pr_11_to_database
+from backend.app.domain.ai_cross_selling_upselling_corridor import CrossUpsellEngineService, get_cross_upsell_engine_service, CrossUpsellEngineServiceRequest
+from ai.ai.ai_cross_selling_upselling_corridor_ai_model import CrossUpsellEngineAIModel, get_cross_upsell_engine_ai_model
+from database.seeds.ai_cross_selling_upselling_corridor_seed import get_seed_data_pr_11, seed_pr_11_to_database
 
 def test_cross_upsell_engine_service_initialization():
     """Verify CrossUpsellEngineService singleton instantiation and default attributes."""

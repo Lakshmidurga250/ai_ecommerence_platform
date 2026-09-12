@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.return-request-workflow-eligibility-engine import ReturnEligibilityService, get_return_eligibility_service, ReturnEligibilityServiceRequest
-from ai.return.return-request-workflow-eligibility-engine_ai_model import ReturnEligibilityAIModel, get_return_eligibility_ai_model
-from database.seeds.return-request-workflow-eligibility-engine_seed import get_seed_data_pr_47, seed_pr_47_to_database
+from backend.app.domain.return_request_workflow_eligibility_engine import ReturnEligibilityService, get_return_eligibility_service, ReturnEligibilityServiceRequest
+from ai.return.return_request_workflow_eligibility_engine_ai_model import ReturnEligibilityAIModel, get_return_eligibility_ai_model
+from database.seeds.return_request_workflow_eligibility_engine_seed import get_seed_data_pr_47, seed_pr_47_to_database
 
 def test_return_eligibility_service_initialization():
     """Verify ReturnEligibilityService singleton instantiation and default attributes."""

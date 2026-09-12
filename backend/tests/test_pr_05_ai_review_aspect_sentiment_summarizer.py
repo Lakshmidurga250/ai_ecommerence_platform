@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-review-aspect-sentiment-summarizer import ReviewSummarizerService, get_review_summarizer_service, ReviewSummarizerServiceRequest
-from ai.ai.ai-review-aspect-sentiment-summarizer_ai_model import ReviewSummarizerAIModel, get_review_summarizer_ai_model
-from database.seeds.ai-review-aspect-sentiment-summarizer_seed import get_seed_data_pr_5, seed_pr_5_to_database
+from backend.app.domain.ai_review_aspect_sentiment_summarizer import ReviewSummarizerService, get_review_summarizer_service, ReviewSummarizerServiceRequest
+from ai.ai.ai_review_aspect_sentiment_summarizer_ai_model import ReviewSummarizerAIModel, get_review_summarizer_ai_model
+from database.seeds.ai_review_aspect_sentiment_summarizer_seed import get_seed_data_pr_5, seed_pr_5_to_database
 
 def test_review_summarizer_service_initialization():
     """Verify ReviewSummarizerService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.split-payments-multi-instrument-checkout import SplitPaymentsService, get_split_payments_service, SplitPaymentsServiceRequest
-from ai.split.split-payments-multi-instrument-checkout_ai_model import SplitPaymentsAIModel, get_split_payments_ai_model
-from database.seeds.split-payments-multi-instrument-checkout_seed import get_seed_data_pr_34, seed_pr_34_to_database
+from backend.app.domain.split_payments_multi_instrument_checkout import SplitPaymentsService, get_split_payments_service, SplitPaymentsServiceRequest
+from ai.split.split_payments_multi_instrument_checkout_ai_model import SplitPaymentsAIModel, get_split_payments_ai_model
+from database.seeds.split_payments_multi_instrument_checkout_seed import get_seed_data_pr_34, seed_pr_34_to_database
 
 def test_split_payments_service_initialization():
     """Verify SplitPaymentsService singleton instantiation and default attributes."""

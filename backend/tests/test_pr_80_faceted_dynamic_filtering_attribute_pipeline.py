@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.faceted-dynamic-filtering-attribute-pipeline import FacetedFilterEngineService, get_faceted_filter_engine_service, FacetedFilterEngineServiceRequest
-from ai.faceted.faceted-dynamic-filtering-attribute-pipeline_ai_model import FacetedFilterEngineAIModel, get_faceted_filter_engine_ai_model
-from database.seeds.faceted-dynamic-filtering-attribute-pipeline_seed import get_seed_data_pr_80, seed_pr_80_to_database
+from backend.app.domain.faceted_dynamic_filtering_attribute_pipeline import FacetedFilterEngineService, get_faceted_filter_engine_service, FacetedFilterEngineServiceRequest
+from ai.faceted.faceted_dynamic_filtering_attribute_pipeline_ai_model import FacetedFilterEngineAIModel, get_faceted_filter_engine_ai_model
+from database.seeds.faceted_dynamic_filtering_attribute_pipeline_seed import get_seed_data_pr_80, seed_pr_80_to_database
 
 def test_faceted_filter_engine_service_initialization():
     """Verify FacetedFilterEngineService singleton instantiation and default attributes."""

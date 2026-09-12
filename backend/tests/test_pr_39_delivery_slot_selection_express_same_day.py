@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.delivery-slot-selection-express-same-day import DeliverySlotsService, get_delivery_slots_service, DeliverySlotsServiceRequest
-from ai.delivery.delivery-slot-selection-express-same-day_ai_model import DeliverySlotsAIModel, get_delivery_slots_ai_model
-from database.seeds.delivery-slot-selection-express-same-day_seed import get_seed_data_pr_39, seed_pr_39_to_database
+from backend.app.domain.delivery_slot_selection_express_same_day import DeliverySlotsService, get_delivery_slots_service, DeliverySlotsServiceRequest
+from ai.delivery.delivery_slot_selection_express_same_day_ai_model import DeliverySlotsAIModel, get_delivery_slots_ai_model
+from database.seeds.delivery_slot_selection_express_same_day_seed import get_seed_data_pr_39, seed_pr_39_to_database
 
 def test_delivery_slots_service_initialization():
     """Verify DeliverySlotsService singleton instantiation and default attributes."""

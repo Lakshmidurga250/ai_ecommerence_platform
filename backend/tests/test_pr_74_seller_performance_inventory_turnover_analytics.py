@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-performance-inventory-turnover-analytics import InventoryTurnoverService, get_inventory_turnover_service, InventoryTurnoverServiceRequest
-from ai.seller.seller-performance-inventory-turnover-analytics_ai_model import InventoryTurnoverAIModel, get_inventory_turnover_ai_model
-from database.seeds.seller-performance-inventory-turnover-analytics_seed import get_seed_data_pr_74, seed_pr_74_to_database
+from backend.app.domain.seller_performance_inventory_turnover_analytics import InventoryTurnoverService, get_inventory_turnover_service, InventoryTurnoverServiceRequest
+from ai.seller.seller_performance_inventory_turnover_analytics_ai_model import InventoryTurnoverAIModel, get_inventory_turnover_ai_model
+from database.seeds.seller_performance_inventory_turnover_analytics_seed import get_seed_data_pr_74, seed_pr_74_to_database
 
 def test_inventory_turnover_service_initialization():
     """Verify InventoryTurnoverService singleton instantiation and default attributes."""

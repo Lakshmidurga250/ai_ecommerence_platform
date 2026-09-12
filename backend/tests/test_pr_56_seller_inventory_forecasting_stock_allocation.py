@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-inventory-forecasting-stock-allocation import SellerInventoryService, get_seller_inventory_service, SellerInventoryServiceRequest
-from ai.seller.seller-inventory-forecasting-stock-allocation_ai_model import SellerInventoryAIModel, get_seller_inventory_ai_model
-from database.seeds.seller-inventory-forecasting-stock-allocation_seed import get_seed_data_pr_56, seed_pr_56_to_database
+from backend.app.domain.seller_inventory_forecasting_stock_allocation import SellerInventoryService, get_seller_inventory_service, SellerInventoryServiceRequest
+from ai.seller.seller_inventory_forecasting_stock_allocation_ai_model import SellerInventoryAIModel, get_seller_inventory_ai_model
+from database.seeds.seller_inventory_forecasting_stock_allocation_seed import get_seed_data_pr_56, seed_pr_56_to_database
 
 def test_seller_inventory_service_initialization():
     """Verify SellerInventoryService singleton instantiation and default attributes."""

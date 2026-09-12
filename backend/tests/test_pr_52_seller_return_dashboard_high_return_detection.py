@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-return-dashboard-high-return-detection import ReturnAnalyticsService, get_return_analytics_service, ReturnAnalyticsServiceRequest
-from ai.seller.seller-return-dashboard-high-return-detection_ai_model import ReturnAnalyticsAIModel, get_return_analytics_ai_model
-from database.seeds.seller-return-dashboard-high-return-detection_seed import get_seed_data_pr_52, seed_pr_52_to_database
+from backend.app.domain.seller_return_dashboard_high_return_detection import ReturnAnalyticsService, get_return_analytics_service, ReturnAnalyticsServiceRequest
+from ai.seller.seller_return_dashboard_high_return_detection_ai_model import ReturnAnalyticsAIModel, get_return_analytics_ai_model
+from database.seeds.seller_return_dashboard_high_return_detection_seed import get_seed_data_pr_52, seed_pr_52_to_database
 
 def test_return_analytics_service_initialization():
     """Verify ReturnAnalyticsService singleton instantiation and default attributes."""

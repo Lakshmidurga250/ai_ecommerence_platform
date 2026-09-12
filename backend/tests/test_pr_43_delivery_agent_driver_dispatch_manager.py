@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.delivery-agent-driver-dispatch-manager import DriverDispatchService, get_driver_dispatch_service, DriverDispatchServiceRequest
-from ai.delivery.delivery-agent-driver-dispatch-manager_ai_model import DriverDispatchAIModel, get_driver_dispatch_ai_model
-from database.seeds.delivery-agent-driver-dispatch-manager_seed import get_seed_data_pr_43, seed_pr_43_to_database
+from backend.app.domain.delivery_agent_driver_dispatch_manager import DriverDispatchService, get_driver_dispatch_service, DriverDispatchServiceRequest
+from ai.delivery.delivery_agent_driver_dispatch_manager_ai_model import DriverDispatchAIModel, get_driver_dispatch_ai_model
+from database.seeds.delivery_agent_driver_dispatch_manager_seed import get_seed_data_pr_43, seed_pr_43_to_database
 
 def test_driver_dispatch_service_initialization():
     """Verify DriverDispatchService singleton instantiation and default attributes."""

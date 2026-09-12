@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-bulk-product-csv-import-updater import BulkProductImporterService, get_bulk_product_importer_service, BulkProductImporterServiceRequest
-from ai.seller.seller-bulk-product-csv-import-updater_ai_model import BulkProductImporterAIModel, get_bulk_product_importer_ai_model
-from database.seeds.seller-bulk-product-csv-import-updater_seed import get_seed_data_pr_60, seed_pr_60_to_database
+from backend.app.domain.seller_bulk_product_csv_import_updater import BulkProductImporterService, get_bulk_product_importer_service, BulkProductImporterServiceRequest
+from ai.seller.seller_bulk_product_csv_import_updater_ai_model import BulkProductImporterAIModel, get_bulk_product_importer_ai_model
+from database.seeds.seller_bulk_product_csv_import_updater_seed import get_seed_data_pr_60, seed_pr_60_to_database
 
 def test_bulk_product_importer_service_initialization():
     """Verify BulkProductImporterService singleton instantiation and default attributes."""

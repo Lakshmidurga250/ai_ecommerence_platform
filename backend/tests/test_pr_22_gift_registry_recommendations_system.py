@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.gift-registry-recommendations-system import GiftRegistryService, get_gift_registry_service, GiftRegistryServiceRequest
-from ai.gift.gift-registry-recommendations-system_ai_model import GiftRegistryAIModel, get_gift_registry_ai_model
-from database.seeds.gift-registry-recommendations-system_seed import get_seed_data_pr_22, seed_pr_22_to_database
+from backend.app.domain.gift_registry_recommendations_system import GiftRegistryService, get_gift_registry_service, GiftRegistryServiceRequest
+from ai.gift.gift_registry_recommendations_system_ai_model import GiftRegistryAIModel, get_gift_registry_ai_model
+from database.seeds.gift_registry_recommendations_system_seed import get_seed_data_pr_22, seed_pr_22_to_database
 
 def test_gift_registry_service_initialization():
     """Verify GiftRegistryService singleton instantiation and default attributes."""

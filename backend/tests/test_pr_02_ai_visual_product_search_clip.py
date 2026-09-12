@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-visual-product-search-clip import VisualSearchService, get_visual_search_service, VisualSearchServiceRequest
-from ai.ai.ai-visual-product-search-clip_ai_model import VisualSearchAIModel, get_visual_search_ai_model
-from database.seeds.ai-visual-product-search-clip_seed import get_seed_data_pr_2, seed_pr_2_to_database
+from backend.app.domain.ai_visual_product_search_clip import VisualSearchService, get_visual_search_service, VisualSearchServiceRequest
+from ai.ai.ai_visual_product_search_clip_ai_model import VisualSearchAIModel, get_visual_search_ai_model
+from database.seeds.ai_visual_product_search_clip_seed import get_seed_data_pr_2, seed_pr_2_to_database
 
 def test_visual_search_service_initialization():
     """Verify VisualSearchService singleton instantiation and default attributes."""

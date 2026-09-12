@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.split-order-partial-shipment-manager import SplitShipmentService, get_split_shipment_service, SplitShipmentServiceRequest
-from ai.split.split-order-partial-shipment-manager_ai_model import SplitShipmentAIModel, get_split_shipment_ai_model
-from database.seeds.split-order-partial-shipment-manager_seed import get_seed_data_pr_42, seed_pr_42_to_database
+from backend.app.domain.split_order_partial_shipment_manager import SplitShipmentService, get_split_shipment_service, SplitShipmentServiceRequest
+from ai.split.split_order_partial_shipment_manager_ai_model import SplitShipmentAIModel, get_split_shipment_ai_model
+from database.seeds.split_order_partial_shipment_manager_seed import get_seed_data_pr_42, seed_pr_42_to_database
 
 def test_split_shipment_service_initialization():
     """Verify SplitShipmentService singleton instantiation and default attributes."""

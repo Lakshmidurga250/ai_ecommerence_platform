@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-price-sensitivity-dynamic-pricing import DynamicPricingEngineService, get_dynamic_pricing_engine_service, DynamicPricingEngineServiceRequest
-from ai.ai.ai-price-sensitivity-dynamic-pricing_ai_model import DynamicPricingEngineAIModel, get_dynamic_pricing_engine_ai_model
-from database.seeds.ai-price-sensitivity-dynamic-pricing_seed import get_seed_data_pr_14, seed_pr_14_to_database
+from backend.app.domain.ai_price_sensitivity_dynamic_pricing import DynamicPricingEngineService, get_dynamic_pricing_engine_service, DynamicPricingEngineServiceRequest
+from ai.ai.ai_price_sensitivity_dynamic_pricing_ai_model import DynamicPricingEngineAIModel, get_dynamic_pricing_engine_ai_model
+from database.seeds.ai_price_sensitivity_dynamic_pricing_seed import get_seed_data_pr_14, seed_pr_14_to_database
 
 def test_dynamic_pricing_engine_service_initialization():
     """Verify DynamicPricingEngineService singleton instantiation and default attributes."""

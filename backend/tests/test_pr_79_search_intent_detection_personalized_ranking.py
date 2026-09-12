@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.search-intent-detection-personalized-ranking import SearchIntentRankerService, get_search_intent_ranker_service, SearchIntentRankerServiceRequest
-from ai.search.search-intent-detection-personalized-ranking_ai_model import SearchIntentRankerAIModel, get_search_intent_ranker_ai_model
-from database.seeds.search-intent-detection-personalized-ranking_seed import get_seed_data_pr_79, seed_pr_79_to_database
+from backend.app.domain.search_intent_detection_personalized_ranking import SearchIntentRankerService, get_search_intent_ranker_service, SearchIntentRankerServiceRequest
+from ai.search.search_intent_detection_personalized_ranking_ai_model import SearchIntentRankerAIModel, get_search_intent_ranker_ai_model
+from database.seeds.search_intent_detection_personalized_ranking_seed import get_seed_data_pr_79, seed_pr_79_to_database
 
 def test_search_intent_ranker_service_initialization():
     """Verify SearchIntentRankerService singleton instantiation and default attributes."""

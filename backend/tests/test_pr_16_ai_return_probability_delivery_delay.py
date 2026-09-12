@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-return-probability-delivery-delay import ReturnDelayPredictorService, get_return_delay_predictor_service, ReturnDelayPredictorServiceRequest
-from ai.ai.ai-return-probability-delivery-delay_ai_model import ReturnDelayPredictorAIModel, get_return_delay_predictor_ai_model
-from database.seeds.ai-return-probability-delivery-delay_seed import get_seed_data_pr_16, seed_pr_16_to_database
+from backend.app.domain.ai_return_probability_delivery_delay import ReturnDelayPredictorService, get_return_delay_predictor_service, ReturnDelayPredictorServiceRequest
+from ai.ai.ai_return_probability_delivery_delay_ai_model import ReturnDelayPredictorAIModel, get_return_delay_predictor_ai_model
+from database.seeds.ai_return_probability_delivery_delay_seed import get_seed_data_pr_16, seed_pr_16_to_database
 
 def test_return_delay_predictor_service_initialization():
     """Verify ReturnDelayPredictorService singleton instantiation and default attributes."""

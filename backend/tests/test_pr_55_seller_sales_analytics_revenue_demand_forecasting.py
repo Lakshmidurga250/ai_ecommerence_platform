@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-sales-analytics-revenue-demand-forecasting import SellerForecastingService, get_seller_forecasting_service, SellerForecastingServiceRequest
-from ai.seller.seller-sales-analytics-revenue-demand-forecasting_ai_model import SellerForecastingAIModel, get_seller_forecasting_ai_model
-from database.seeds.seller-sales-analytics-revenue-demand-forecasting_seed import get_seed_data_pr_55, seed_pr_55_to_database
+from backend.app.domain.seller_sales_analytics_revenue_demand_forecasting import SellerForecastingService, get_seller_forecasting_service, SellerForecastingServiceRequest
+from ai.seller.seller_sales_analytics_revenue_demand_forecasting_ai_model import SellerForecastingAIModel, get_seller_forecasting_ai_model
+from database.seeds.seller_sales_analytics_revenue_demand_forecasting_seed import get_seed_data_pr_55, seed_pr_55_to_database
 
 def test_seller_forecasting_service_initialization():
     """Verify SellerForecastingService singleton instantiation and default attributes."""

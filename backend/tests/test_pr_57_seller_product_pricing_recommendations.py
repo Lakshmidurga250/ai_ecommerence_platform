@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-product-pricing-recommendations import SellerPricingRecService, get_seller_pricing_rec_service, SellerPricingRecServiceRequest
-from ai.seller.seller-product-pricing-recommendations_ai_model import SellerPricingRecAIModel, get_seller_pricing_rec_ai_model
-from database.seeds.seller-product-pricing-recommendations_seed import get_seed_data_pr_57, seed_pr_57_to_database
+from backend.app.domain.seller_product_pricing_recommendations import SellerPricingRecService, get_seller_pricing_rec_service, SellerPricingRecServiceRequest
+from ai.seller.seller_product_pricing_recommendations_ai_model import SellerPricingRecAIModel, get_seller_pricing_rec_ai_model
+from database.seeds.seller_product_pricing_recommendations_seed import get_seed_data_pr_57, seed_pr_57_to_database
 
 def test_seller_pricing_rec_service_initialization():
     """Verify SellerPricingRecService singleton instantiation and default attributes."""

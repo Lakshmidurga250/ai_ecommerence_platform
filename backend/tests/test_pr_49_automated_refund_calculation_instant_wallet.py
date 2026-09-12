@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.automated-refund-calculation-instant-wallet import RefundCalculatorService, get_refund_calculator_service, RefundCalculatorServiceRequest
-from ai.automated.automated-refund-calculation-instant-wallet_ai_model import RefundCalculatorAIModel, get_refund_calculator_ai_model
-from database.seeds.automated-refund-calculation-instant-wallet_seed import get_seed_data_pr_49, seed_pr_49_to_database
+from backend.app.domain.automated_refund_calculation_instant_wallet import RefundCalculatorService, get_refund_calculator_service, RefundCalculatorServiceRequest
+from ai.automated.automated_refund_calculation_instant_wallet_ai_model import RefundCalculatorAIModel, get_refund_calculator_ai_model
+from database.seeds.automated_refund_calculation_instant_wallet_seed import get_seed_data_pr_49, seed_pr_49_to_database
 
 def test_refund_calculator_service_initialization():
     """Verify RefundCalculatorService singleton instantiation and default attributes."""

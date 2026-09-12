@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.customer-wallet-store-credit-refunds import WalletSystemService, get_wallet_system_service, WalletSystemServiceRequest
-from ai.customer.customer-wallet-store-credit-refunds_ai_model import WalletSystemAIModel, get_wallet_system_ai_model
-from database.seeds.customer-wallet-store-credit-refunds_seed import get_seed_data_pr_33, seed_pr_33_to_database
+from backend.app.domain.customer_wallet_store_credit_refunds import WalletSystemService, get_wallet_system_service, WalletSystemServiceRequest
+from ai.customer.customer_wallet_store_credit_refunds_ai_model import WalletSystemAIModel, get_wallet_system_ai_model
+from database.seeds.customer_wallet_store_credit_refunds_seed import get_seed_data_pr_33, seed_pr_33_to_database
 
 def test_wallet_system_service_initialization():
     """Verify WalletSystemService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.search-typo-correction-synonym-query-expansion import QueryIntelligenceService, get_query_intelligence_service, QueryIntelligenceServiceRequest
-from ai.search.search-typo-correction-synonym-query-expansion_ai_model import QueryIntelligenceAIModel, get_query_intelligence_ai_model
-from database.seeds.search-typo-correction-synonym-query-expansion_seed import get_seed_data_pr_78, seed_pr_78_to_database
+from backend.app.domain.search_typo_correction_synonym_query_expansion import QueryIntelligenceService, get_query_intelligence_service, QueryIntelligenceServiceRequest
+from ai.search.search_typo_correction_synonym_query_expansion_ai_model import QueryIntelligenceAIModel, get_query_intelligence_ai_model
+from database.seeds.search_typo_correction_synonym_query_expansion_seed import get_seed_data_pr_78, seed_pr_78_to_database
 
 def test_query_intelligence_service_initialization():
     """Verify QueryIntelligenceService singleton instantiation and default attributes."""

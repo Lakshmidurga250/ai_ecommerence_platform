@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-bundle-optimization-tiered-value import BundleOptimizerService, get_bundle_optimizer_service, BundleOptimizerServiceRequest
-from ai.ai.ai-bundle-optimization-tiered-value_ai_model import BundleOptimizerAIModel, get_bundle_optimizer_ai_model
-from database.seeds.ai-bundle-optimization-tiered-value_seed import get_seed_data_pr_12, seed_pr_12_to_database
+from backend.app.domain.ai_bundle_optimization_tiered_value import BundleOptimizerService, get_bundle_optimizer_service, BundleOptimizerServiceRequest
+from ai.ai.ai_bundle_optimization_tiered_value_ai_model import BundleOptimizerAIModel, get_bundle_optimizer_ai_model
+from database.seeds.ai_bundle_optimization_tiered_value_seed import get_seed_data_pr_12, seed_pr_12_to_database
 
 def test_bundle_optimizer_service_initialization():
     """Verify BundleOptimizerService singleton instantiation and default attributes."""

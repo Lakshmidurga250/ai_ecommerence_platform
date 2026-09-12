@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.back-in-stock-price-drop-alerts import PriceDropAlertsService, get_price_drop_alerts_service, PriceDropAlertsServiceRequest
-from ai.back.back-in-stock-price-drop-alerts_ai_model import PriceDropAlertsAIModel, get_price_drop_alerts_ai_model
-from database.seeds.back-in-stock-price-drop-alerts_seed import get_seed_data_pr_27, seed_pr_27_to_database
+from backend.app.domain.back_in_stock_price_drop_alerts import PriceDropAlertsService, get_price_drop_alerts_service, PriceDropAlertsServiceRequest
+from ai.back.back_in_stock_price_drop_alerts_ai_model import PriceDropAlertsAIModel, get_price_drop_alerts_ai_model
+from database.seeds.back_in_stock_price_drop_alerts_seed import get_seed_data_pr_27, seed_pr_27_to_database
 
 def test_price_drop_alerts_service_initialization():
     """Verify PriceDropAlertsService singleton instantiation and default attributes."""

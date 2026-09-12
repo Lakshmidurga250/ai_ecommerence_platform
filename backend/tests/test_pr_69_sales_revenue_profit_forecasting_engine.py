@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.sales-revenue-profit-forecasting-engine import FinancialForecasterService, get_financial_forecaster_service, FinancialForecasterServiceRequest
-from ai.sales.sales-revenue-profit-forecasting-engine_ai_model import FinancialForecasterAIModel, get_financial_forecaster_ai_model
-from database.seeds.sales-revenue-profit-forecasting-engine_seed import get_seed_data_pr_69, seed_pr_69_to_database
+from backend.app.domain.sales_revenue_profit_forecasting_engine import FinancialForecasterService, get_financial_forecaster_service, FinancialForecasterServiceRequest
+from ai.sales.sales_revenue_profit_forecasting_engine_ai_model import FinancialForecasterAIModel, get_financial_forecaster_ai_model
+from database.seeds.sales_revenue_profit_forecasting_engine_seed import get_seed_data_pr_69, seed_pr_69_to_database
 
 def test_financial_forecaster_service_initialization():
     """Verify FinancialForecasterService singleton instantiation and default attributes."""

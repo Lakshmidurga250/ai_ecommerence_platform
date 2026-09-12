@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.similar-products-complete-the-look-matcher import CompleteTheLookService, get_complete_the_look_service, CompleteTheLookServiceRequest
-from ai.similar.similar-products-complete-the-look-matcher_ai_model import CompleteTheLookAIModel, get_complete_the_look_ai_model
-from database.seeds.similar-products-complete-the-look-matcher_seed import get_seed_data_pr_81, seed_pr_81_to_database
+from backend.app.domain.similar_products_complete_the_look_matcher import CompleteTheLookService, get_complete_the_look_service, CompleteTheLookServiceRequest
+from ai.similar.similar_products_complete_the_look_matcher_ai_model import CompleteTheLookAIModel, get_complete_the_look_ai_model
+from database.seeds.similar_products_complete_the_look_matcher_seed import get_seed_data_pr_81, seed_pr_81_to_database
 
 def test_complete_the_look_service_initialization():
     """Verify CompleteTheLookService singleton instantiation and default attributes."""

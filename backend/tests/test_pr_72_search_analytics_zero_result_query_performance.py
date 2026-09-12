@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.search-analytics-zero-result-query-performance import SearchAnalyticsService, get_search_analytics_service, SearchAnalyticsServiceRequest
-from ai.search.search-analytics-zero-result-query-performance_ai_model import SearchAnalyticsAIModel, get_search_analytics_ai_model
-from database.seeds.search-analytics-zero-result-query-performance_seed import get_seed_data_pr_72, seed_pr_72_to_database
+from backend.app.domain.search_analytics_zero_result_query_performance import SearchAnalyticsService, get_search_analytics_service, SearchAnalyticsServiceRequest
+from ai.search.search_analytics_zero_result_query_performance_ai_model import SearchAnalyticsAIModel, get_search_analytics_ai_model
+from database.seeds.search_analytics_zero_result_query_performance_seed import get_seed_data_pr_72, seed_pr_72_to_database
 
 def test_search_analytics_service_initialization():
     """Verify SearchAnalyticsService singleton instantiation and default attributes."""

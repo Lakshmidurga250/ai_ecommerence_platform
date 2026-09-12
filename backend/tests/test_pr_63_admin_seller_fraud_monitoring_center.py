@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-seller-fraud-monitoring-center import AdminFraudCenterService, get_admin_fraud_center_service, AdminFraudCenterServiceRequest
-from ai.admin.admin-seller-fraud-monitoring-center_ai_model import AdminFraudCenterAIModel, get_admin_fraud_center_ai_model
-from database.seeds.admin-seller-fraud-monitoring-center_seed import get_seed_data_pr_63, seed_pr_63_to_database
+from backend.app.domain.admin_seller_fraud_monitoring_center import AdminFraudCenterService, get_admin_fraud_center_service, AdminFraudCenterServiceRequest
+from ai.admin.admin_seller_fraud_monitoring_center_ai_model import AdminFraudCenterAIModel, get_admin_fraud_center_ai_model
+from database.seeds.admin_seller_fraud_monitoring_center_seed import get_seed_data_pr_63, seed_pr_63_to_database
 
 def test_admin_fraud_center_service_initialization():
     """Verify AdminFraudCenterService singleton instantiation and default attributes."""

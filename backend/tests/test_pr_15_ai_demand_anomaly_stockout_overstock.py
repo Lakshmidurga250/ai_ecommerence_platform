@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-demand-anomaly-stockout-overstock import AnomalyStockoutEngineService, get_anomaly_stockout_engine_service, AnomalyStockoutEngineServiceRequest
-from ai.ai.ai-demand-anomaly-stockout-overstock_ai_model import AnomalyStockoutEngineAIModel, get_anomaly_stockout_engine_ai_model
-from database.seeds.ai-demand-anomaly-stockout-overstock_seed import get_seed_data_pr_15, seed_pr_15_to_database
+from backend.app.domain.ai_demand_anomaly_stockout_overstock import AnomalyStockoutEngineService, get_anomaly_stockout_engine_service, AnomalyStockoutEngineServiceRequest
+from ai.ai.ai_demand_anomaly_stockout_overstock_ai_model import AnomalyStockoutEngineAIModel, get_anomaly_stockout_engine_ai_model
+from database.seeds.ai_demand_anomaly_stockout_overstock_seed import get_seed_data_pr_15, seed_pr_15_to_database
 
 def test_anomaly_stockout_engine_service_initialization():
     """Verify AnomalyStockoutEngineService singleton instantiation and default attributes."""

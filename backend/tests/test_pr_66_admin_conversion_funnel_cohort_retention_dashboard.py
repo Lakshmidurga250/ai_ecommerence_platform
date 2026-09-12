@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-conversion-funnel-cohort-retention-dashboard import AdminFunnelCohortService, get_admin_funnel_cohort_service, AdminFunnelCohortServiceRequest
-from ai.admin.admin-conversion-funnel-cohort-retention-dashboard_ai_model import AdminFunnelCohortAIModel, get_admin_funnel_cohort_ai_model
-from database.seeds.admin-conversion-funnel-cohort-retention-dashboard_seed import get_seed_data_pr_66, seed_pr_66_to_database
+from backend.app.domain.admin_conversion_funnel_cohort_retention_dashboard import AdminFunnelCohortService, get_admin_funnel_cohort_service, AdminFunnelCohortServiceRequest
+from ai.admin.admin_conversion_funnel_cohort_retention_dashboard_ai_model import AdminFunnelCohortAIModel, get_admin_funnel_cohort_ai_model
+from database.seeds.admin_conversion_funnel_cohort_retention_dashboard_seed import get_seed_data_pr_66, seed_pr_66_to_database
 
 def test_admin_funnel_cohort_service_initialization():
     """Verify AdminFunnelCohortService singleton instantiation and default attributes."""

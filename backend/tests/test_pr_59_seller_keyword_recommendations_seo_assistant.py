@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-keyword-recommendations-seo-assistant import SellerSeoAssistantService, get_seller_seo_assistant_service, SellerSeoAssistantServiceRequest
-from ai.seller.seller-keyword-recommendations-seo-assistant_ai_model import SellerSeoAssistantAIModel, get_seller_seo_assistant_ai_model
-from database.seeds.seller-keyword-recommendations-seo-assistant_seed import get_seed_data_pr_59, seed_pr_59_to_database
+from backend.app.domain.seller_keyword_recommendations_seo_assistant import SellerSeoAssistantService, get_seller_seo_assistant_service, SellerSeoAssistantServiceRequest
+from ai.seller.seller_keyword_recommendations_seo_assistant_ai_model import SellerSeoAssistantAIModel, get_seller_seo_assistant_ai_model
+from database.seeds.seller_keyword_recommendations_seo_assistant_seed import get_seed_data_pr_59, seed_pr_59_to_database
 
 def test_seller_seo_assistant_service_initialization():
     """Verify SellerSeoAssistantService singleton instantiation and default attributes."""

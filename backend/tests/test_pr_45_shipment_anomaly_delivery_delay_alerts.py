@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.shipment-anomaly-delivery-delay-alerts import ShipmentAnomalyService, get_shipment_anomaly_service, ShipmentAnomalyServiceRequest
-from ai.shipment.shipment-anomaly-delivery-delay-alerts_ai_model import ShipmentAnomalyAIModel, get_shipment_anomaly_ai_model
-from database.seeds.shipment-anomaly-delivery-delay-alerts_seed import get_seed_data_pr_45, seed_pr_45_to_database
+from backend.app.domain.shipment_anomaly_delivery_delay_alerts import ShipmentAnomalyService, get_shipment_anomaly_service, ShipmentAnomalyServiceRequest
+from ai.shipment.shipment_anomaly_delivery_delay_alerts_ai_model import ShipmentAnomalyAIModel, get_shipment_anomaly_ai_model
+from database.seeds.shipment_anomaly_delivery_delay_alerts_seed import get_seed_data_pr_45, seed_pr_45_to_database
 
 def test_shipment_anomaly_service_initialization():
     """Verify ShipmentAnomalyService singleton instantiation and default attributes."""

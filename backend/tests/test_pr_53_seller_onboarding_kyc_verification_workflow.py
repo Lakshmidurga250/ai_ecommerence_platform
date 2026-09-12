@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.seller-onboarding-kyc-verification-workflow import SellerKycService, get_seller_kyc_service, SellerKycServiceRequest
-from ai.seller.seller-onboarding-kyc-verification-workflow_ai_model import SellerKycAIModel, get_seller_kyc_ai_model
-from database.seeds.seller-onboarding-kyc-verification-workflow_seed import get_seed_data_pr_53, seed_pr_53_to_database
+from backend.app.domain.seller_onboarding_kyc_verification_workflow import SellerKycService, get_seller_kyc_service, SellerKycServiceRequest
+from ai.seller.seller_onboarding_kyc_verification_workflow_ai_model import SellerKycAIModel, get_seller_kyc_ai_model
+from database.seeds.seller_onboarding_kyc_verification_workflow_seed import get_seed_data_pr_53, seed_pr_53_to_database
 
 def test_seller_kyc_service_initialization():
     """Verify SellerKycService singleton instantiation and default attributes."""

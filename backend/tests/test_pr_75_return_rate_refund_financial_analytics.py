@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.return-rate-refund-financial-analytics import ReturnsFinancialBiService, get_returns_financial_bi_service, ReturnsFinancialBiServiceRequest
-from ai.return.return-rate-refund-financial-analytics_ai_model import ReturnsFinancialBiAIModel, get_returns_financial_bi_ai_model
-from database.seeds.return-rate-refund-financial-analytics_seed import get_seed_data_pr_75, seed_pr_75_to_database
+from backend.app.domain.return_rate_refund_financial_analytics import ReturnsFinancialBiService, get_returns_financial_bi_service, ReturnsFinancialBiServiceRequest
+from ai.return.return_rate_refund_financial_analytics_ai_model import ReturnsFinancialBiAIModel, get_returns_financial_bi_ai_model
+from database.seeds.return_rate_refund_financial_analytics_seed import get_seed_data_pr_75, seed_pr_75_to_database
 
 def test_returns_financial_bi_service_initialization():
     """Verify ReturnsFinancialBiService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.recommendation-promotion-performance-analytics import RecPromotionAnalyticsService, get_rec_promotion_analytics_service, RecPromotionAnalyticsServiceRequest
-from ai.recommendation.recommendation-promotion-performance-analytics_ai_model import RecPromotionAnalyticsAIModel, get_rec_promotion_analytics_ai_model
-from database.seeds.recommendation-promotion-performance-analytics_seed import get_seed_data_pr_73, seed_pr_73_to_database
+from backend.app.domain.recommendation_promotion_performance_analytics import RecPromotionAnalyticsService, get_rec_promotion_analytics_service, RecPromotionAnalyticsServiceRequest
+from ai.recommendation.recommendation_promotion_performance_analytics_ai_model import RecPromotionAnalyticsAIModel, get_rec_promotion_analytics_ai_model
+from database.seeds.recommendation_promotion_performance_analytics_seed import get_seed_data_pr_73, seed_pr_73_to_database
 
 def test_rec_promotion_analytics_service_initialization():
     """Verify RecPromotionAnalyticsService singleton instantiation and default attributes."""

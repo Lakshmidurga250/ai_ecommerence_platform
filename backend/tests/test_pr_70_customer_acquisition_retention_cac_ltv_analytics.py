@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.customer-acquisition-retention-cac-ltv-analytics import AcquisitionAnalyticsService, get_acquisition_analytics_service, AcquisitionAnalyticsServiceRequest
-from ai.customer.customer-acquisition-retention-cac-ltv-analytics_ai_model import AcquisitionAnalyticsAIModel, get_acquisition_analytics_ai_model
-from database.seeds.customer-acquisition-retention-cac-ltv-analytics_seed import get_seed_data_pr_70, seed_pr_70_to_database
+from backend.app.domain.customer_acquisition_retention_cac_ltv_analytics import AcquisitionAnalyticsService, get_acquisition_analytics_service, AcquisitionAnalyticsServiceRequest
+from ai.customer.customer_acquisition_retention_cac_ltv_analytics_ai_model import AcquisitionAnalyticsAIModel, get_acquisition_analytics_ai_model
+from database.seeds.customer_acquisition_retention_cac_ltv_analytics_seed import get_seed_data_pr_70, seed_pr_70_to_database
 
 def test_acquisition_analytics_service_initialization():
     """Verify AcquisitionAnalyticsService singleton instantiation and default attributes."""

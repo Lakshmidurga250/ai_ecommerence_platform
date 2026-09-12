@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.shipment-tracking-timeline-milestone-fsm import ShipmentFsmService, get_shipment_fsm_service, ShipmentFsmServiceRequest
-from ai.shipment.shipment-tracking-timeline-milestone-fsm_ai_model import ShipmentFsmAIModel, get_shipment_fsm_ai_model
-from database.seeds.shipment-tracking-timeline-milestone-fsm_seed import get_seed_data_pr_40, seed_pr_40_to_database
+from backend.app.domain.shipment_tracking_timeline_milestone_fsm import ShipmentFsmService, get_shipment_fsm_service, ShipmentFsmServiceRequest
+from ai.shipment.shipment_tracking_timeline_milestone_fsm_ai_model import ShipmentFsmAIModel, get_shipment_fsm_ai_model
+from database.seeds.shipment_tracking_timeline_milestone_fsm_seed import get_seed_data_pr_40, seed_pr_40_to_database
 
 def test_shipment_fsm_service_initialization():
     """Verify ShipmentFsmService singleton instantiation and default attributes."""

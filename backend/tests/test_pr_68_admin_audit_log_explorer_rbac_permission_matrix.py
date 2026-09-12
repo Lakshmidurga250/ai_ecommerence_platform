@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.admin-audit-log-explorer-rbac-permission-matrix import AdminRbacAuditService, get_admin_rbac_audit_service, AdminRbacAuditServiceRequest
-from ai.admin.admin-audit-log-explorer-rbac-permission-matrix_ai_model import AdminRbacAuditAIModel, get_admin_rbac_audit_ai_model
-from database.seeds.admin-audit-log-explorer-rbac-permission-matrix_seed import get_seed_data_pr_68, seed_pr_68_to_database
+from backend.app.domain.admin_audit_log_explorer_rbac_permission_matrix import AdminRbacAuditService, get_admin_rbac_audit_service, AdminRbacAuditServiceRequest
+from ai.admin.admin_audit_log_explorer_rbac_permission_matrix_ai_model import AdminRbacAuditAIModel, get_admin_rbac_audit_ai_model
+from database.seeds.admin_audit_log_explorer_rbac_permission_matrix_seed import get_seed_data_pr_68, seed_pr_68_to_database
 
 def test_admin_rbac_audit_service_initialization():
     """Verify AdminRbacAuditService singleton instantiation and default attributes."""

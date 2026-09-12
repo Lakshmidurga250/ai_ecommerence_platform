@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.product-exchange-replacement-fsm-service import ExchangeServiceService, get_exchange_service_service, ExchangeServiceServiceRequest
-from ai.product.product-exchange-replacement-fsm-service_ai_model import ExchangeServiceAIModel, get_exchange_service_ai_model
-from database.seeds.product-exchange-replacement-fsm-service_seed import get_seed_data_pr_50, seed_pr_50_to_database
+from backend.app.domain.product_exchange_replacement_fsm_service import ExchangeServiceService, get_exchange_service_service, ExchangeServiceServiceRequest
+from ai.product.product_exchange_replacement_fsm_service_ai_model import ExchangeServiceAIModel, get_exchange_service_ai_model
+from database.seeds.product_exchange_replacement_fsm_service_seed import get_seed_data_pr_50, seed_pr_50_to_database
 
 def test_exchange_service_service_initialization():
     """Verify ExchangeServiceService singleton instantiation and default attributes."""

@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.frequently-bought-together-popular-near-you import FrequentlyBoughtService, get_frequently_bought_service, FrequentlyBoughtServiceRequest
-from ai.frequently.frequently-bought-together-popular-near-you_ai_model import FrequentlyBoughtAIModel, get_frequently_bought_ai_model
-from database.seeds.frequently-bought-together-popular-near-you_seed import get_seed_data_pr_30, seed_pr_30_to_database
+from backend.app.domain.frequently_bought_together_popular_near_you import FrequentlyBoughtService, get_frequently_bought_service, FrequentlyBoughtServiceRequest
+from ai.frequently.frequently_bought_together_popular_near_you_ai_model import FrequentlyBoughtAIModel, get_frequently_bought_ai_model
+from database.seeds.frequently_bought_together_popular_near_you_seed import get_seed_data_pr_30, seed_pr_30_to_database
 
 def test_frequently_bought_service_initialization():
     """Verify FrequentlyBoughtService singleton instantiation and default attributes."""

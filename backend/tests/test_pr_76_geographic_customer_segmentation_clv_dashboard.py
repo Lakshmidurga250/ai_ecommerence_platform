@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.geographic-customer-segmentation-clv-dashboard import RfmSegmentationBiService, get_rfm_segmentation_bi_service, RfmSegmentationBiServiceRequest
-from ai.geographic.geographic-customer-segmentation-clv-dashboard_ai_model import RfmSegmentationBiAIModel, get_rfm_segmentation_bi_ai_model
-from database.seeds.geographic-customer-segmentation-clv-dashboard_seed import get_seed_data_pr_76, seed_pr_76_to_database
+from backend.app.domain.geographic_customer_segmentation_clv_dashboard import RfmSegmentationBiService, get_rfm_segmentation_bi_service, RfmSegmentationBiServiceRequest
+from ai.geographic.geographic_customer_segmentation_clv_dashboard_ai_model import RfmSegmentationBiAIModel, get_rfm_segmentation_bi_ai_model
+from database.seeds.geographic_customer_segmentation_clv_dashboard_seed import get_seed_data_pr_76, seed_pr_76_to_database
 
 def test_rfm_segmentation_bi_service_initialization():
     """Verify RfmSegmentationBiService singleton instantiation and default attributes."""

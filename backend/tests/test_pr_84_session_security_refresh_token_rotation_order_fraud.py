@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.session-security-refresh-token-rotation-order-fraud import SessionFraudShieldService, get_session_fraud_shield_service, SessionFraudShieldServiceRequest
-from ai.session.session-security-refresh-token-rotation-order-fraud_ai_model import SessionFraudShieldAIModel, get_session_fraud_shield_ai_model
-from database.seeds.session-security-refresh-token-rotation-order-fraud_seed import get_seed_data_pr_84, seed_pr_84_to_database
+from backend.app.domain.session_security_refresh_token_rotation_order_fraud import SessionFraudShieldService, get_session_fraud_shield_service, SessionFraudShieldServiceRequest
+from ai.session.session_security_refresh_token_rotation_order_fraud_ai_model import SessionFraudShieldAIModel, get_session_fraud_shield_ai_model
+from database.seeds.session_security_refresh_token_rotation_order_fraud_seed import get_seed_data_pr_84, seed_pr_84_to_database
 
 def test_session_fraud_shield_service_initialization():
     """Verify SessionFraudShieldService singleton instantiation and default attributes."""

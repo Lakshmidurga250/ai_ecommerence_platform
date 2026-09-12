@@ -5,9 +5,9 @@ Verifies domain service calculations, AI model probability calibrations, and see
 """
 
 import pytest
-from backend.app.domain.ai-counterfeit-detection-brand-classifier import CounterfeitDetectorService, get_counterfeit_detector_service, CounterfeitDetectorServiceRequest
-from ai.ai.ai-counterfeit-detection-brand-classifier_ai_model import CounterfeitDetectorAIModel, get_counterfeit_detector_ai_model
-from database.seeds.ai-counterfeit-detection-brand-classifier_seed import get_seed_data_pr_18, seed_pr_18_to_database
+from backend.app.domain.ai_counterfeit_detection_brand_classifier import CounterfeitDetectorService, get_counterfeit_detector_service, CounterfeitDetectorServiceRequest
+from ai.ai.ai_counterfeit_detection_brand_classifier_ai_model import CounterfeitDetectorAIModel, get_counterfeit_detector_ai_model
+from database.seeds.ai_counterfeit_detection_brand_classifier_seed import get_seed_data_pr_18, seed_pr_18_to_database
 
 def test_counterfeit_detector_service_initialization():
     """Verify CounterfeitDetectorService singleton instantiation and default attributes."""
