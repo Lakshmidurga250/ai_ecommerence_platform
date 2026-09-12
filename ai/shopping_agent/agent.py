@@ -7,14 +7,31 @@ Multi-Turn Memory, Grounding Guardrails, Response Evaluation, and Telemetry Anal
 
 import time
 import re
+import sys
+from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 from sqlalchemy.orm import Session
 from sqlalchemy import or_, desc
 
-from app.models.product import Product, Category, Brand
-from app.models.order import Order
-from app.models.cart import Cart, CartItem
-from app.models.review import Review
+# Ensure workspace root and backend directory are in sys.path
+_current_file = Path(__file__).resolve()
+_root_dir = _current_file.parents[2]
+_backend_dir = _root_dir / "backend"
+
+for _p in (str(_root_dir), str(_backend_dir)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    from app.models.product import Product, Category, Brand
+    from app.models.order import Order
+    from app.models.cart import Cart, CartItem
+    from app.models.review import Review
+except ImportError:
+    from backend.app.models.product import Product, Category, Brand
+    from backend.app.models.order import Order
+    from backend.app.models.cart import Cart, CartItem
+    from backend.app.models.review import Review
 
 from ai.shopping_agent.memory import SessionMemoryRegistry, ShoppingAgentMemory
 from ai.shopping_agent.guardrails import ShoppingAgentGuardrails
@@ -48,7 +65,24 @@ class AIShoppingAgent:
     ]
 
     def __init__(self, db: Optional[Session] = None):
-        self.db = db
+        if db is None:
+            try:
+                from app.core.database import SessionLocal
+                self.db = SessionLocal()
+                self._owns_db = True
+            except Exception:
+                self.db = None
+                self._owns_db = False
+        else:
+            self.db = db
+            self._owns_db = False
+
+    def __del__(self):
+        if getattr(self, "_owns_db", False) and self.db is not None:
+            try:
+                self.db.close()
+            except Exception:
+                pass
 
     def handle_shopping_query(
         self,
@@ -58,16 +92,33 @@ class AIShoppingAgent:
         session_id: Optional[str] = None
     ) -> Dict[str, Any]:
         """Entry point for shopping requests."""
-        res = self.process_message(self.db, query, user_id=user_id, context=context, session_id=session_id)
-        return {
-            "reply": res.get("reply_text") or res.get("reply", ""),
-            "action_pills": res.get("action_pills") or res.get("suggested_actions", []),
-            "grounded_products": res.get("recommended_products") or res.get("grounded_products", []),
-            "comparison_table": res.get("comparison_table"),
-            "extracted_requirements": res.get("extracted_requirements", {}),
-            "evaluation": res.get("evaluation", {}),
-            **res
-        }
+        db_to_use = self.db
+        temp_db = False
+        if db_to_use is None:
+            try:
+                from app.core.database import SessionLocal
+                db_to_use = SessionLocal()
+                temp_db = True
+            except Exception:
+                db_to_use = None
+
+        try:
+            res = self.process_message(db_to_use, query, user_id=user_id, context=context, session_id=session_id)
+            return {
+                "reply": res.get("reply_text") or res.get("reply", ""),
+                "action_pills": res.get("action_pills") or res.get("suggested_actions", []),
+                "grounded_products": res.get("recommended_products") or res.get("grounded_products", []),
+                "comparison_table": res.get("comparison_table"),
+                "extracted_requirements": res.get("extracted_requirements", {}),
+                "evaluation": res.get("evaluation", {}),
+                **res
+            }
+        finally:
+            if temp_db and db_to_use is not None:
+                try:
+                    db_to_use.close()
+                except Exception:
+                    pass
 
     def _match_category(self, text: str):
         if not self.db:
@@ -84,7 +135,7 @@ class AIShoppingAgent:
     @classmethod
     def process_message(
         cls,
-        db: Session,
+        db: Optional[Session],
         message: str,
         user_id: Optional[int] = None,
         context: Optional[Dict[str, Any]] = None,
@@ -99,6 +150,40 @@ class AIShoppingAgent:
         5. Ranking & Grounded Explanation
         6. Response Evaluation & Analytics Logging
         """
+        temp_db = False
+        if db is None:
+            try:
+                from app.core.database import SessionLocal
+                db = SessionLocal()
+                temp_db = True
+            except Exception:
+                db = None
+
+        try:
+            return cls._execute_pipeline(
+                db=db,
+                message=message,
+                user_id=user_id,
+                context=context,
+                session_id=session_id
+            )
+        finally:
+            if temp_db and db is not None:
+                try:
+                    db.close()
+                except Exception:
+                    pass
+
+    @classmethod
+    def _execute_pipeline(
+        cls,
+        db: Optional[Session],
+        message: str,
+        user_id: Optional[int] = None,
+        context: Optional[Dict[str, Any]] = None,
+        session_id: Optional[str] = None
+    ) -> Dict[str, Any]:
+        """Internal execution pipeline for handling shopping queries."""
         start_time = time.time()
         context = context or {}
         cleaned_msg = message.strip()
@@ -256,7 +341,7 @@ class AIShoppingAgent:
         return "GENERAL_ASSISTANCE"
 
     @classmethod
-    def extract_requirements(cls, db: Session, text: str) -> Dict[str, Any]:
+    def extract_requirements(cls, db: Optional[Session], text: str) -> Dict[str, Any]:
         """
         Extracts structured constraints:
         - Category
@@ -266,7 +351,7 @@ class AIShoppingAgent:
         - Brand
         """
         lower = text.lower()
-        cat_obj, brand_obj = cls._extract_entities(db, text)
+        cat_obj, brand_obj = cls._extract_entities(db, text) if db is not None else (None, None)
         min_b, max_b = cls._extract_budget_range(lower)
 
         # Extract use cases
@@ -370,8 +455,10 @@ class AIShoppingAgent:
             return None
 
     @classmethod
-    def _extract_entities(cls, db: Session, text: str) -> Tuple[Optional[Category], Optional[Brand]]:
+    def _extract_entities(cls, db: Optional[Session], text: str) -> Tuple[Optional[Category], Optional[Brand]]:
         """Match categories and brands against database."""
+        if db is None:
+            return None, None
         lower_text = text.lower()
         all_categories = db.query(Category).all()
         matched_category = None
@@ -714,13 +801,18 @@ class AIShoppingAgent:
     @classmethod
     def _handle_general_intent(
         cls,
-        db: Session,
+        db: Optional[Session],
         message: str,
         reqs: Dict[str, Any],
         memory: ShoppingAgentMemory
     ) -> Dict[str, Any]:
         """Handles general greetings and open-ended shopping queries."""
-        top_prods = db.query(Product).filter(Product.is_active == True).order_by(desc(Product.rating)).limit(3).all()
+        top_prods = []
+        if db is not None:
+            try:
+                top_prods = db.query(Product).filter(Product.is_active == True).order_by(desc(Product.rating)).limit(3).all()
+            except Exception:
+                top_prods = []
         rec_cards = []
         for p in top_prods:
             rec_cards.append({
@@ -747,3 +839,15 @@ class AIShoppingAgent:
             "suggested_actions": actions,
             "action_pills": actions
         }
+
+
+if __name__ == "__main__":
+    print("Testing AIShoppingAgent initialization and query handling...")
+    agent = AIShoppingAgent()
+    query = "wireless gaming headphones under 5000"
+    res = agent.handle_shopping_query(query)
+    print(f"Query: {query}")
+    print(f"Intent detected: {res.get('intent')}")
+    print(f"Products recommended: {len(res.get('grounded_products', []))}")
+    print("AIShoppingAgent test completed successfully.")
+

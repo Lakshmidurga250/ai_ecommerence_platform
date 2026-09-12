@@ -7,9 +7,23 @@ Evaluates agent outputs along 4 enterprise dimensions:
 4. Overall Quality Index (0.0 to 1.0)
 """
 
+import sys
+from pathlib import Path
 from typing import Dict, Any, List, Optional
 from sqlalchemy.orm import Session
-from app.models.product import Product
+
+_current_file = Path(__file__).resolve()
+_root_dir = _current_file.parents[2]
+_backend_dir = _root_dir / "backend"
+
+for _p in (str(_root_dir), str(_backend_dir)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    from app.models.product import Product
+except ImportError:
+    from backend.app.models.product import Product
 
 
 class ResponseEvaluator:
@@ -18,7 +32,7 @@ class ResponseEvaluator:
     @classmethod
     def evaluate(
         cls,
-        db: Session,
+        db: Optional[Session],
         user_query: str,
         extracted_requirements: Dict[str, Any],
         recommended_products: List[Dict[str, Any]],
@@ -36,7 +50,12 @@ class ResponseEvaluator:
         for p in recommended_products:
             pid = p.get("id")
             claimed_price = p.get("price")
-            db_p = db.query(Product).filter(Product.id == pid).first()
+            db_p = None
+            if db is not None:
+                try:
+                    db_p = db.query(Product).filter(Product.id == pid).first()
+                except Exception:
+                    db_p = None
             if db_p:
                 grounded_count += 1
                 if claimed_price is not None and abs(db_p.price - float(claimed_price)) > 1.0:

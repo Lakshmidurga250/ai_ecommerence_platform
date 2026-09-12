@@ -9,15 +9,32 @@ Provides modular functional tool execution:
 - AlternativeAndBundleTool: substitute products and curated starter/pro/master bundles
 """
 
+import sys
+from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 from sqlalchemy.orm import Session
 from sqlalchemy import or_, desc
 
-from app.models.product import Product, Category, Brand
-from app.models.order import Order, OrderItem
-from app.models.cart import Cart, CartItem
-from app.models.user import User
-from app.models.review import Review
+_current_file = Path(__file__).resolve()
+_root_dir = _current_file.parents[2]
+_backend_dir = _root_dir / "backend"
+
+for _p in (str(_root_dir), str(_backend_dir)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    from app.models.product import Product, Category, Brand
+    from app.models.order import Order, OrderItem
+    from app.models.cart import Cart, CartItem
+    from app.models.user import User
+    from app.models.review import Review
+except ImportError:
+    from backend.app.models.product import Product, Category, Brand
+    from backend.app.models.order import Order, OrderItem
+    from backend.app.models.cart import Cart, CartItem
+    from backend.app.models.user import User
+    from backend.app.models.review import Review
 
 
 class SearchAndFilterTool:
