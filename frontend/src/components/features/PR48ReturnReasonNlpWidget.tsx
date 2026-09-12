@@ -15,7 +15,7 @@ export interface ReturnReasonNlpWidgetProps {
 
 export const ReturnReasonNlpWidget: React.FC<ReturnReasonNlpWidgetProps> = ({
   entityId = 'ENT-PR48-001',
-  title = 'Automated return reason NLP classification and predictive return-risk scoring',
+  title = "Automated return reason NLP classification and predictive return-risk scoring",
   initialValue = 100,
   onActionTriggered,
 }) => {

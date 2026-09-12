@@ -15,7 +15,7 @@ export interface EmiCalculatorWidgetProps {
 
 export const EmiCalculatorWidget: React.FC<EmiCalculatorWidgetProps> = ({
   entityId = 'ENT-PR35-001',
-  title = 'Installment and EMI simulation calculator with bank interest rate schemes',
+  title = "Installment and EMI simulation calculator with bank interest rate schemes",
   initialValue = 100,
   onActionTriggered,
 }) => {

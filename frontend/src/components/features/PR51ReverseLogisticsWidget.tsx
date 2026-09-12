@@ -15,7 +15,7 @@ export interface ReverseLogisticsWidgetProps {
 
 export const ReverseLogisticsWidget: React.FC<ReverseLogisticsWidgetProps> = ({
   entityId = 'ENT-PR51-001',
-  title = 'Reverse logistics pickup scheduling, courier assignment, and return package tracking',
+  title = "Reverse logistics pickup scheduling, courier assignment, and return package tracking",
   initialValue = 100,
   onActionTriggered,
 }) => {

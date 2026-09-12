@@ -15,7 +15,7 @@ export interface RfmSegmentationBiWidgetProps {
 
 export const RfmSegmentationBiWidget: React.FC<RfmSegmentationBiWidgetProps> = ({
   entityId = 'ENT-PR76-001',
-  title = 'Geographic customer spatial distribution, RFM customer segmentation, and CLV decile dashboard',
+  title = "Geographic customer spatial distribution, RFM customer segmentation, and CLV decile dashboard",
   initialValue = 100,
   onActionTriggered,
 }) => {

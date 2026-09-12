@@ -15,7 +15,7 @@ export interface AdminFunnelCohortWidgetProps {
 
 export const AdminFunnelCohortWidget: React.FC<AdminFunnelCohortWidgetProps> = ({
   entityId = 'ENT-PR66-001',
-  title = 'Admin conversion funnel drop-off diagnostics, cohort retention heatmaps, and CLV distributions',
+  title = "Admin conversion funnel drop-off diagnostics, cohort retention heatmaps, and CLV distributions",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface SplitShipmentWidgetProps {
 
 export const SplitShipmentWidget: React.FC<SplitShipmentWidgetProps> = ({
   entityId = 'ENT-PR42-001',
-  title = 'Split-order fulfillment engine and partial package dispatch management',
+  title = "Split-order fulfillment engine and partial package dispatch management",
   initialValue = 100,
   onActionTriggered,
 }) => {

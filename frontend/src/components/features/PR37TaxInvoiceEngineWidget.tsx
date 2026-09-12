@@ -15,7 +15,7 @@ export interface TaxInvoiceEngineWidgetProps {
 
 export const TaxInvoiceEngineWidget: React.FC<TaxInvoiceEngineWidgetProps> = ({
   entityId = 'ENT-PR37-001',
-  title = 'Automated GST/VAT multi-tier tax calculation and PDF-ready invoice generator',
+  title = "Automated GST/VAT multi-tier tax calculation and PDF-ready invoice generator",
   initialValue = 100,
   onActionTriggered,
 }) => {

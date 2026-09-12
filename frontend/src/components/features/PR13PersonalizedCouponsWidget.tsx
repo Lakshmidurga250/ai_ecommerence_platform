@@ -15,7 +15,7 @@ export interface PersonalizedCouponsWidgetProps {
 
 export const PersonalizedCouponsWidget: React.FC<PersonalizedCouponsWidgetProps> = ({
   entityId = 'ENT-PR13-001',
-  title = 'AI personalized discounts and dynamic customer-specific coupon assignment',
+  title = "AI personalized discounts and dynamic customer-specific coupon assignment",
   initialValue = 100,
   onActionTriggered,
 }) => {

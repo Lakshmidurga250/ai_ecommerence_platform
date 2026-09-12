@@ -15,7 +15,7 @@ export interface AutonomousAgentFleetWidgetProps {
 
 export const AutonomousAgentFleetWidget: React.FC<AutonomousAgentFleetWidgetProps> = ({
   entityId = 'ENT-PR85-001',
-  title = 'Autonomous AI agent swarm (Product, Shopper, Gift, Seller, Admin, Support) with gamified loyalty and omnichannel notifications',
+  title = "Autonomous AI agent swarm (Product, Shopper, Gift, Seller, Admin, Support) with gamified loyalty and omnichannel notifications",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface OutfitMatcherWidgetProps {
 
 export const OutfitMatcherWidget: React.FC<OutfitMatcherWidgetProps> = ({
   entityId = 'ENT-PR03-001',
-  title = 'AI outfit and product matching engine with bipartite compatibility graph and aesthetic coherence',
+  title = "AI outfit and product matching engine with bipartite compatibility graph and aesthetic coherence",
   initialValue = 100,
   onActionTriggered,
 }) => {

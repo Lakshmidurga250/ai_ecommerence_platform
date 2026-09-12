@@ -15,7 +15,7 @@ export interface BayesianQualityWidgetProps {
 
 export const BayesianQualityWidget: React.FC<BayesianQualityWidgetProps> = ({
   entityId = 'ENT-PR07-001',
-  title = 'AI Bayesian smoothed product quality scoring and reliability rating engine',
+  title = "AI Bayesian smoothed product quality scoring and reliability rating engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

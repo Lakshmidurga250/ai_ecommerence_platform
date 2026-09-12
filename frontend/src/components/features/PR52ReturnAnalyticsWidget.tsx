@@ -15,7 +15,7 @@ export interface ReturnAnalyticsWidgetProps {
 
 export const ReturnAnalyticsWidget: React.FC<ReturnAnalyticsWidgetProps> = ({
   entityId = 'ENT-PR52-001',
-  title = 'Seller return metrics dashboard, root-cause analytics, and high-return item detection',
+  title = "Seller return metrics dashboard, root-cause analytics, and high-return item detection",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface SessionFraudShieldWidgetProps {
 
 export const SessionFraudShieldWidget: React.FC<SessionFraudShieldWidgetProps> = ({
   entityId = 'ENT-PR84-001',
-  title = 'JWT refresh-token rotation, session audit ledger, and suspicious-order fraud scoring',
+  title = "JWT refresh-token rotation, session audit ledger, and suspicious-order fraud scoring",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface CrossUpsellEngineWidgetProps {
 
 export const CrossUpsellEngineWidget: React.FC<CrossUpsellEngineWidgetProps> = ({
   entityId = 'ENT-PR11-001',
-  title = 'AI cross-selling and price-corridor trade-up upselling engine',
+  title = "AI cross-selling and price-corridor trade-up upselling engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

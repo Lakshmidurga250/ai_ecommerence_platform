@@ -15,7 +15,7 @@ export interface SellerPricingRecWidgetProps {
 
 export const SellerPricingRecWidget: React.FC<SellerPricingRecWidgetProps> = ({
   entityId = 'ENT-PR57-001',
-  title = 'Seller intelligent pricing recommendations and catalog gap expansion suggestions',
+  title = "Seller intelligent pricing recommendations and catalog gap expansion suggestions",
   initialValue = 100,
   onActionTriggered,
 }) => {

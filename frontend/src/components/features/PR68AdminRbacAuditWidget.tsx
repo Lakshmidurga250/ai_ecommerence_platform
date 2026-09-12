@@ -15,7 +15,7 @@ export interface AdminRbacAuditWidgetProps {
 
 export const AdminRbacAuditWidget: React.FC<AdminRbacAuditWidgetProps> = ({
   entityId = 'ENT-PR68-001',
-  title = 'Enterprise audit log explorer, security event ledger, and granular RBAC role-permission matrix',
+  title = "Enterprise audit log explorer, security event ledger, and granular RBAC role-permission matrix",
   initialValue = 100,
   onActionTriggered,
 }) => {

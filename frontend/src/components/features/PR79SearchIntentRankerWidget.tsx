@@ -15,7 +15,7 @@ export interface SearchIntentRankerWidgetProps {
 
 export const SearchIntentRankerWidget: React.FC<SearchIntentRankerWidgetProps> = ({
   entityId = 'ENT-PR79-001',
-  title = 'Search intent classifier, query parameter parser, and personalized search ranker',
+  title = "Search intent classifier, query parameter parser, and personalized search ranker",
   initialValue = 100,
   onActionTriggered,
 }) => {

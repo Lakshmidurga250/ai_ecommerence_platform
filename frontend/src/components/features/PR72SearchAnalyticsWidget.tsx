@@ -15,7 +15,7 @@ export interface SearchAnalyticsWidgetProps {
 
 export const SearchAnalyticsWidget: React.FC<SearchAnalyticsWidgetProps> = ({
   entityId = 'ENT-PR72-001',
-  title = 'Search query volume tracking, zero-result search query analytics, and click-through rate optimizer',
+  title = "Search query volume tracking, zero-result search query analytics, and click-through rate optimizer",
   initialValue = 100,
   onActionTriggered,
 }) => {

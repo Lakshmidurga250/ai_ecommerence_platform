@@ -15,7 +15,7 @@ export interface RecentActivityWidgetProps {
 
 export const RecentActivityWidget: React.FC<RecentActivityWidgetProps> = ({
   entityId = 'ENT-PR29-001',
-  title = 'Recently searched query feed, recently viewed cache, and recently purchased history',
+  title = "Recently searched query feed, recently viewed cache, and recently purchased history",
   initialValue = 100,
   onActionTriggered,
 }) => {

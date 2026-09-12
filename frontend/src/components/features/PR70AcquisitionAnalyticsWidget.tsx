@@ -15,7 +15,7 @@ export interface AcquisitionAnalyticsWidgetProps {
 
 export const AcquisitionAnalyticsWidget: React.FC<AcquisitionAnalyticsWidgetProps> = ({
   entityId = 'ENT-PR70-001',
-  title = 'Customer acquisition cost (CAC), retention rate analytics, and LTV-to-CAC ratio monitor',
+  title = "Customer acquisition cost (CAC), retention rate analytics, and LTV-to-CAC ratio monitor",
   initialValue = 100,
   onActionTriggered,
 }) => {

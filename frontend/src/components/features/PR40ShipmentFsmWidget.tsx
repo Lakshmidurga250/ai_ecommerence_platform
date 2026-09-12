@@ -15,7 +15,7 @@ export interface ShipmentFsmWidgetProps {
 
 export const ShipmentFsmWidget: React.FC<ShipmentFsmWidgetProps> = ({
   entityId = 'ENT-PR40-001',
-  title = 'Warehouse-to-customer shipment tracking timeline with finite state machine milestones',
+  title = "Warehouse-to-customer shipment tracking timeline with finite state machine milestones",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface RouteTspSolverWidgetProps {
 
 export const RouteTspSolverWidget: React.FC<RouteTspSolverWidgetProps> = ({
   entityId = 'ENT-PR44-001',
-  title = 'Traveling Salesperson Problem (TSP) multi-stop route optimizer and live ETA engine',
+  title = "Traveling Salesperson Problem (TSP) multi-stop route optimizer and live ETA engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

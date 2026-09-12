@@ -15,7 +15,7 @@ export interface CartRecoveryWidgetProps {
 
 export const CartRecoveryWidget: React.FC<CartRecoveryWidgetProps> = ({
   entityId = 'ENT-PR25-001',
-  title = 'Saved multi-carts and automated abandoned-cart recovery workflow with incentives',
+  title = "Saved multi-carts and automated abandoned-cart recovery workflow with incentives",
   initialValue = 100,
   onActionTriggered,
 }) => {

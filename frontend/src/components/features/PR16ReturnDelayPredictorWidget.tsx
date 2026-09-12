@@ -15,7 +15,7 @@ export interface ReturnDelayPredictorWidgetProps {
 
 export const ReturnDelayPredictorWidget: React.FC<ReturnDelayPredictorWidgetProps> = ({
   entityId = 'ENT-PR16-001',
-  title = 'AI return-probability scoring and transit delivery-delay risk predictor',
+  title = "AI return-probability scoring and transit delivery-delay risk predictor",
   initialValue = 100,
   onActionTriggered,
 }) => {

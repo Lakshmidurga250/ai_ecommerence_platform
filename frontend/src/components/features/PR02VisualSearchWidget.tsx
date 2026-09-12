@@ -15,7 +15,7 @@ export interface VisualSearchWidgetProps {
 
 export const VisualSearchWidget: React.FC<VisualSearchWidgetProps> = ({
   entityId = 'ENT-PR02-001',
-  title = 'AI visual product search with CLIP ViT vector embeddings and multimodal image similarity',
+  title = "AI visual product search with CLIP ViT vector embeddings and multimodal image similarity",
   initialValue = 100,
   onActionTriggered,
 }) => {

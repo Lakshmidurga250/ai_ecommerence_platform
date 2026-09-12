@@ -15,7 +15,7 @@ export interface BulkProductImporterWidgetProps {
 
 export const BulkProductImporterWidget: React.FC<BulkProductImporterWidgetProps> = ({
   entityId = 'ENT-PR60-001',
-  title = 'Seller bulk product upload via CSV import, multi-attribute validation, and price/stock batch updater',
+  title = "Seller bulk product upload via CSV import, multi-attribute validation, and price/stock batch updater",
   initialValue = 100,
   onActionTriggered,
 }) => {

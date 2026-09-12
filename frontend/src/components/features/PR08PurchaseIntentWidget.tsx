@@ -15,7 +15,7 @@ export interface PurchaseIntentWidgetProps {
 
 export const PurchaseIntentWidget: React.FC<PurchaseIntentWidgetProps> = ({
   entityId = 'ENT-PR08-001',
-  title = 'AI purchase-intent and real-time conversion probability prediction engine',
+  title = "AI purchase-intent and real-time conversion probability prediction engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

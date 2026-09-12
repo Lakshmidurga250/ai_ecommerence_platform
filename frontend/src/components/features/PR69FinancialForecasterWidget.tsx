@@ -15,7 +15,7 @@ export interface FinancialForecasterWidgetProps {
 
 export const FinancialForecasterWidget: React.FC<FinancialForecasterWidgetProps> = ({
   entityId = 'ENT-PR69-001',
-  title = 'Holistic enterprise sales, revenue, and net profit predictive forecasting engine',
+  title = "Holistic enterprise sales, revenue, and net profit predictive forecasting engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

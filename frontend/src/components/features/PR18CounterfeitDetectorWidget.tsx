@@ -15,7 +15,7 @@ export interface CounterfeitDetectorWidgetProps {
 
 export const CounterfeitDetectorWidget: React.FC<CounterfeitDetectorWidgetProps> = ({
   entityId = 'ENT-PR18-001',
-  title = 'AI counterfeit-product detection, brand classification, and duplicate matching',
+  title = "AI counterfeit-product detection, brand classification, and duplicate matching",
   initialValue = 100,
   onActionTriggered,
 }) => {

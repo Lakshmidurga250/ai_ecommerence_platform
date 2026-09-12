@@ -15,7 +15,7 @@ export interface FacetedFilterEngineWidgetProps {
 
 export const FacetedFilterEngineWidget: React.FC<FacetedFilterEngineWidgetProps> = ({
   entityId = 'ENT-PR80-001',
-  title = 'Faceted search engine with dynamic brand, price range, rating, and custom attribute filters',
+  title = "Faceted search engine with dynamic brand, price range, rating, and custom attribute filters",
   initialValue = 100,
   onActionTriggered,
 }) => {

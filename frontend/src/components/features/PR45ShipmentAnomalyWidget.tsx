@@ -15,7 +15,7 @@ export interface ShipmentAnomalyWidgetProps {
 
 export const ShipmentAnomalyWidget: React.FC<ShipmentAnomalyWidgetProps> = ({
   entityId = 'ENT-PR45-001',
-  title = 'Shipment in-transit anomaly detection and proactive delivery-delay alert engine',
+  title = "Shipment in-transit anomaly detection and proactive delivery-delay alert engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

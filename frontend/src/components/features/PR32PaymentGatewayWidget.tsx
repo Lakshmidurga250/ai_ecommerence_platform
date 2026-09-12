@@ -15,7 +15,7 @@ export interface PaymentGatewayWidgetProps {
 
 export const PaymentGatewayWidget: React.FC<PaymentGatewayWidgetProps> = ({
   entityId = 'ENT-PR32-001',
-  title = 'Comprehensive payment simulation gateway supporting UPI, Cards, NetBanking, and Wallets',
+  title = "Comprehensive payment simulation gateway supporting UPI, Cards, NetBanking, and Wallets",
   initialValue = 100,
   onActionTriggered,
 }) => {

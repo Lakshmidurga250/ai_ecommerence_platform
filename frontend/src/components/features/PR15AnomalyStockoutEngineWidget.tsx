@@ -15,7 +15,7 @@ export interface AnomalyStockoutEngineWidgetProps {
 
 export const AnomalyStockoutEngineWidget: React.FC<AnomalyStockoutEngineWidgetProps> = ({
   entityId = 'ENT-PR15-001',
-  title = 'AI demand anomaly detection, stockout risk, and overstock prediction suite',
+  title = "AI demand anomaly detection, stockout risk, and overstock prediction suite",
   initialValue = 100,
   onActionTriggered,
 }) => {

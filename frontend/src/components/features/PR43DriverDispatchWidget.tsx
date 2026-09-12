@@ -15,7 +15,7 @@ export interface DriverDispatchWidgetProps {
 
 export const DriverDispatchWidget: React.FC<DriverDispatchWidgetProps> = ({
   entityId = 'ENT-PR43-001',
-  title = 'Delivery agent fleet management and intelligent driver assignment dispatcher',
+  title = "Delivery agent fleet management and intelligent driver assignment dispatcher",
   initialValue = 100,
   onActionTriggered,
 }) => {

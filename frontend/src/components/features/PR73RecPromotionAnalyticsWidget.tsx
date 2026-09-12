@@ -15,7 +15,7 @@ export interface RecPromotionAnalyticsWidgetProps {
 
 export const RecPromotionAnalyticsWidget: React.FC<RecPromotionAnalyticsWidgetProps> = ({
   entityId = 'ENT-PR73-001',
-  title = 'Recommendation widget revenue attribution, click-through evaluation, and coupon ROI analytics',
+  title = "Recommendation widget revenue attribution, click-through evaluation, and coupon ROI analytics",
   initialValue = 100,
   onActionTriggered,
 }) => {

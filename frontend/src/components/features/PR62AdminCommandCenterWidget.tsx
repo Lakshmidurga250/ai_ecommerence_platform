@@ -15,7 +15,7 @@ export interface AdminCommandCenterWidgetProps {
 
 export const AdminCommandCenterWidget: React.FC<AdminCommandCenterWidgetProps> = ({
   entityId = 'ENT-PR62-001',
-  title = 'Admin executive command center with real-time sales, orders, user activity, and stock streams',
+  title = "Admin executive command center with real-time sales, orders, user activity, and stock streams",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface BundleOptimizerWidgetProps {
 
 export const BundleOptimizerWidget: React.FC<BundleOptimizerWidgetProps> = ({
   entityId = 'ENT-PR12-001',
-  title = 'AI bundle optimization and multi-tiered value bundle package generator',
+  title = "AI bundle optimization and multi-tiered value bundle package generator",
   initialValue = 100,
   onActionTriggered,
 }) => {

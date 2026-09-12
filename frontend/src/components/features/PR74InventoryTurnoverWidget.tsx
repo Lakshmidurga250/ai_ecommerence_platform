@@ -15,7 +15,7 @@ export interface InventoryTurnoverWidgetProps {
 
 export const InventoryTurnoverWidget: React.FC<InventoryTurnoverWidgetProps> = ({
   entityId = 'ENT-PR74-001',
-  title = 'Marketplace seller performance index, inventory turnover ratio, and days-of-inventory-on-hand (DOH)',
+  title = "Marketplace seller performance index, inventory turnover ratio, and days-of-inventory-on-hand (DOH)",
   initialValue = 100,
   onActionTriggered,
 }) => {

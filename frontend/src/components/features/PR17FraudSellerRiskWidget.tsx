@@ -15,7 +15,7 @@ export interface FraudSellerRiskWidgetProps {
 
 export const FraudSellerRiskWidget: React.FC<FraudSellerRiskWidgetProps> = ({
   entityId = 'ENT-PR17-001',
-  title = 'AI multi-factor fraud-risk scoring and seller operational risk classifier',
+  title = "AI multi-factor fraud-risk scoring and seller operational risk classifier",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface QueryIntelligenceWidgetProps {
 
 export const QueryIntelligenceWidget: React.FC<QueryIntelligenceWidgetProps> = ({
   entityId = 'ENT-PR78-001',
-  title = 'Search typo correction via Damerau-Levenshtein distance, synonym expansion, and stemmer',
+  title = "Search typo correction via Damerau-Levenshtein distance, synonym expansion, and stemmer",
   initialValue = 100,
   onActionTriggered,
 }) => {

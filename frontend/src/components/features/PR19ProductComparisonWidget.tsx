@@ -15,7 +15,7 @@ export interface ProductComparisonWidgetProps {
 
 export const ProductComparisonWidget: React.FC<ProductComparisonWidgetProps> = ({
   entityId = 'ENT-PR19-001',
-  title = 'Smart side-by-side multi-product comparison matrix with spec diffing',
+  title = "Smart side-by-side multi-product comparison matrix with spec diffing",
   initialValue = 100,
   onActionTriggered,
 }) => {

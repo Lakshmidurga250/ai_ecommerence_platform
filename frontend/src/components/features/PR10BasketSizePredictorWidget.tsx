@@ -15,7 +15,7 @@ export interface BasketSizePredictorWidgetProps {
 
 export const BasketSizePredictorWidget: React.FC<BasketSizePredictorWidgetProps> = ({
   entityId = 'ENT-PR10-001',
-  title = 'AI basket-size prediction and order quantity distribution forecasting',
+  title = "AI basket-size prediction and order quantity distribution forecasting",
   initialValue = 100,
   onActionTriggered,
 }) => {

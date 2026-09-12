@@ -15,7 +15,7 @@ export interface AbandonmentDiagnosticsWidgetProps {
 
 export const AbandonmentDiagnosticsWidget: React.FC<AbandonmentDiagnosticsWidgetProps> = ({
   entityId = 'ENT-PR71-001',
-  title = 'Deep cart abandonment analytics, stage-by-stage checkout drop-off, and recovery rate metrics',
+  title = "Deep cart abandonment analytics, stage-by-stage checkout drop-off, and recovery rate metrics",
   initialValue = 100,
   onActionTriggered,
 }) => {

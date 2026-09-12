@@ -15,7 +15,7 @@ export interface DynamicPricingEngineWidgetProps {
 
 export const DynamicPricingEngineWidget: React.FC<DynamicPricingEngineWidgetProps> = ({
   entityId = 'ENT-PR14-001',
-  title = 'AI price-sensitivity modeling and dynamic price recommendation engine',
+  title = "AI price-sensitivity modeling and dynamic price recommendation engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

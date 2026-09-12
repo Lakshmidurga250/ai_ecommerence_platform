@@ -15,7 +15,7 @@ export interface ReviewSummarizerWidgetProps {
 
 export const ReviewSummarizerWidget: React.FC<ReviewSummarizerWidgetProps> = ({
   entityId = 'ENT-PR05-001',
-  title = 'AI review summarization and multi-aspect sentiment extraction engine',
+  title = "AI review summarization and multi-aspect sentiment extraction engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface ReturnsFinancialBiWidgetProps {
 
 export const ReturnsFinancialBiWidget: React.FC<ReturnsFinancialBiWidgetProps> = ({
   entityId = 'ENT-PR75-001',
-  title = 'Comprehensive return-rate root cause analytics and financial refund impact report',
+  title = "Comprehensive return-rate root cause analytics and financial refund impact report",
   initialValue = 100,
   onActionTriggered,
 }) => {

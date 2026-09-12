@@ -15,7 +15,7 @@ export interface FlashSaleEngineWidgetProps {
 
 export const FlashSaleEngineWidget: React.FC<FlashSaleEngineWidgetProps> = ({
   entityId = 'ENT-PR31-001',
-  title = 'High-concurrency flash sale system, deal reservation locks, and countdown timers',
+  title = "High-concurrency flash sale system, deal reservation locks, and countdown timers",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface ClvChurnEngineWidgetProps {
 
 export const ClvChurnEngineWidget: React.FC<ClvChurnEngineWidgetProps> = ({
   entityId = 'ENT-PR09-001',
-  title = 'AI customer churn, next-purchase timing, and Pareto/NBD customer lifetime value predictor',
+  title = "AI customer churn, next-purchase timing, and Pareto/NBD customer lifetime value predictor",
   initialValue = 100,
   onActionTriggered,
 }) => {

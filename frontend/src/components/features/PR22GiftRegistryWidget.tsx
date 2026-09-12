@@ -15,7 +15,7 @@ export interface GiftRegistryWidgetProps {
 
 export const GiftRegistryWidget: React.FC<GiftRegistryWidgetProps> = ({
   entityId = 'ENT-PR22-001',
-  title = 'Event-based gift registry system with AI gift recommendation engine',
+  title = "Event-based gift registry system with AI gift recommendation engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

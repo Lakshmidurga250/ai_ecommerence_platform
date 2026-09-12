@@ -15,7 +15,7 @@ export interface ShoppingAgentWidgetProps {
 
 export const ShoppingAgentWidget: React.FC<ShoppingAgentWidgetProps> = ({
   entityId = 'ENT-PR01-001',
-  title = 'Autonomous AI shopping agent with natural-language conversational reasoning and tool execution',
+  title = "Autonomous AI shopping agent with natural-language conversational reasoning and tool execution",
   initialValue = 100,
   onActionTriggered,
 }) => {

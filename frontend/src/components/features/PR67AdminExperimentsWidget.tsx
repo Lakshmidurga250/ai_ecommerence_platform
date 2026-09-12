@@ -15,7 +15,7 @@ export interface AdminExperimentsWidgetProps {
 
 export const AdminExperimentsWidget: React.FC<AdminExperimentsWidgetProps> = ({
   entityId = 'ENT-PR67-001',
-  title = 'Admin A/B testing experimentation dashboard, statistical significance calculator, and feature flags',
+  title = "Admin A/B testing experimentation dashboard, statistical significance calculator, and feature flags",
   initialValue = 100,
   onActionTriggered,
 }) => {

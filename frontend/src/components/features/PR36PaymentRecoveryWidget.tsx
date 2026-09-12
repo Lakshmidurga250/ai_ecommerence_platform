@@ -15,7 +15,7 @@ export interface PaymentRecoveryWidgetProps {
 
 export const PaymentRecoveryWidget: React.FC<PaymentRecoveryWidgetProps> = ({
   entityId = 'ENT-PR36-001',
-  title = 'Intelligent payment retry system and abandoned checkout failed-payment recovery',
+  title = "Intelligent payment retry system and abandoned checkout failed-payment recovery",
   initialValue = 100,
   onActionTriggered,
 }) => {

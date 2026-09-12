@@ -15,7 +15,7 @@ export interface SubscriptionEngineWidgetProps {
 
 export const SubscriptionEngineWidget: React.FC<SubscriptionEngineWidgetProps> = ({
   entityId = 'ENT-PR26-001',
-  title = 'Recurring product subscriptions and automated replenishment scheduling',
+  title = "Recurring product subscriptions and automated replenishment scheduling",
   initialValue = 100,
   onActionTriggered,
 }) => {

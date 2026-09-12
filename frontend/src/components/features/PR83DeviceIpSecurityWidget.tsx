@@ -15,7 +15,7 @@ export interface DeviceIpSecurityWidgetProps {
 
 export const DeviceIpSecurityWidget: React.FC<DeviceIpSecurityWidgetProps> = ({
   entityId = 'ENT-PR83-001',
-  title = 'Device fingerprinting, IP reputation risk scoring, and token-bucket API rate limiter',
+  title = "Device fingerprinting, IP reputation risk scoring, and token-bucket API rate limiter",
   initialValue = 100,
   onActionTriggered,
 }) => {

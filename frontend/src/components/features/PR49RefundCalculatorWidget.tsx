@@ -15,7 +15,7 @@ export interface RefundCalculatorWidgetProps {
 
 export const RefundCalculatorWidget: React.FC<RefundCalculatorWidgetProps> = ({
   entityId = 'ENT-PR49-001',
-  title = 'Automated refund calculation with deductions, tax adjustments, and instant wallet credit',
+  title = "Automated refund calculation with deductions, tax adjustments, and instant wallet credit",
   initialValue = 100,
   onActionTriggered,
 }) => {

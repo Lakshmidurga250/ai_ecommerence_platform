@@ -15,7 +15,7 @@ export interface SplitPaymentsWidgetProps {
 
 export const SplitPaymentsWidget: React.FC<SplitPaymentsWidgetProps> = ({
   entityId = 'ENT-PR34-001',
-  title = 'Split payments engine allowing multi-instrument checkout (Wallet + Card / UPI)',
+  title = "Split payments engine allowing multi-instrument checkout (Wallet + Card / UPI)",
   initialValue = 100,
   onActionTriggered,
 }) => {

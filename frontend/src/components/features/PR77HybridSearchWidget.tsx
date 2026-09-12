@@ -15,7 +15,7 @@ export interface HybridSearchWidgetProps {
 
 export const HybridSearchWidget: React.FC<HybridSearchWidgetProps> = ({
   entityId = 'ENT-PR77-001',
-  title = 'Hybrid semantic vector search, BM25 lexical ranking, and conversational search dialogue',
+  title = "Hybrid semantic vector search, BM25 lexical ranking, and conversational search dialogue",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface WarehouseAllocatorWidgetProps {
 
 export const WarehouseAllocatorWidget: React.FC<WarehouseAllocatorWidgetProps> = ({
   entityId = 'ENT-PR41-001',
-  title = 'Multi-warehouse fulfillment engine with Dijkstra nearest-stock allocation',
+  title = "Multi-warehouse fulfillment engine with Dijkstra nearest-stock allocation",
   initialValue = 100,
   onActionTriggered,
 }) => {

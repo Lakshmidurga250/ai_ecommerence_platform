@@ -15,7 +15,7 @@ export interface AdminFraudCenterWidgetProps {
 
 export const AdminFraudCenterWidget: React.FC<AdminFraudCenterWidgetProps> = ({
   entityId = 'ENT-PR63-001',
-  title = 'Admin seller audit center and multi-factor fraud detection triage queue',
+  title = "Admin seller audit center and multi-factor fraud detection triage queue",
   initialValue = 100,
   onActionTriggered,
 }) => {

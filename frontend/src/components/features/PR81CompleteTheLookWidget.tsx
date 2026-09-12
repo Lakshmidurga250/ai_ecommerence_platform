@@ -15,7 +15,7 @@ export interface CompleteTheLookWidgetProps {
 
 export const CompleteTheLookWidget: React.FC<CompleteTheLookWidgetProps> = ({
   entityId = 'ENT-PR81-001',
-  title = 'Content-based 'similar products' visual matcher and 'complete the look' bundle synthesizer',
+  title = "Content-based similar products visual matcher and complete the look bundle synthesizer",
   initialValue = 100,
   onActionTriggered,
 }) => {

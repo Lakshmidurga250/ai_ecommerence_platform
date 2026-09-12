@@ -15,7 +15,7 @@ export interface ContentGeneratorWidgetProps {
 
 export const ContentGeneratorWidget: React.FC<ContentGeneratorWidgetProps> = ({
   entityId = 'ENT-PR04-001',
-  title = 'AI content generation suite for automated descriptions, titles, tags, and SEO metadata',
+  title = "AI content generation suite for automated descriptions, titles, tags, and SEO metadata",
   initialValue = 100,
   onActionTriggered,
 }) => {

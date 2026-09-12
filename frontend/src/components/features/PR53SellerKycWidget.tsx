@@ -15,7 +15,7 @@ export interface SellerKycWidgetProps {
 
 export const SellerKycWidget: React.FC<SellerKycWidgetProps> = ({
   entityId = 'ENT-PR53-001',
-  title = 'Seller registration, business document verification, and automated KYC workflow',
+  title = "Seller registration, business document verification, and automated KYC workflow",
   initialValue = 100,
   onActionTriggered,
 }) => {

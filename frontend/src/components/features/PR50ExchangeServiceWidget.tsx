@@ -15,7 +15,7 @@ export interface ExchangeServiceWidgetProps {
 
 export const ExchangeServiceWidget: React.FC<ExchangeServiceWidgetProps> = ({
   entityId = 'ENT-PR50-001',
-  title = 'Product size/color exchange workflow and defective replacement order FSM',
+  title = "Product size/color exchange workflow and defective replacement order FSM",
   initialValue = 100,
   onActionTriggered,
 }) => {

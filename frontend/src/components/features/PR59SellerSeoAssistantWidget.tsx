@@ -15,7 +15,7 @@ export interface SellerSeoAssistantWidgetProps {
 
 export const SellerSeoAssistantWidget: React.FC<SellerSeoAssistantWidgetProps> = ({
   entityId = 'ENT-PR59-001',
-  title = 'Seller SEO assistant, high-conversion keyword recommendations, and AI listing generator',
+  title = "Seller SEO assistant, high-conversion keyword recommendations, and AI listing generator",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface AtoDefenseServiceWidgetProps {
 
 export const AtoDefenseServiceWidget: React.FC<AtoDefenseServiceWidgetProps> = ({
   entityId = 'ENT-PR82-001',
-  title = 'Login attempt velocity monitoring, brute-force defense, and account takeover (ATO) shield',
+  title = "Login attempt velocity monitoring, brute-force defense, and account takeover (ATO) shield",
   initialValue = 100,
   onActionTriggered,
 }) => {

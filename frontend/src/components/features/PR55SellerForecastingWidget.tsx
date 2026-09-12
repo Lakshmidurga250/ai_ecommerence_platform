@@ -15,7 +15,7 @@ export interface SellerForecastingWidgetProps {
 
 export const SellerForecastingWidget: React.FC<SellerForecastingWidgetProps> = ({
   entityId = 'ENT-PR55-001',
-  title = 'Seller sales analytics dashboard with multi-horizon revenue and demand forecasting',
+  title = "Seller sales analytics dashboard with multi-horizon revenue and demand forecasting",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface SellerHealthWidgetProps {
 
 export const SellerHealthWidget: React.FC<SellerHealthWidgetProps> = ({
   entityId = 'ENT-PR54-001',
-  title = 'Seller operational performance scorecard, SLA compliance, and health audit matrix',
+  title = "Seller operational performance scorecard, SLA compliance, and health audit matrix",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface FrequentlyBoughtWidgetProps {
 
 export const FrequentlyBoughtWidget: React.FC<FrequentlyBoughtWidgetProps> = ({
   entityId = 'ENT-PR30-001',
-  title = 'Frequently bought together bundling and geospatial 'popular near you' items',
+  title = "Frequently bought together bundling and geospatial popular near you items",
   initialValue = 100,
   onActionTriggered,
 }) => {

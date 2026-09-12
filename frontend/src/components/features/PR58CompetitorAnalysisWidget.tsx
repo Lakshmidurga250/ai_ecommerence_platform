@@ -15,7 +15,7 @@ export interface CompetitorAnalysisWidgetProps {
 
 export const CompetitorAnalysisWidget: React.FC<CompetitorAnalysisWidgetProps> = ({
   entityId = 'ENT-PR58-001',
-  title = 'Seller market competitor price monitoring and catalog opportunity gap finder',
+  title = "Seller market competitor price monitoring and catalog opportunity gap finder",
   initialValue = 100,
   onActionTriggered,
 }) => {

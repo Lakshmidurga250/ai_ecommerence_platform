@@ -15,7 +15,7 @@ export interface SellerPayoutsWidgetProps {
 
 export const SellerPayoutsWidget: React.FC<SellerPayoutsWidgetProps> = ({
   entityId = 'ENT-PR38-001',
-  title = 'Seller tiered commission calculation and automated payout disbursement scheduler',
+  title = "Seller tiered commission calculation and automated payout disbursement scheduler",
   initialValue = 100,
   onActionTriggered,
 }) => {

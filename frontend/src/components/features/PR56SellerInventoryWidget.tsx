@@ -15,7 +15,7 @@ export interface SellerInventoryWidgetProps {
 
 export const SellerInventoryWidget: React.FC<SellerInventoryWidgetProps> = ({
   entityId = 'ENT-PR56-001',
-  title = 'Seller inventory depletion forecasting, reorder point alerts, and safety stock planner',
+  title = "Seller inventory depletion forecasting, reorder point alerts, and safety stock planner",
   initialValue = 100,
   onActionTriggered,
 }) => {

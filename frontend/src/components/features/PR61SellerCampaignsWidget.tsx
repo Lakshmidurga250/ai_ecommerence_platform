@@ -15,7 +15,7 @@ export interface SellerCampaignsWidgetProps {
 
 export const SellerCampaignsWidget: React.FC<SellerCampaignsWidgetProps> = ({
   entityId = 'ENT-PR61-001',
-  title = 'Seller promotional coupon campaign creator and historical payout financial statements',
+  title = "Seller promotional coupon campaign creator and historical payout financial statements",
   initialValue = 100,
   onActionTriggered,
 }) => {

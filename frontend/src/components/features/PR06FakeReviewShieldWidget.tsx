@@ -15,7 +15,7 @@ export interface FakeReviewShieldWidgetProps {
 
 export const FakeReviewShieldWidget: React.FC<FakeReviewShieldWidgetProps> = ({
   entityId = 'ENT-PR06-001',
-  title = 'AI review quality scoring and Shannon entropy fake-review detection shield',
+  title = "AI review quality scoring and Shannon entropy fake-review detection shield",
   initialValue = 100,
   onActionTriggered,
 }) => {

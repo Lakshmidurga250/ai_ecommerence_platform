@@ -15,7 +15,7 @@ export interface ReturnEligibilityWidgetProps {
 
 export const ReturnEligibilityWidget: React.FC<ReturnEligibilityWidgetProps> = ({
   entityId = 'ENT-PR47-001',
-  title = 'Return request workflow, policy evaluation rules, and window eligibility engine',
+  title = "Return request workflow, policy evaluation rules, and window eligibility engine",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface WalletSystemWidgetProps {
 
 export const WalletSystemWidget: React.FC<WalletSystemWidgetProps> = ({
   entityId = 'ENT-PR33-001',
-  title = 'Customer digital wallet system, store credit ledger, and instant refund wallet',
+  title = "Customer digital wallet system, store credit ledger, and instant refund wallet",
   initialValue = 100,
   onActionTriggered,
 }) => {

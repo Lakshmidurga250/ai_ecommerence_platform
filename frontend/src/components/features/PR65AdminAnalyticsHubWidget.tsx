@@ -15,7 +15,7 @@ export interface AdminAnalyticsHubWidgetProps {
 
 export const AdminAnalyticsHubWidget: React.FC<AdminAnalyticsHubWidgetProps> = ({
   entityId = 'ENT-PR65-001',
-  title = 'Comprehensive admin revenue analytics, category gross margins, and geographic sales heatmaps',
+  title = "Comprehensive admin revenue analytics, category gross margins, and geographic sales heatmaps",
   initialValue = 100,
   onActionTriggered,
 }) => {

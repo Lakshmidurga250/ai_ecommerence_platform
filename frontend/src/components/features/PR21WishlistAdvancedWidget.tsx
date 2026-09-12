@@ -15,7 +15,7 @@ export interface WishlistAdvancedWidgetProps {
 
 export const WishlistAdvancedWidget: React.FC<WishlistAdvancedWidgetProps> = ({
   entityId = 'ENT-PR21-001',
-  title = 'Multiple wishlists, custom naming, and collaborative shared shopping lists',
+  title = "Multiple wishlists, custom naming, and collaborative shared shopping lists",
   initialValue = 100,
   onActionTriggered,
 }) => {

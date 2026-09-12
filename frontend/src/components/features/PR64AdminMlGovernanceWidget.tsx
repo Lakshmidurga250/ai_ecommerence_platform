@@ -15,7 +15,7 @@ export interface AdminMlGovernanceWidgetProps {
 
 export const AdminMlGovernanceWidget: React.FC<AdminMlGovernanceWidgetProps> = ({
   entityId = 'ENT-PR64-001',
-  title = 'Admin AI model governance center, real-time inference latency, and PSI statistical drift monitoring',
+  title = "Admin AI model governance center, real-time inference latency, and PSI statistical drift monitoring",
   initialValue = 100,
   onActionTriggered,
 }) => {

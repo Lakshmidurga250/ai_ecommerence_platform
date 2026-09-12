@@ -15,7 +15,7 @@ export interface PriceDropAlertsWidgetProps {
 
 export const PriceDropAlertsWidget: React.FC<PriceDropAlertsWidgetProps> = ({
   entityId = 'ENT-PR27-001',
-  title = 'Real-time back-in-stock notifications and price-drop customer alerts',
+  title = "Real-time back-in-stock notifications and price-drop customer alerts",
   initialValue = 100,
   onActionTriggered,
 }) => {

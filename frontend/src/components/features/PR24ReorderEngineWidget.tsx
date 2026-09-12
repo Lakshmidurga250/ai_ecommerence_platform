@@ -15,7 +15,7 @@ export interface ReorderEngineWidgetProps {
 
 export const ReorderEngineWidget: React.FC<ReorderEngineWidgetProps> = ({
   entityId = 'ENT-PR24-001',
-  title = 'Smart 'Buy Again' replenishment feed and one-click instant reordering',
+  title = "Smart Buy Again replenishment feed and one-click instant reordering",
   initialValue = 100,
   onActionTriggered,
 }) => {

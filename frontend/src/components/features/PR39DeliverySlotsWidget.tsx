@@ -15,7 +15,7 @@ export interface DeliverySlotsWidgetProps {
 
 export const DeliverySlotsWidget: React.FC<DeliverySlotsWidgetProps> = ({
   entityId = 'ENT-PR39-001',
-  title = 'Customer delivery slot selection with same-day, express, and eco-standard modes',
+  title = "Customer delivery slot selection with same-day, express, and eco-standard modes",
   initialValue = 100,
   onActionTriggered,
 }) => {

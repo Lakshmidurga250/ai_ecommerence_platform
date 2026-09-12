@@ -15,7 +15,7 @@ export interface ShoppingWizardWidgetProps {
 
 export const ShoppingWizardWidget: React.FC<ShoppingWizardWidgetProps> = ({
   entityId = 'ENT-PR20-001',
-  title = 'Interactive 'Best Product for Me' multi-criteria decision wizard',
+  title = "Interactive Best Product for Me multi-criteria decision wizard",
   initialValue = 100,
   onActionTriggered,
 }) => {

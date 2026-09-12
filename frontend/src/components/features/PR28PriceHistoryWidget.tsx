@@ -15,7 +15,7 @@ export interface PriceHistoryWidgetProps {
 
 export const PriceHistoryWidget: React.FC<PriceHistoryWidgetProps> = ({
   entityId = 'ENT-PR28-001',
-  title = 'Historical price tracking time-series, interactive charts, and availability alerts',
+  title = "Historical price tracking time-series, interactive charts, and availability alerts",
   initialValue = 100,
   onActionTriggered,
 }) => {

@@ -15,7 +15,7 @@ export interface PodSimulationWidgetProps {
 
 export const PodSimulationWidget: React.FC<PodSimulationWidgetProps> = ({
   entityId = 'ENT-PR46-001',
-  title = 'Proof-of-delivery (POD) simulation with OTP verification and digital signature capture',
+  title = "Proof-of-delivery (POD) simulation with OTP verification and digital signature capture",
   initialValue = 100,
   onActionTriggered,
 }) => {

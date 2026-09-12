@@ -15,7 +15,7 @@ export interface GiftCardServiceWidgetProps {
 
 export const GiftCardServiceWidget: React.FC<GiftCardServiceWidgetProps> = ({
   entityId = 'ENT-PR23-001',
-  title = 'Digital gift card purchasing, recipient scheduling, and store credit balance',
+  title = "Digital gift card purchasing, recipient scheduling, and store credit balance",
   initialValue = 100,
   onActionTriggered,
 }) => {
