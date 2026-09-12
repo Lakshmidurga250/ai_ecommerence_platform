@@ -20,7 +20,7 @@ def test_personalized_coupons_metric_computations():
     """Validate domain calculation logic across sample inputs."""
     svc = get_personalized_coupons_service()
     res = svc.compute_domain_metric_1('TEST-ENT-01', [10.0, 20.0, 30.0, 40.0])
-    assert res['status'] != 'EMPTY'
+    assert res.get('status') != 'EMPTY'
     assert res['sample_size'] == 4
     assert res['normalized_score'] >= 0.0
 
