@@ -76,12 +76,24 @@ class ChurnRiskProfile(BaseModel):
 class ShoppingAssistantRequest(BaseModel):
     user_message: str
     user_id: Optional[int] = None
-    conversation_history: List[Dict[str, str]] = []
+    session_id: Optional[str] = None
+    conversation_history: List[Dict[str, Any]] = []
+    context: Optional[Dict[str, Any]] = None
 
 
 class ShoppingAssistantResponse(BaseModel):
     assistant_reply: str
-    parsed_intent: ParsedSearchIntent
+    parsed_intent: Optional[ParsedSearchIntent] = None
     grounded_products: List[ProductRead] = []
-    confidence_score: float
-    reasoning: str
+    confidence_score: float = 0.95
+    reasoning: str = ""
+    session_id: Optional[str] = None
+    intent: Optional[str] = None
+    action_pills: List[Dict[str, Any]] = []
+    comparison_table: Optional[Dict[str, Any]] = None
+    cart_result: Optional[Dict[str, Any]] = None
+    order_result: Optional[Dict[str, Any]] = None
+    bundle: Optional[Dict[str, Any]] = None
+    extracted_requirements: Optional[Dict[str, Any]] = None
+    evaluation: Optional[Dict[str, Any]] = None
+

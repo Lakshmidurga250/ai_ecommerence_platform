@@ -7,6 +7,7 @@ import { ProductCard } from '../components/ProductCard';
 import { RecommendationSection } from '../components/RecommendationSection';
 import { AIChatAssistantModal } from '../components/AIChatAssistantModal';
 import { RecentlyViewedBar } from '../components/RecentlyViewedBar';
+import { NextBestActionBanner } from '../components/NextBestActionBanner';
 
 
 export const HomePage: React.FC = () => {
@@ -19,7 +20,7 @@ export const HomePage: React.FC = () => {
     const fetchData = async () => {
       try {
         const [prods, cats] = await Promise.all([
-          api.getProducts({ is_featured: true, limit: 8 }),
+          api.getProducts({ is_featured: true, limit: 12 }),
           api.getCategories(),
         ]);
         setFeaturedProducts(prods);
@@ -134,6 +135,9 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mb-2 mt-4">
+        <NextBestActionBanner />
+      </div>
 
       {/* Categories Bar */}
       <section className="py-8 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">

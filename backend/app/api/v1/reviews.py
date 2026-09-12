@@ -10,6 +10,7 @@ from app.dependencies.auth import get_current_user
 from app.models.user import User
 from app.schemas.review import ReviewCreate, ReviewRead
 from app.services.review_service import ReviewService
+from ai.sentiment.review_intelligence import ReviewIntelligenceService
 
 router = APIRouter(prefix="/reviews", tags=["Reviews & Ratings"])
 
@@ -23,6 +24,15 @@ def get_product_reviews(
 ):
     """Retrieve approved customer reviews with sentiment analysis scores."""
     return ReviewService.list_product_reviews(db, product_id, skip, limit)
+
+
+@router.get("/product/{product_id}/intelligence-summary")
+def get_product_review_intelligence(
+    product_id: int,
+    db: Session = Depends(get_db)
+):
+    """Generates aspect-based sentiment, pros/cons, and review consensus summary."""
+    return ReviewIntelligenceService.generate_product_summary(db, product_id)
 
 
 @router.post("/", response_model=ReviewRead, status_code=status.HTTP_201_CREATED)

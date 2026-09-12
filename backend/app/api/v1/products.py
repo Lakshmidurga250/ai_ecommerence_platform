@@ -18,32 +18,42 @@ router = APIRouter(prefix="/products", tags=["Product Catalog"])
 @router.get("/", response_model=List[ProductRead])
 def list_products(
     category_id: Optional[int] = Query(None, description="Filter by category ID"),
+    category: Optional[str] = Query(None, description="Filter by category slug or name"),
     brand_id: Optional[int] = Query(None, description="Filter by brand ID"),
+    brand: Optional[str] = Query(None, description="Filter by brand slug or name"),
     seller_id: Optional[int] = Query(None, description="Filter by seller ID"),
     min_price: Optional[float] = Query(None, ge=0, description="Minimum price filter"),
     max_price: Optional[float] = Query(None, ge=0, description="Maximum price filter"),
     min_rating: Optional[float] = Query(None, ge=0, le=5, description="Minimum customer rating"),
+    in_stock: Optional[bool] = Query(None, description="Filter only in-stock items (alias for in_stock_only)"),
     in_stock_only: bool = Query(False, description="Exclude out-of-stock items"),
-    sort_by: str = Query("featured", description="Sorting: featured, price_asc, price_desc, rating, popular, newest"),
+    sort: Optional[str] = Query(None, description="Sorting parameter alias for sort_by"),
+    sort_by: str = Query("featured", description="Sorting: featured, price_asc, price_desc, rating, popular, newest, discount_desc"),
     skip: int = Query(0, ge=0),
-    limit: int = Query(50, ge=1, le=100),
+    limit: int = Query(50, ge=1, le=250),
     db: Session = Depends(get_db)
 ):
     """Retrieve filtered, sorted, and paginated products."""
+    effective_sort = sort or sort_by
+    effective_in_stock = in_stock if in_stock is not None else in_stock_only
+
     products, _ = ProductService.list_products(
         db=db,
         category_id=category_id,
+        category_slug=category,
         brand_id=brand_id,
+        brand_slug=brand,
         seller_id=seller_id,
         min_price=min_price,
         max_price=max_price,
         min_rating=min_rating,
-        in_stock_only=in_stock_only,
-        sort_by=sort_by,
+        in_stock_only=effective_in_stock,
+        sort_by=effective_sort,
         skip=skip,
         limit=limit
     )
     return products
+
 
 
 @router.get("/{product_id}", response_model=ProductRead)

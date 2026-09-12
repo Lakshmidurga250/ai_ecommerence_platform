@@ -185,6 +185,11 @@ class SearchService:
         logger.info(f"Synchronized search index with {len(products)} active products")
 
     @staticmethod
+    def search_products(db: Session, query: str = "", limit: int = 10, **kwargs):
+        """Convenience wrapper around search."""
+        return SearchService.search(db, query_text=query, limit=limit)
+
+    @staticmethod
     def search(
         db: Session,
         query_text: str,

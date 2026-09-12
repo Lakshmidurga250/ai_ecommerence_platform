@@ -8,6 +8,9 @@ import { RecommendationSection } from '../components/RecommendationSection';
 import { ProductBundleCard } from '../components/ProductBundleCard';
 import { ProductQnASection } from '../components/ProductQnASection';
 import { RecentlyViewedBar } from '../components/RecentlyViewedBar';
+import { AIReviewSummaryCard } from '../components/AIReviewSummaryCard';
+import { CrossSellUpsellSection } from '../components/CrossSellUpsellSection';
+import { OutfitBundleModal } from '../components/OutfitBundleModal';
 import { Bell } from 'lucide-react';
 
 export const ProductDetailPage: React.FC = () => {
@@ -20,6 +23,7 @@ export const ProductDetailPage: React.FC = () => {
   const [bundles, setBundles] = useState<any[]>([]);
   const [alertTargetPrice, setAlertTargetPrice] = useState<string>('');
   const [showAlertModal, setShowAlertModal] = useState<boolean>(false);
+  const [showOutfitModal, setShowOutfitModal] = useState<boolean>(false);
   const [alertSuccess, setAlertSuccess] = useState<string | null>(null);
   const { addItem, loading: cartLoading } = useCart();
 
@@ -186,13 +190,14 @@ export const ProductDetailPage: React.FC = () => {
             <div>
               <div className="flex items-baseline gap-3">
                 <span className="text-3xl font-black text-slate-900 dark:text-white">
-                  ${Number(product.price).toFixed(2)}
+                  ₹{Number(product.price).toLocaleString('en-IN')}
                 </span>
                 {product.compare_at_price && product.compare_at_price > product.price && (
                   <span className="text-base text-slate-400 line-through">
-                    ${Number(product.compare_at_price).toFixed(2)}
+                    ₹{Number(product.compare_at_price).toLocaleString('en-IN')}
                   </span>
                 )}
+
                 {product.discount_percent > 0 && (
                   <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-rose-500 text-white">
                     Save {product.discount_percent}%
@@ -264,6 +269,15 @@ export const ProductDetailPage: React.FC = () => {
               <Bell className="w-4 h-4 text-amber-500" />
               <span className="hidden sm:inline">Price Alert</span>
             </button>
+
+            <button
+              onClick={() => setShowOutfitModal(true)}
+              className="py-3.5 px-4 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-indigo-500/25 transition-all"
+              title="AI Outfit & Setup Generator"
+            >
+              <Sparkles className="w-4 h-4 text-amber-300" />
+              <span className="hidden sm:inline">AI Outfit & Setup</span>
+            </button>
           </div>
 
           {/* Value Props */}
@@ -309,6 +323,16 @@ export const ProductDetailPage: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* AI Review Intelligence & Consensus */}
+      <AIReviewSummaryCard productId={product.id} />
+
+      {/* AI Cross-Sell & Upsell Engine */}
+      <CrossSellUpsellSection
+        productId={product.id}
+        productName={product.name}
+        onAddToCart={(id) => addItem(id, 1)}
+      />
 
       {/* Grounded Recommendations for this Product */}
       <RecommendationSection
@@ -368,6 +392,17 @@ export const ProductDetailPage: React.FC = () => {
             </form>
           </div>
         </div>
+      )}
+
+      {/* AI Outfit & Setup Generator Modal */}
+      {product && (
+        <OutfitBundleModal
+          productId={product.id}
+          productName={product.name}
+          isOpen={showOutfitModal}
+          onClose={() => setShowOutfitModal(false)}
+          onAddBundleToCart={(ids) => ids.forEach((id) => addItem(id, 1))}
+        />
       )}
     </div>
   );

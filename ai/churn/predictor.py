@@ -3,7 +3,7 @@ Customer Churn Prediction and Retention Intelligence Pipeline.
 Models dormancy risk using recency decay, interaction drop-off, and engagement signals.
 """
 
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 import numpy as np
 
 
@@ -58,6 +58,31 @@ class ChurnPredictor:
         return {
             "churn_probability": churn_prob,
             "risk_category": risk_category,
+            "churn_risk_level": risk_category,
             "contributing_factors": contributing_factors or ["Normal engaged purchasing frequency"],
             "suggested_retention_action": retention_action
         }
+
+    @classmethod
+    def predict_churn(
+        cls,
+        recency_days: int = 30,
+        purchase_count: int = 1,
+        total_spend: float = 1000.0,
+        days_since_last_purchase: Optional[int] = None,
+        total_orders: Optional[int] = None,
+        **kwargs
+    ) -> Dict[str, Any]:
+        """
+        Alias for evaluate_churn_risk supporting named parameters from customer intelligence services.
+        """
+        days_p = days_since_last_purchase if days_since_last_purchase is not None else recency_days
+        orders = total_orders if total_orders is not None else purchase_count
+        return cls.evaluate_churn_risk(
+            days_since_last_purchase=days_p,
+            total_orders=orders,
+            days_since_last_login=kwargs.get("days_since_last_login", 5),
+            cart_abandonment_count=kwargs.get("cart_abandonment_count", 0),
+            reviews_count=kwargs.get("reviews_count", 0),
+            wishlist_count=kwargs.get("wishlist_count", 0)
+        )

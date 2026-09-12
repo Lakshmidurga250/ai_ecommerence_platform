@@ -26,6 +26,18 @@ from app.api.v1.admin import router as admin_router
 from app.api.v1.reports import router as reports_router
 from app.api.v1.customer_expansion import router as customer_expansion_router
 from app.api.v1.marketplace import router as marketplace_router
+from app.api.v1.visual_search import router as visual_search_router
+from app.api.v1.customer_intelligence import router as customer_intelligence_router
+from app.api.v1.inventory_intelligence import router as inventory_intelligence_router
+from app.api.v1.fraud_center import router as fraud_center_router
+from app.api.v1.logistics import router as logistics_router
+from app.api.v1.events import router as events_router
+from app.api.v1.mlops import router as mlops_router
+from app.api.v1.experiments import router as experiments_router
+from app.api.v1.loyalty import router as loyalty_router
+from app.api.v1.recommendations_v3 import router as recommendations_v3_router
+from app.api.v1.commerce_intelligence import router as commerce_intelligence_router
+from app.api.v1.analytics_v3 import router as analytics_v3_router
 
 api_v1_router = APIRouter(prefix="/api/v1")
 
@@ -51,3 +63,15 @@ api_v1_router.include_router(admin_router)
 api_v1_router.include_router(reports_router)
 api_v1_router.include_router(customer_expansion_router)
 api_v1_router.include_router(marketplace_router)
+api_v1_router.include_router(visual_search_router)
+api_v1_router.include_router(customer_intelligence_router)
+api_v1_router.include_router(inventory_intelligence_router)
+api_v1_router.include_router(fraud_center_router)
+api_v1_router.include_router(logistics_router)
+api_v1_router.include_router(events_router)
+api_v1_router.include_router(mlops_router)
+api_v1_router.include_router(experiments_router)
+api_v1_router.include_router(loyalty_router)
+api_v1_router.include_router(recommendations_v3_router)
+api_v1_router.include_router(commerce_intelligence_router)
+api_v1_router.include_router(analytics_v3_router)

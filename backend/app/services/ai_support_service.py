@@ -13,6 +13,7 @@ from app.models.order import Order, OrderItem, OrderStatus
 from app.models.product import Product
 from app.services.order_orchestration_service import OrderOrchestrationService
 from app.services.search_service import SearchService
+from ai.shopping_agent.agent import AIShoppingAgent
 
 
 class AISupportService:
@@ -32,7 +33,27 @@ class AISupportService:
         # Sentiment Analysis
         sentiment = AISupportService._detect_sentiment(normalized)
 
-        # Intent Classification
+        # Check if query is a shopping, discovery, budget, or comparison request
+        shopping_agent_intent = AIShoppingAgent._classify_intent(normalized)
+        if shopping_agent_intent in [
+            "DISCOVER_PRODUCTS", "COMPARE_PRODUCTS", "FILTER_BUDGET",
+            "CHECK_SPECIFICATION", "PRODUCT_SEARCH", "COMPARISON", "BUDGET_DISCOVERY", "BESTSELLER"
+        ]:
+            res = AIShoppingAgent.process_message(db, message, user_id, context)
+            res["sentiment"] = sentiment
+            res["reply"] = res.get("reply_text") or res.get("reply", "")
+            res["reply_text"] = res["reply"]
+            res["suggested_actions"] = res.get("action_pills") or res.get("suggested_actions") or []
+            res["escalate_to_human"] = sentiment == "FRUSTRATED" or "agent" in normalized or "human" in normalized
+            if res["escalate_to_human"]:
+                res.setdefault("suggested_actions", []).insert(0, {
+                    "label": "Escalate to Human Agent",
+                    "action": "CREATE_SUPPORT_TICKET",
+                    "payload": {"priority": "HIGH"}
+                })
+            return res
+
+        # Intent Classification for general support
         intent = AISupportService._classify_intent(normalized)
 
         # Grounded response generation

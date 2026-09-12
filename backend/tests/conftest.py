@@ -15,6 +15,7 @@ sys.path.insert(0, str(BASE_DIR / "backend"))
 from app.main import app
 from app.core.database import SessionLocal, Base, engine
 from database.seeds.seed_data import seed_database
+from database.seeds.seed_catalog_expansion import seed_expanded_catalog
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -22,6 +23,7 @@ def setup_test_database():
     """Ensure database schema and seed data are loaded for tests."""
     Base.metadata.create_all(bind=engine)
     seed_database()
+    seed_expanded_catalog()
     yield
 
 

@@ -10,7 +10,7 @@ Provides business logic for:
 - Inventory Stock Ledger
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict, Any, Optional
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
@@ -209,9 +209,10 @@ class CatalogExpansionService:
         ).first()
 
         if existing:
-            existing.viewed_at = datetime.utcnow()
+            existing.viewed_at = datetime.now(timezone.utc).replace(tzinfo=None)
         else:
             rv = UserRecentlyViewed(user_id=user_id, product_id=product_id)
+
             db.add(rv)
         db.commit()
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { DollarSign, Package, TrendingUp, AlertTriangle, Cpu, BarChart3, Plus, ArrowUpRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
+import { DynamicPricingWidget } from '../components/DynamicPricingWidget';
 
 export const SellerDashboardPage: React.FC = () => {
   const { user, isSeller, isAdmin } = useAuth();
@@ -256,6 +257,9 @@ export const SellerDashboardPage: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* AI Dynamic Pricing & Elasticity Engine */}
+      <DynamicPricingWidget />
 
       {/* Catalog Listings Table */}
       <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">

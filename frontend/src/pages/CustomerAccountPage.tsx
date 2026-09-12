@@ -3,6 +3,7 @@ import { User, Bell, MapPin, Package, Shield, Award, Sparkles, Trash2, ArrowRigh
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
 import { Link } from 'react-router-dom';
+import { Customer360Card } from '../components/Customer360Card';
 
 export const CustomerAccountPage: React.FC = () => {
   const { user } = useAuth();
@@ -143,6 +144,9 @@ export const CustomerAccountPage: React.FC = () => {
                   <p className="text-base font-bold text-slate-900 dark:text-white mt-1">30-Day Hassle Free Returns</p>
                 </div>
               </div>
+
+              {/* AI Customer 360 & Loyalty Panel */}
+              <Customer360Card />
             </div>
           )}
 

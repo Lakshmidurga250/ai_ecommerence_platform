@@ -22,6 +22,14 @@ from app.models.catalog_expansion import (
     ReviewHelpfulnessVote, UserRecentlyViewed, PriceAlert,
     InventoryLedger, SellerPayout
 )
+from app.models.platform_expansion_v2 import (
+    ABExperiment, ABExperimentEvent, LoyaltyAccount, LoyaltyTransaction,
+    DynamicPriceRecommendation, ShipmentRouteOptimization, ModelDriftLog, ProductQualityAudit
+)
+from app.models.data_warehouse_models import (
+    DimDate, DimCustomer, DimProduct, DimSeller,
+    FactSales, FactProductViews, FactOrderReturns
+)
 from app.models.audit import AuditLog
 
 __all__ = [
@@ -78,5 +86,20 @@ __all__ = [
     "UserRecentlyViewed",
     "PriceAlert",
     "InventoryLedger",
-    "SellerPayout"
+    "SellerPayout",
+    "ABExperiment",
+    "ABExperimentEvent",
+    "LoyaltyAccount",
+    "LoyaltyTransaction",
+    "DynamicPriceRecommendation",
+    "ShipmentRouteOptimization",
+    "ModelDriftLog",
+    "ProductQualityAudit",
+    "DimDate",
+    "DimCustomer",
+    "DimProduct",
+    "DimSeller",
+    "FactSales",
+    "FactProductViews",
+    "FactOrderReturns"
 ]

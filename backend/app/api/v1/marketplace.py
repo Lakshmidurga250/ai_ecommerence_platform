@@ -17,6 +17,7 @@ from app.models.seller import Seller
 from app.services.marketplace_service import MarketplaceService
 from app.services.order_orchestration_service import OrderOrchestrationService
 from app.services.ai_support_service import AISupportService
+from ai.pricing.dynamic_pricing_engine import DynamicPricingEngine
 
 
 router = APIRouter(prefix="/marketplace", tags=["Marketplace & Order Orchestration"])
@@ -200,3 +201,23 @@ def ai_support_chat_inquiry(
         user_id=user_id,
         context=data.context
     )
+
+
+@router.get("/pricing-recommendations")
+def get_pricing_recommendations(
+    seller: Seller = Depends(get_current_seller),
+    limit: int = Query(10, ge=1, le=50),
+    db: Session = Depends(get_db)
+):
+    """Retrieves AI dynamic pricing elasticity recommendations for the authenticated seller."""
+    return DynamicPricingEngine.evaluate_seller_catalog(db, seller.id, limit=limit)
+
+
+@router.get("/pricing-recommendations/product/{product_id}")
+def get_product_pricing_recommendation(
+    product_id: int,
+    db: Session = Depends(get_db)
+):
+    """Calculates optimal price, expected demand shift, and elasticity for a single product."""
+    return DynamicPricingEngine.evaluate_product_pricing(db, product_id)
+

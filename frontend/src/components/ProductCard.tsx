@@ -148,11 +148,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="flex items-baseline justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
           <div className="flex items-baseline gap-2">
             <span className="text-lg font-extrabold text-slate-900 dark:text-white">
-              ${Number(product.price).toFixed(2)}
+              ₹{Number(product.price).toLocaleString('en-IN')}
             </span>
             {product.compare_at_price && product.compare_at_price > product.price && (
               <span className="text-xs text-slate-400 line-through">
-                ${Number(product.compare_at_price).toFixed(2)}
+                ₹{Number(product.compare_at_price).toLocaleString('en-IN')}
               </span>
             )}
           </div>
@@ -160,6 +160,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {product.stock > 0 ? 'In Stock' : 'Out of Stock'}
           </span>
         </div>
+
       </div>
     </div>
   );

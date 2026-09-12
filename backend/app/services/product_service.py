@@ -178,7 +178,9 @@ class ProductService:
     def list_products(
         db: Session,
         category_id: Optional[int] = None,
+        category_slug: Optional[str] = None,
         brand_id: Optional[int] = None,
+        brand_slug: Optional[str] = None,
         seller_id: Optional[int] = None,
         min_price: Optional[float] = None,
         max_price: Optional[float] = None,
@@ -192,8 +194,18 @@ class ProductService:
 
         if category_id:
             query = query.filter(Product.category_id == category_id)
+        elif category_slug:
+            query = query.join(Category, Product.category_id == Category.id).filter(
+                (Category.slug == category_slug) | (Category.name == category_slug)
+            )
+
         if brand_id:
             query = query.filter(Product.brand_id == brand_id)
+        elif brand_slug:
+            query = query.join(Brand, Product.brand_id == Brand.id).filter(
+                (Brand.slug == brand_slug) | (Brand.name == brand_slug)
+            )
+
         if seller_id:
             query = query.filter(Product.seller_id == seller_id)
         if min_price is not None:
@@ -211,14 +223,17 @@ class ProductService:
             query = query.order_by(asc(Product.price))
         elif sort_by == "price_desc":
             query = query.order_by(desc(Product.price))
-        elif sort_by == "rating":
+        elif sort_by == "rating" or sort_by == "rating_desc":
             query = query.order_by(desc(Product.rating))
-        elif sort_by == "popular":
+        elif sort_by == "popular" or sort_by == "sales_desc":
             query = query.order_by(desc(Product.sales_count))
         elif sort_by == "newest":
             query = query.order_by(desc(Product.created_at))
+        elif sort_by == "discount_desc":
+            query = query.order_by(desc(Product.discount_percent))
         else:
             query = query.order_by(desc(Product.is_featured), desc(Product.rating))
 
         products = query.offset(skip).limit(limit).all()
         return products, total
+
