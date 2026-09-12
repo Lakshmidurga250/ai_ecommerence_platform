@@ -90,7 +90,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_2(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -118,7 +118,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_3(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -146,7 +146,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_4(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -174,7 +174,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_5(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -202,7 +202,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_6(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -230,7 +230,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_7(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -258,7 +258,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_8(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -286,7 +286,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_9(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -314,7 +314,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_10(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -342,7 +342,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_11(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -370,7 +370,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_12(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -398,7 +398,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_13(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -426,7 +426,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_14(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -454,7 +454,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_15(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -482,7 +482,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_16(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -510,7 +510,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_17(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -538,7 +538,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_18(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -566,7 +566,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_19(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -594,7 +594,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_20(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -622,7 +622,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_21(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -650,7 +650,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_22(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -678,7 +678,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_23(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -706,7 +706,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_24(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -734,7 +734,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_25(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -762,7 +762,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_26(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -790,7 +790,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_27(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -818,7 +818,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_28(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -846,7 +846,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_29(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -874,7 +874,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_30(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -902,7 +902,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_31(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -930,7 +930,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_32(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -958,7 +958,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_33(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -986,7 +986,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_34(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -1014,7 +1014,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def compute_domain_metric_35(self, entity_id: str, values: List[float], weights: Optional[List[float]] = None) -> Dict[str, Any]:
@@ -1042,7 +1042,7 @@ class GiftRegistryService:
             "latency_ms": round((time.perf_counter() - start_time) * 1000, 3),
             "computed_at": datetime.utcnow().isoformat(),
         }
-        self._cache[f"{entity_id}_metric_{method_idx}"] = record
+        self._cache[f"{entity_id}_metric_val"] = record
         return record
 
     def evaluate_business_rules(self, request: GiftRegistryServiceRequest) -> GiftRegistryServiceResponse:
