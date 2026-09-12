@@ -6,7 +6,7 @@ Verifies domain service calculations, AI model probability calibrations, and see
 
 import pytest
 from backend.app.domain.return_reason_classification_risk_predictor import ReturnReasonNlpService, get_return_reason_nlp_service, ReturnReasonNlpServiceRequest
-from ai.return.return_reason_classification_risk_predictor_ai_model import ReturnReasonNlpAIModel, get_return_reason_nlp_ai_model
+from ai.returns.return_reason_classification_risk_predictor_ai_model import ReturnReasonNlpAIModel, get_return_reason_nlp_ai_model
 from database.seeds.return_reason_classification_risk_predictor_seed import get_seed_data_pr_48, seed_pr_48_to_database
 
 def test_return_reason_nlp_service_initialization():

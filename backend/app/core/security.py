@@ -55,3 +55,9 @@ def decode_token(token: str) -> Optional[Dict[str, Any]]:
         return payload
     except JWTError:
         return None
+
+
+# Standard aliases for FastAPI ecosystem compatibility
+get_password_hash = hash_password
+verify_token = decode_token
+

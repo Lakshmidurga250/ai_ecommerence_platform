@@ -6,7 +6,7 @@ Verifies domain service calculations, AI model probability calibrations, and see
 
 import pytest
 from backend.app.domain.return_pickup_scheduling_reverse_tracking import ReverseLogisticsService, get_reverse_logistics_service, ReverseLogisticsServiceRequest
-from ai.return.return_pickup_scheduling_reverse_tracking_ai_model import ReverseLogisticsAIModel, get_reverse_logistics_ai_model
+from ai.returns.return_pickup_scheduling_reverse_tracking_ai_model import ReverseLogisticsAIModel, get_reverse_logistics_ai_model
 from database.seeds.return_pickup_scheduling_reverse_tracking_seed import get_seed_data_pr_51, seed_pr_51_to_database
 
 def test_reverse_logistics_service_initialization():
