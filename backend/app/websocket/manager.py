@@ -53,3 +53,5 @@ class ConnectionManager:
 
 
 ws_manager = ConnectionManager()
+
+# Topic-based pub/sub broadcast for connected client sockets
