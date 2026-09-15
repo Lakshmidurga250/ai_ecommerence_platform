@@ -78,3 +78,5 @@ class SupportService:
         if status:
             q = q.filter(SupportTicket.status == status)
         return q.order_by(SupportTicket.created_at.desc()).all()
+
+# Support ticket lifecycle finite state machine
