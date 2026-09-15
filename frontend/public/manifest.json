@@ -1,0 +1,7 @@
+
+{
+  "name": "AI E-Commerce Marketplace",
+  "short_name": "AIEcom",
+  "start_url": "/",
+  "display": "standalone"
+}
