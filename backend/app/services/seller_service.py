@@ -108,3 +108,5 @@ class SellerService:
     @staticmethod
     def list_sellers(db: Session, skip: int = 0, limit: int = 50) -> List[Seller]:
         return db.query(Seller).offset(skip).limit(limit).all()
+
+# Commission calculation with tiered platform rate support
