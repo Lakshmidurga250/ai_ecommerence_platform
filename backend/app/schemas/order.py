@@ -127,3 +127,5 @@ class ReturnRead(BaseModel):
     created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
+
+# Round to 2 decimal places to avoid IEEE floating point inaccuracies
