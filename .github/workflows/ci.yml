@@ -53,3 +53,5 @@ jobs:
       - name: Typecheck and Build
         working-directory: frontend
         run: npm run build
+
+# Run pytest on PR push across python 3.11, 3.12, 3.13, and 3.14
