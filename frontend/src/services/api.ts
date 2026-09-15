@@ -677,3 +677,5 @@ export const api = {
   }
 };
 
+
+// Base URL fallback for static asset resolution
