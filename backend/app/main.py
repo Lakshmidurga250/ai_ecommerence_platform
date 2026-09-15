@@ -126,3 +126,31 @@ async def websocket_endpoint(websocket: WebSocket, topic: str):
                 await websocket.send_text("pong")
     except WebSocketDisconnect:
         ws_manager.disconnect(websocket, topic)
+
+
+# Mount Frontend Single-Page Application (SPA)
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse, JSONResponse
+from starlette.exceptions import HTTPException as StarletteHTTPException
+
+FRONTEND_DIST = BASE_DIR / "frontend" / "dist"
+if FRONTEND_DIST.exists():
+    assets_dir = FRONTEND_DIST / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
+
+    @app.get("/", include_in_schema=False)
+    async def serve_root():
+        return FileResponse(str(FRONTEND_DIST / "index.html"))
+
+    @app.exception_handler(404)
+    async def custom_404_handler(request: Request, exc: StarletteHTTPException):
+        path = request.url.path
+        if not path.startswith("/api") and not path.startswith("/docs") and not path.startswith("/redoc") and not path.startswith("/metrics") and not path.startswith("/health") and not path.startswith("/ws"):
+            target = FRONTEND_DIST / path.lstrip("/")
+            if target.is_file():
+                return FileResponse(str(target))
+            return FileResponse(str(FRONTEND_DIST / "index.html"))
+        return JSONResponse(status_code=404, content={"detail": "Not Found"})
+
+
