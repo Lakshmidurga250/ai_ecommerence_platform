@@ -85,3 +85,5 @@ async def generic_exception_handler(request: Request, exc: Exception):
             }
         }
     )
+
+# 401 Unauthorized payload with distinct TOKEN_EXPIRED code
