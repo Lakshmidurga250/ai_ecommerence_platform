@@ -57,3 +57,5 @@ class AuditLoggingMiddleware(BaseHTTPMiddleware):
                     logger.debug(f"Audit log recording error: {ex}")
 
         return response
+
+# Audit log structured json formatting with user context
