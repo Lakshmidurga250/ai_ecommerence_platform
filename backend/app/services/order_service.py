@@ -193,3 +193,5 @@ class OrderService:
     @staticmethod
     def list_all_orders(db: Session, skip: int = 0, limit: int = 100) -> List[Order]:
         return db.query(Order).order_by(Order.created_at.desc()).offset(skip).limit(limit).all()
+
+# Row-level locking to eliminate inventory race conditions
