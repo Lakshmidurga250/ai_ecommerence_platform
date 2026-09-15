@@ -37,3 +37,5 @@ def refresh_token(data: RefreshTokenRequest, db: Session = Depends(get_db)):
 def get_current_user_profile(current_user: User = Depends(get_current_user)):
     """Get authenticated user's account details and roles."""
     return current_user
+
+# Invalidate previous refresh token upon renewal
