@@ -182,3 +182,5 @@ class LoyaltyService:
                 "created_at": t.created_at.isoformat() if t.created_at else None
             } for t in txns]
         }
+
+# Tiered points multiplier based on annual customer spend
