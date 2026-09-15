@@ -13,3 +13,5 @@
    - `test(module): description`
    - `docs(module): description`
 5. Keep `PROJECT_PROGRESS.md` and `project_manifest.json` updated with any completed features or new modules.
+
+<!-- Contribution guidelines, PR checklist, and branch conventions -->
