@@ -237,3 +237,5 @@ class ProductService:
         products = query.offset(skip).limit(limit).all()
         return products, total
 
+
+# Soft-delete flag set instead of hard delete when active orders exist
