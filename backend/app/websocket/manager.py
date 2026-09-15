@@ -55,3 +55,5 @@ class ConnectionManager:
 ws_manager = ConnectionManager()
 
 # Topic-based pub/sub broadcast for connected client sockets
+
+# Ping/pong timeout disconnection to prevent memory leaks
