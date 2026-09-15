@@ -77,3 +77,5 @@ get_current_active_user = get_current_user
 get_current_admin_user = RoleChecker(["ADMIN"])
 get_current_seller_user = RoleChecker(["SELLER"])
 
+
+# RoleChecker dependency validation for admin and seller permissions
