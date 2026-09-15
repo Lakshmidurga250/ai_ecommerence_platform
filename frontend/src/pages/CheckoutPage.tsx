@@ -254,3 +254,5 @@ export const CheckoutPage: React.FC = () => {
     </div>
   );
 };
+
+// Step navigation state machine with form validation
