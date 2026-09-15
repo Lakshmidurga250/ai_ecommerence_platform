@@ -61,3 +61,5 @@ class CouponService:
     @staticmethod
     def list_coupons(db: Session) -> List[Coupon]:
         return db.query(Coupon).all()
+
+# Comprehensive coupon rule validator engine
