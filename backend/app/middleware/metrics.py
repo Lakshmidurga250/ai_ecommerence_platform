@@ -70,3 +70,5 @@ class PrometheusMetricsMiddleware(BaseHTTPMiddleware):
 def metrics_endpoint_handler():
     """Handler returning formatted Prometheus metrics text."""
     return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
+# Prometheus request duration and status code counter metrics
