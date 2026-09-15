@@ -63,3 +63,5 @@ class CouponService:
         return db.query(Coupon).all()
 
 # Comprehensive coupon rule validator engine
+
+# Reject subsequent coupon applications if coupon already attached
