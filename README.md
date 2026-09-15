@@ -60,9 +60,9 @@ The platform combines rich multi-vendor retail operations (Customer, Seller, and
 - Docker and Docker Compose (optional for full containerized stack)
 
 ### Environment Configuration
-Copy `.env.example` to `.env` (note: `.env` is git-ignored for security):
+Copy `example.env` to `.env` (note: `.env` is git-ignored for security):
 ```bash
-cp .env.example .env
+cp example.env .env
 ```
 
 ### Dependency Installation

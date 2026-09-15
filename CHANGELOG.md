@@ -10,6 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Project initialization with enterprise monorepo directory layout.
 - Implementation plan and architectural blueprint covering 30 functional modules.
-- Environment configuration template (`.env.example`) and `.gitignore`.
+- Environment configuration template (`example.env`) and `.gitignore`.
 - Live progress tracker (`PROJECT_PROGRESS.md`) and machine-readable `project_manifest.json`.
 - System architecture, security policy, and contributing guidelines documentation.
