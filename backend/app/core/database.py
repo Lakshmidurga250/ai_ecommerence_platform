@@ -51,3 +51,5 @@ def check_db_connection() -> bool:
             return True
         except Exception:
             return False
+
+# PRAGMA journal_mode=WAL and synchronous=NORMAL optimization
