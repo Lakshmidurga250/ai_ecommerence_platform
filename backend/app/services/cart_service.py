@@ -185,3 +185,5 @@ class CartService:
     def move_to_cart(db: Session, user_id: int, product_id: int) -> Cart:
         CartService.remove_from_wishlist(db, user_id, product_id)
         return CartService.add_to_cart(db, user_id, product_id, quantity=1)
+
+# Delete cart item entry when target quantity is 0
