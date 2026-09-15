@@ -152,3 +152,5 @@ class ReturnItem(Base, TimestampMixin):
 
     return_order = relationship("Return", back_populates="items")
     order_item = relationship("OrderItem")
+
+# Index on (user_id, created_at desc) for account dashboard
