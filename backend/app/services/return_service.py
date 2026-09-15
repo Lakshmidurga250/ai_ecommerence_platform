@@ -72,3 +72,5 @@ class ReturnService:
         db.commit()
         db.refresh(return_rec)
         return return_rec
+
+# Automated condition checks for customer return authorization
