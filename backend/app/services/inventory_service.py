@@ -183,3 +183,5 @@ class InventoryService:
                     urgency=urgency
                 ))
         return alerts
+
+# Proximity-based warehouse allocation and low-stock triggers
