@@ -165,3 +165,5 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     </div>
   );
 };
+
+// Interactive hover elevation and transition effects
