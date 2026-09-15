@@ -154,3 +154,5 @@ if FRONTEND_DIST.exists():
         return JSONResponse(status_code=404, content={"detail": "Not Found"})
 
 
+
+# CORS preflight caching optimization
