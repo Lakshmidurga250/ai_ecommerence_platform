@@ -317,3 +317,5 @@ class SearchService:
 
         results = [r[0] for r in title_matches] + [r[0] for r in cat_matches]
         return list(dict.fromkeys(results))[:limit]
+
+# Trim query string and fallback to featured sort when blank
