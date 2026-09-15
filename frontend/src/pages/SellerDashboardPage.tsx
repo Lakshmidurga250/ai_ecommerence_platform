@@ -314,3 +314,5 @@ export const SellerDashboardPage: React.FC = () => {
     </div>
   );
 };
+
+// Integrated forecasting chart with stock reorder recommendations
