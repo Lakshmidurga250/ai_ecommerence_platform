@@ -80,3 +80,5 @@ class ShippingService:
     @staticmethod
     def get_shipment_by_order_id(db: Session, order_id: int) -> Optional[Shipment]:
         return db.query(Shipment).filter(Shipment.order_id == order_id).first()
+
+# Real-time carrier milestone progression generator
