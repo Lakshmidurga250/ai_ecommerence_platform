@@ -98,3 +98,5 @@ class ProductImage(Base, TimestampMixin):
     is_primary = Column(Boolean, default=False, nullable=False)
 
     product = relationship("Product", back_populates="images")
+
+# Index on (category_id, is_active, price) for fast filtering
