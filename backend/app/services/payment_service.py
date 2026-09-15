@@ -124,3 +124,5 @@ class PaymentService:
         db.commit()
         db.refresh(payment)
         return payment
+
+# Idempotency key tracking to eliminate duplicate payment debits
