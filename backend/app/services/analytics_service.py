@@ -158,3 +158,5 @@ class AnalyticsService:
             low_stock_count=low_stock_count,
             top_products=[{"id": p.id, "name": p.name, "sales": p.sales_count, "price": p.price} for p in top_prods]
         )
+
+# Funnel step drop-off calculations and revenue aggregation
