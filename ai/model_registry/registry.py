@@ -65,3 +65,5 @@ class ModelRegistryService:
             ModelRegistryEntry.model_name == model_name,
             ModelRegistryEntry.status == "PRODUCTION"
         ).order_by(ModelRegistryEntry.created_at.desc()).first()
+
+# Automated model artifact hashing and validation metrics tracking
