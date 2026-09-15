@@ -48,3 +48,5 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
 
         self.request_counts[client_ip].append(now)
         return await call_next(request)
+
+# Sliding window counter for API endpoint throttling
