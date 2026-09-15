@@ -50,3 +50,5 @@ class SellerProfile(Base, TimestampMixin):
     shipping_policy = Column(Text, nullable=True)
 
     seller = relationship("Seller", back_populates="profile")
+
+# Banner image URL, verification status badge, and custom description fields
